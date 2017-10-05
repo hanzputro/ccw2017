@@ -1,0 +1,73 @@
+.popup{
+	&__wrapper{
+		visibility: hidden;
+		opacity:0;
+		position: fixed;
+		top: 0; left: 0;
+		width: 100%; height: 100%;
+		background: rgba(0,0,0, 0.4);
+		z-index: 100;
+		transition:0.4s all;
+		&.active{
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+	&__box{
+		position: absolute;
+		top: 0; left: 0; right: 0; bottom: 0;
+		width: 380px;
+		margin: auto;
+		padding: 20px;
+		background: white;
+		border-radius:4px;
+		&--delitemcart{ height: 120px; }
+	}
+	&__content{
+		position: relative;
+		.ico-popupclose{
+			@extend .ico-delete;
+			cursor: pointer;
+			position: absolute;
+			top:-26px; right:-26px;
+			opacity:1;
+			&:before{
+				content:"x";
+				font-family: 'proximanova-light';
+				font-style:normal;
+				color:#f35d25;
+				position:absolute;
+				top:-5px; left:-5px;
+				background:white;
+				width:25px; height:25px;
+				border-radius:50%;
+				padding:3px;
+				box-shadow:0 1px 5px rgba(0,0,0,0.1);
+			}
+		}
+		.form__wrapper{
+			.input__wrapper{
+				width:100%;
+				margin:10px 0 15px 0;
+			}
+		}
+	}
+}
+
+@include break (768){
+	.popup{
+		&__box{
+			width: 80%;	
+			padding: 40px 0;
+		}
+		&__content{
+			.ico-popupclose{ top:-30px; right:10px }
+		}
+	}
+}
+
+@include break (480){
+	.popup{
+		&__box{ width: 95%; }
+	}
+}

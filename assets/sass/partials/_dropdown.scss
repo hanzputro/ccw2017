@@ -1,0 +1,111 @@
+.dropdown{	
+	position: relative;
+	padding:0 !important;
+	&:after{
+		content:"";
+		position: absolute;
+		top:0; bottom:0; right:15px;
+		margin:auto;
+		width:7px; height:5px;
+		background:url(/images/ico/ico-dropdown-gray.svg) no-repeat;
+	}
+	&:hover{
+		&:after{ transform:rotate(180deg); }		
+		.dropdown__content{
+			opacity:1;
+			visibility:visible;
+
+		}
+	}
+	.dropdown__span{
+		cursor:pointer;
+		display:inline-block;
+		padding:8px 25px 7px 15px; 
+	}
+    .dropdown__content{
+		opacity:0;
+		visibility:hidden;
+		background:#fff;
+	    position: absolute;
+		margin:0;
+	    padding:0;
+    }
+    .dropdown__content--mobile{
+		display:none;
+    }
+}
+
+.miniheader{
+	.dropdown{
+		&:hover{
+			&:after{ transform:none; }		
+			.dropdown__content{ opacity:0; visibility:hidden; }
+			.dropdown__span{
+                position: relative;
+                z-index: 2;
+                background: linear-gradient(to bottom, rgba(66,65,74,1) 0%,rgba(87,86,95,1) 100%);
+                &:before{
+                    content:"";
+                    position: absolute;
+                    top:0; bottom:0; left:-2px;
+                    width:2px; height:100%;
+                    background:#414049;
+                }
+                &:after{
+                    content:"";
+                    position: absolute;
+                    top:0; bottom:0; right:-2px;
+                    width:2px; height:100%;
+                    background:#414049;
+                }
+            }
+		}
+		&.active{
+			&:after{ transform:rotate(180deg); }
+            .dropdown__content{ 
+            	opacity:1; visibility:visible;
+            	top:32px;
+                transition:0.3s ease;      
+                z-index: 10;  
+            }
+            &:hover{ .dropdown__content{ opacity:1; visibility:visible; } }
+            .dropdown__span{
+                position: relative;
+                z-index: 2;
+                background: linear-gradient(to bottom, rgba(66,65,74,1) 0%,rgba(87,86,95,1) 100%);
+                &:before{
+                    content:"";
+                    position: absolute;
+                    top:0; bottom:0; left:-2px;
+                    width:2px; height:100%;
+                    background:#414049;
+                }
+                &:after{
+                    content:"";
+                    position: absolute;
+                    top:0; bottom:0; right:-2px;
+                    width:2px; height:100%;
+                    background:#414049;
+                }
+            }
+        }
+	}
+}
+
+// responsive
+@media (max-device-width:1024px), (max-width:980px) {
+	.dropdown{
+		&:after{
+			background:url(/images/ico/ico-dropdown-white.svg) no-repeat;
+		}
+		.dropdown__span{
+			padding:15px 0;
+			width:100%;
+		}
+		.dropdown__content{
+			position:relative;
+			opacity:1;
+			visibility:visible;
+		}
+	}
+}

@@ -1,0 +1,23 @@
+{
+  "name": "ccw",
+  "authors": [
+    "Hanif Putra <hanzputro@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "slick-carousel": "slick.js#^1.8.1",
+    "responsive-img.js": "^1.0.0",
+    "scrollmagic": "^2.0.5"
+  }
+}
