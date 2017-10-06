@@ -1,3 +1,51 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, main {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
 *,
 *:before,
 *:after {
@@ -6,12 +54,10 @@
     -moz-osx-font-smoothing: grayscale;
 }
 // a, a:active, a:focus, input, p, article {outline: none;}
-iframe{border: none;}
+iframe{ border: none; }
 html,body{
     min-height: 100%;
-    margin:0;
-    padding: 0;
-    background:#f9f9f9;
+    background: #fff;
 }
 img, video, picture {
     max-width: 100%;
@@ -150,6 +196,10 @@ a{
     @extend .container;
     width:1440px;
 }
+.container1600{
+    @extend .container;
+    width:1600px;
+}
 .container1920{
     @extend .container;
     width:1920px;
@@ -158,52 +208,8 @@ a{
     width: 100%;
     margin: auto;
 }
-.field{ margin-bottom:15px; }
+.section{ position:relative; height:100vh; }
 .content{ padding:20px; }
-.title--line{
-    position: relative;
-    display:inline-block;
-    &:before{
-        content:'';
-        position: absolute;
-        top:0; bottom:0; left:-150px;
-        margin:auto;
-        width:140px;
-        height:5px;
-        background:url(/images/ico/ico-linezigzag.svg) repeat;
-    }
-    &:after{
-        @extend .title--line:before;
-        left:initial; right:-150px;
-    }
-}
-.pagetitle{
-    background: linear-gradient(to bottom, rgba(195,61,22,1) 0%,rgba(223,68,23,1) 100%);
-    min-height:100px;
-    &--small{
-        background: linear-gradient(to bottom, rgba(195,61,22,1) 0%,rgba(223,68,23,1) 100%);
-        // min-height:100px;
-        padding: 32px 0;
-        
-        @include break (600){
-            background:inherit;
-            // min-height: auto;
-            padding: 14px 0;
-            h2{
-                font-size: 18px;
-            }
-        }
-    }
-}
-.bg--white{ background:white; }
-.bg--gradorange{ background: linear-gradient(to bottom, #C53D15 0%, #F93C05 100%); }
-.bg--gradorange2{ background: linear-gradient(to right, #fbc311 0%, #e64325 100%); }
-.bg--blue{ background:#292667; }
-.bg--black{ background: #414049; }
-.bg--black2{ background: #000; }
-.bg--gray{ background: #f9f9f9; }
-.bg--gray2{ background: #afafaf; }
-
 .loading{
     position:relative;
     pointer-events: none;
@@ -231,17 +237,11 @@ a{
         z-index:60;
     }
 }
-
-.more-link{}
-.more-desc{ overflow:hidden; }
-
-.overflow-visible{overflow:visible !important;}.link-trigger-content, .expand-content{display: none;}
-
 .g-recaptcha{ display:initial !important; }
-// responsive
-@include break(1280) {    
-}
 
+// responsive
+
+// only tablet/ipad above
 @media (max-device-width:1024px), (max-width:980px) {
     .show-t{ display:initial !important; }
     .hide-t{ display:none !important; }
@@ -253,29 +253,11 @@ a{
     // }
 }
 
-@include break(600) {
+@media (max-width:767px) {
     body{ background:white; }
     .hide-m{ display:none !important; }
     .show-m{ display:initial !important; }
-    // .boxshadow{ box-shadow:none; }
-    .title--line{
-        &:before{ 
-            left:-60px;
-            width:50px;
-        }
-        &:after{
-            left:initial; right:-60px;
-        }
-    }        
-    // .container{         
-    //     padding:0 10px; 
-    // }
-    .container__content{
-        padding: 30px 10px;
-    } 
-    .content{ padding:10px; }
-    .field{ margin-bottom:10px; }    
 }
 
-@include break(480) {
+@media (max-width:480px) {
 }

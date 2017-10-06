@@ -1,0 +1,25 @@
+.cd-section{
+    .section-cover{ background-position:center center; }
+    &:first-of-type .section-cover {
+        background-color: #392e41;
+        background-image: url(../../images/home/bg-section1.jpg);
+    }
+    &:nth-of-type(2) .section-cover {
+        background-color: #fff;
+    }
+    &:nth-of-type(3) .section-cover {
+        background-color: #cacbca;
+        background-image: url(../../images/home/bg-section3.jpg);
+    }
+    &:nth-of-type(4) .section-cover {
+        background-image: #fcb052;
+    }
+    &:nth-of-type(5) .section-cover {
+        background-image: #f06a59;
+    }
+}
+
+
+// responsive
+// only tablet/ipad above
+// @media (max-device-width:1024px), (max-width:980px) {}
