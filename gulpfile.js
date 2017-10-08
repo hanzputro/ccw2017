@@ -25,7 +25,7 @@ elixir(function(mix) {
     /* From Plugin */
     mix.styles(
         [
-            // 'page-scroll-effects/css/style.css'
+            'page-scroll-effects/css/style.css'
         ],'dist/css/plugins.css',bowerDir);
 
     /* core */

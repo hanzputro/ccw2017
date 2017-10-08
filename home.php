@@ -21,7 +21,8 @@
     <link rel="stylesheet" href="<?php echo elixir('css/home.css'); ?>">
 </head>
 
-<body>
+<!-- hijacking: on/off - animation: none/scaleDown/rotate/gallery/catch/opacity/fixed/parallax -->
+<body data-hijacking="on" data-animation="catch">
     
     <div class="container header">
         <div class="container1600">
@@ -40,10 +41,9 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </div>    
     
-    <!-- hijacking: on/off - animation: none/scaleDown/rotate/gallery/catch/opacity/fixed/parallax -->
-    <div class="section-page" data-hijacking="off" data-animation="catch">       
+    <div class="section-page" id="section_page">       
   
         <section class="cd-section visible" id="section1">
             <div class="section-cover">

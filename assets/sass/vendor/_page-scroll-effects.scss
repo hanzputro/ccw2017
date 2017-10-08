@@ -8,7 +8,7 @@ body::before {
   content: 'mobile';
   display: none;
 }
-@media only screen and (min-width: 1050px) {
+@media only screen and (min-width: 1025px) {
   body::before {
     /* never visible - this is used in jQuery to check the current MQ */
     content: 'desktop';
@@ -20,8 +20,9 @@ body::before {
 Main Components 
 
 -------------------------------- */
-@media only screen and (min-width: 1050px) {
-  body[data-hijacking="on"] {
+@media only screen and (min-width: 1025px) {
+  body[data-hijacking="on"],
+  .section-page[data-hijacking="on"] {
     overflow: hidden;
   }
 }
@@ -62,7 +63,7 @@ Main Components
 [data-animation="parallax"] .cd-section:nth-of-type(5) > div, [data-animation="fixed"] .cd-section:nth-of-type(5) > div, [data-animation="opacity"] .cd-section:nth-of-type(5) > div {
   background-image: url("../img/img-5.jpg");
 }
-@media only screen and (min-width: 1050px) {
+@media only screen and (min-width: 1025px) {
   [data-hijacking="on"] .cd-section {
     opacity: 0;
     visibility: hidden;
@@ -96,12 +97,12 @@ Main Components
   }
 }
 
-@media only screen and (min-width: 1050px) {
+@media only screen and (min-width: 1025px) {
   .cd-section:first-of-type > div::before {
     display: none;
   }
 }
-@media only screen and (min-width: 1050px) {
+@media only screen and (min-width: 1025px) {
   .cd-section > div {
     position: fixed;
     top: 0;

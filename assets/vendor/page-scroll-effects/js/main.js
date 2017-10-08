@@ -1,9 +1,9 @@
 jQuery(document).ready(function($){
 	//variables
-	var hijacking= $('.section-page').data('hijacking'),
-		animationType = $('.section-page').data('animation'),
+	var hijacking= $('body').data('hijacking'),
+		animationType = $('body').data('animation'),
 		delta = 0,
-        scrollThreshold = 5,
+        scrollThreshold = 3,
         actual = 1,
         animating = false;
     
