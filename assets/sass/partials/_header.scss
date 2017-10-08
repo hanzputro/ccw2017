@@ -1,20 +1,60 @@
+@keyframes header {
+    to{ opacity:1; transform: translateY(0px); }
+}
 .header{    
     position: fixed;
     z-index:10;
+    opacity:0;
+    transform: translateY(-10px);
+    animation: header 2s ease forwards 5s; 
     .container1600{
         @extend .flex;
         @extend .between;
     }
     .logo{
+        margin:32px 0 0 0;
         img{}
     }
     .navbar{
-        ul{ @extend .clearfix; }
+        ul{ 
+            @extend .clearfix;
+            @extend .s18;
+            color:white;
+            margin:41px 0 0 0; 
+        }
         li{
             @extend .float-left;
+            a{
+                height:30px;
+                padding:14px 17px 0 17px;                
+            }
+            &:last-child{
+                a{
+                    height:auto;
+                    padding:0 0 0 17px;
+                }
+            }
         }
     }
 }
+
+.ico-menu{
+    position:relative;
+    width:38px; height:28px;
+    .ico-menu__line{
+        position:absolute;
+        top:0; right:0;
+        height:6px;
+        background:#FFF;
+        border-radius:3px;
+        margin:auto;
+        &:last-child{ margin:0; }
+        &1{ width:38px; }
+        &2{ width:25px; bottom:0; }
+        &3{ width:34px; top:initial; bottom:0; }
+    }
+}
+
 
 // responsive
 // khusus tablet/ipad

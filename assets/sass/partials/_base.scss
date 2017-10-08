@@ -29,6 +29,7 @@ footer, header, hgroup, menu, nav, section, main {
     display: block;
 }
 body {
+    scroll-behavior: smooth;
     line-height: 1;
 }
 ol, ul {
@@ -137,9 +138,6 @@ a{
 .padding0{ padding:0 !important; }
 .padding15{ padding:15px; }
 .marginr0{ margin-right:0 !important; }
-.spacing2{ letter-spacing:2px !important; }
-.spacing1{ letter-spacing:1.2px !important; }
-.spacing0{ letter-spacing:0 !important; }
 .border{ border:1px solid #e1e1e1; border-radius:2px; }
 .border-bottom{ padding: 5px 0; border-bottom:1px solid #eaeaea; }
 .radius0{ border-radius:0 !important; }
@@ -147,62 +145,18 @@ a{
 .width-initial{width:initial !important;}  
 .widthfull{ width:100% !important; }
 .container{
-    overflow:hidden;
+    // overflow:hidden;
     position:relative;
     max-width:100%;
     margin: 0 auto;
     padding:0 20px;
+    &1600{
+        @extend .container;
+        width:1600px;
+    }
 }
 .container__content{
     padding: 50px 20px;
-}
-.container320{
-    @extend .container;
-    width:320px;
-}
-.container480{
-    @extend .container;
-    width:480px;
-}
-.container540{
-    @extend .container;
-    width:540px;
-}
-.container600{
-    @extend .container;
-    width:600px;
-}
-.container768{
-    @extend .container;
-    width:768px;
-}
-.container980{
-    @extend .container;
-    width:980px;
-}
-.container1024{
-    @extend .container;
-    width:1024px;    
-}
-.container1220{
-    @extend .container;
-    width:1220px;    
-}
-.container1330{
-    @extend .container;
-    width:1330px;
-}
-.container1440{
-    @extend .container;
-    width:1440px;
-}
-.container1600{
-    @extend .container;
-    width:1600px;
-}
-.container1920{
-    @extend .container;
-    width:1920px;
 }
 .containerfull{
     width: 100%;

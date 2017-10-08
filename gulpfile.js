@@ -5,7 +5,7 @@ elixir.config.assetsPath = 'assets';
 elixir.config.publicPath = 'dist';
 elixir.config.viewPath = './';
 
-var browserSync = require('laravel-elixir-browsersync-official');
+// var browserSync = require('laravel-elixir-browsersync-official');
 var gulp = require("gulp");
 var bowerDir = 'assets/vendor/';
 
@@ -25,7 +25,7 @@ elixir(function(mix) {
     /* From Plugin */
     mix.styles(
         [
-            'page-scroll-effects/css/style.css'
+            // 'page-scroll-effects/css/style.css'
         ],'dist/css/plugins.css',bowerDir);
 
     /* core */
@@ -36,8 +36,7 @@ elixir(function(mix) {
     /* From Plugin */
     mix.scripts(
         [
-            // 'jquery/jquery-1.11.3.min.js',       
-            'scrollmagic/scrollmagic/minified/ScrollMagic.min.js',
+            // 'jquery/jquery-1.11.3.min.js',
             'responsive-img.js/responsive-img.js',
             'page-scroll-effects/js/velocity.min.js',
             'page-scroll-effects/js/velocity.ui.min.js',
@@ -45,28 +44,25 @@ elixir(function(mix) {
         ], 'dist/js/plugins.js',bowerDir);
 
     /* main */
-    mix.scripts( 
-        [
-            'base.js'
-        ],'dist/js/base.js');
+    mix.scripts( [ 'home.js' ],'dist/js/home.js');
 
 
     //################### VERSIONING ###################//
     mix.version([
         "css/plugins.css",
         "css/base.css",
-        "js/plugins.js",
-        "js/base.js",
+        "js/plugins.js", 
 
-        "css/home.css"
+        "css/home.css",
+        "js/home.js"
     ]);
 
-    mix.browserSync({
-        files: ['**/*.html', 'dist/js/**/*.js', 'dist/css/**/*.css'],
-        proxy: undefined,
-        server: {
-            baseDir: "./"
-        }
-    });
+    // mix.browserSync({
+    //     files: ['**/*.html', 'dist/js/**/*.js', 'dist/css/**/*.css'],
+    //     proxy: undefined,
+    //     server: {
+    //         baseDir: "./"
+    //     }
+    // });
 });
 
