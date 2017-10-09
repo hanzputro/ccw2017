@@ -54,7 +54,7 @@ table {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-// a, a:active, a:focus, input, p, article {outline: none;}
+a, a:active, a:focus, input, p, p:active, p:focus, article { outline: none; }
 iframe{ border: none; }
 html,body{
     min-height: 100%;

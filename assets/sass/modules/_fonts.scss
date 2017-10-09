@@ -20,6 +20,15 @@
     font-style: normal;
 }
 @font-face {
+    font-family: 'Merriweather-Italic';
+    src: url('../../fonts/merriweather/Merriweather-Italic.eot');
+    src: url('../../fonts/merriweather/Merriweather-Italic.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/merriweather/Merriweather-Italic.woff') format('woff'),
+         url('../../fonts/merriweather/Merriweather-Italic.svg#opensans-italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
     font-family: 'Merriweather-Light';
     src: url('../../fonts/merriweather/MerriweatherLight.eot');
     src: url('../../fonts/merriweather/MerriweatherLight.eot?#iefix') format('embedded-opentype'),

@@ -45,7 +45,7 @@
     
     <div class="section-page" id="section_page">       
   
-        <section class="cd-section visible" id="section1">
+        <section class="cd-section" id="section1">
             <div class="section-cover">
                 <div class="section container1600 center" id="section-cover1">
                     <h1 class="light white">CREATIVE CITY WORSHIP</h1>
@@ -69,7 +69,7 @@
                             <div class="splash"></div>
                         </div>                    
                     </div>
-                    <div class="span6">
+                    <div class="span6 section__content">
                         <h1 class="linetitle s50 merriweather bold">Come as<br> You Are</h1>
                         <p class="s30">Pastor Walter is our lead pastor. Creative City Worship lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
                         <nav class="tablink">
@@ -84,11 +84,41 @@
             </div>
         </section>
 
-        <section class="cd-section" id="section3">
+        <section class="cd-section visible" id="section3">
             <div class="section-cover">
-                <div class="section container1600">
-                    <h2>Section 3</h2>
-                    <p>ccccccccccc</p>
+                <div class="slider">
+                    <div class="slide-bg">
+                        <div class="slide" style="background-image: url(dist/images/home/bg-section3.jpg);"></div>
+                        <div class="slide" style="background-image: url(dist/images/home/bg-section3.jpg);"></div>
+                        <div class="slide" style="background-image: url(dist/images/home/bg-section3.jpg);"></div>                    
+                    </div>
+                    <div class="slide-caption">
+                        <div class="slide">
+                            <h1 class="s38 merriweather bold linetitle">Sunday Service</h1>
+                            <p class="margin0 s24">Lorem ipsum dolor sit amet, consectetur adipiscing elitdo eiusmod tempor incididunt ut labore et dolore magna alia. Ut enim ad minim veniam, quis nostrud.</p>
+                        </div>
+                        <div class="slide">
+                            <h1 class="s38 merriweather bold linetitle">Creative Kids</h1>
+                            <p class="margin0 s24">Lorem ipsum dolor sit amet, consectetur adipiscing elitdo eiusmod tempor incididunt ut labore et dolore magna alia. Ut enim ad minim veniam, quis nostrud.</p>
+                        </div>
+                        <div class="slide">
+                            <h1 class="s38 merriweather bold linetitle">Creative Community</h1>
+                            <p class="margin0 s24">Lorem ipsum dolor sit amet, consectetur adipiscing elitdo eiusmod tempor incididunt ut labore et dolore magna alia. Ut enim ad minim veniam, quis nostrud.</p>
+                        </div>
+                    </div>
+                    <nav class="clearfix slide__nav">
+                        <div class="read-more">
+                            <a href="" class="clearfix">
+                                <div class="ico-plus">+</div>
+                                <h1 class="s24 merriweather italic">READ MORE</h1>
+                            </a>
+                        </div>
+                        <ul>
+                            <li class=""><a href="javascript:void(0)" class="s16 merriweather">SUNDAY SERVICE</a></li>
+                            <li class=""><a href="javascript:void(0)" class="s16 merriweather">CREATIVE KIDS</a></li>
+                            <li class=""><a href="javascript:void(0)" class="s16 merriweather">CREATIVE COMMUNITY</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </section>

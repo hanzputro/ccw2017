@@ -12,7 +12,25 @@ $(document).ready(function(){
         var gethS = $('.section', this).height();
         var setmidS = (gethSC - gethS)/2;
         $('.section', this).css("cssText","margin-top:"+setmidS+"px;");
-    });  
+    });
+
+    $('#section3 .slide-bg').slick({
+        arrows: false,
+        swipe: false,
+        fade: true,
+        speed:500       
+    });
+    $('#section3 .slide-caption').slick({
+        arrows: false,
+        swipe: false,
+        speed:500 
+    });
+    $('#section3 .slide__nav ul').slick({
+        asNavFor: '#section3 .slide-bg, #section3 .slide-caption',
+        slidesToShow: 3,
+        centerMode: true,
+        focusOnSelect: true
+    });
 
 });
 

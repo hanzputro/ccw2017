@@ -37,6 +37,7 @@ elixir(function(mix) {
     mix.scripts(
         [
             // 'jquery/jquery-1.11.3.min.js',
+            'slick-carousel/slick/slick.min.js',
             'responsive-img.js/responsive-img.js',
             'page-scroll-effects/js/velocity.min.js',
             'page-scroll-effects/js/velocity.ui.min.js',

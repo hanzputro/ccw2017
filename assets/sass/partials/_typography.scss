@@ -10,6 +10,7 @@
 .bold{ font-family: 'Roboto-Bold'; }
 .merriweather{
     font-family: 'Merriweather-Regular';
+    &.italic{ font-family: 'Merriweather-Italic'; }
     &.light{ font-family: 'Merriweather-Light'; }
     &.bold{ font-family: 'Merriweather-Bold'; }
 }
@@ -20,7 +21,7 @@
 .s16{ font-size:16px; }
 .s18{ font-size:18px; }
 .s22{ font-size:22px; }
-.s24{ font-size:24px; }
+.s24{ font-size:24px; line-height:30px; }
 .s30{ font-size:30px; line-height:40px; }
 .s38{ font-size:38px; line-height:48px; }
 .s50{ font-size:50px; line-height:60px; }
