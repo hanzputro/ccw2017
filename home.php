@@ -84,7 +84,7 @@
             </div>
         </section>
 
-        <section class="cd-section visible" id="section3">
+        <section class="cd-section" id="section3">
             <div class="section-cover">
                 <div class="slider">
                     <div class="slide-bg">
@@ -123,11 +123,42 @@
             </div>
         </section>
 
-        <section class="cd-section" id="section4">
+        <section class="cd-section visible" id="section4">
             <div class="section-cover">
-                <div class="section container1600">
-                    <h2>Section 4</h2>
-                    <p>dddddddddddd</p>
+                <div class="section">
+                    <h1 class="s50 merriweather bold linetitle">Upcoming Events</h1>
+                    <p class="margin0 s24">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+                    <ul class="news">
+                        <li class="news__list">
+                            <div class="splash2"></div>
+                            <a href="">
+                                <img src="dist/images/home/section4-thumb1.jpg" alt="" class="thumb">
+                                <div class="caption">
+                                    <span class="s28 merriweather bold date"><span class="s60">12</span><br>AUG</span>
+                                    <span class="s20 light title light">MEN'S MEETING</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="news__list">
+                            <a href="">
+                                <img src="dist/images/home/section4-thumb2.jpg" alt="" class="thumb">
+                                <div class="caption">
+                                    <span class="s28 merriweather bold date"><span class="s60">12</span><br>NOV</span>
+                                    <span class="s20 light title light">CCW'S ANNIVERSARY</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="news__list">
+                            <div class="splash3"></div>
+                            <a href="">
+                                <img src="dist/images/home/section4-thumb3.jpg" alt="" class="thumb">
+                                <div class="caption">
+                                    <span class="s28 merriweather bold date"><span class="s60">12</span><br>NOV</span>
+                                    <span class="s20 light title light">COFFEE WORKSHOP</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>

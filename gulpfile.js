@@ -40,12 +40,14 @@ elixir(function(mix) {
             'slick-carousel/slick/slick.min.js',
             'responsive-img.js/responsive-img.js',
             'page-scroll-effects/js/velocity.min.js',
-            'page-scroll-effects/js/velocity.ui.min.js',
-            'page-scroll-effects/js/main.js'
+            'page-scroll-effects/js/velocity.ui.min.js'
         ], 'dist/js/plugins.js',bowerDir);
 
     /* main */
-    mix.scripts( [ 'home.js' ],'dist/js/home.js');
+    mix.scripts( [ 
+        '/../vendor/page-scroll-effects/js/main.js', 
+        'home.js' 
+        ],'dist/js/home.js');
 
 
     //################### VERSIONING ###################//

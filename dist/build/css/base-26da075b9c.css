@@ -1167,6 +1167,10 @@ a i ~ small {
   font-size: 18px;
 }
 
+.s20 {
+  font-size: 20px;
+}
+
 .s22 {
   font-size: 22px;
 }
@@ -1174,6 +1178,10 @@ a i ~ small {
 .s24 {
   font-size: 24px;
   line-height: 30px;
+}
+
+.s28 {
+  font-size: 28px;
 }
 
 .s30 {
@@ -1184,11 +1192,27 @@ a i ~ small {
 .s38 {
   font-size: 38px;
   line-height: 48px;
+  margin-bottom: 25px;
+}
+
+.s40 {
+  font-size: 40px;
+  line-height: 50px;
 }
 
 .s50 {
   font-size: 50px;
   line-height: 60px;
+  margin-bottom: 70px;
+}
+
+.s60 {
+  font-size: 60px;
+}
+
+.s72 {
+  font-size: 72px;
+  line-height: 82px;
 }
 
 body {
