@@ -59,6 +59,14 @@
 }
 
 @font-face {
+  font-family: 'Roboto-Italic';
+  src: url("../../fonts/roboto/Roboto-Italic.eot");
+  src: url("../../fonts/roboto/Roboto-Italic.eot?#iefix") format("embedded-opentype"), url("../../fonts/roboto/Roboto-Italic.woff") format("woff"), url("../../fonts/roboto/Roboto-Italic.svg#opensans-italic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Roboto-Light';
   src: url("../../fonts/roboto/Roboto-Light.eot");
   src: url("../../fonts/roboto/Roboto-Light.eot?#iefix") format("embedded-opentype"), url("../../fonts/roboto/Roboto-Light.woff") format("woff"), url("../../fonts/roboto/Roboto-Light.svg#opensans-italic") format("svg");
@@ -83,660 +91,22 @@
   font-style: normal;
 }
 
-.ico-smile {
-  background: url(/images/ico/ico-smile.svg) no-repeat;
+.ico-email {
   display: inline-block;
   vertical-align: middle;
-  width: 15px;
-  height: 15px;
-  margin: 0 2px;
-}
-
-.ico-bag {
-  background: url(/images/ico/ico-bag.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 15px;
-  height: 13px;
-  margin: 0 2px;
-}
-
-.ico-card {
-  background: url(/images/ico/ico-card.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 15px;
-  height: 12px;
-  margin: 0 2px;
-}
-
-.ico-coupon {
-  background: url(/images/ico/ico-coupon.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 15px;
-  height: 12px;
-  margin: 0 2px;
-}
-
-.ico-swap {
-  background: url(/images/ico/ico-swap.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 15px;
-  height: 10px;
-  margin: 0 2px;
-}
-
-.ico-equip {
-  background: url(/images/ico/ico-equip.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 15px;
-  height: 15px;
-  margin: 0 2px;
-}
-
-.ico-time {
-  background: url(/images/ico/ico-time.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 15px;
-  height: 15px;
-  margin: 0 2px;
-}
-
-.ico-technical {
-  background: url(/images/ico/ico-technical.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 15px;
-  height: 15px;
-  margin: 0 2px;
-}
-
-.ico-form {
-  background: url(/images/ico/ico-form.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 12px;
-  height: 15px;
-  margin: 0 2px;
-}
-
-.ico-signout {
-  background: url(/images/ico/ico-signout.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 15px;
-  height: 12px;
-  margin: 0 2px;
-}
-
-.ico-marker {
-  background: url(/images/ico/ico-marker.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 14px;
-  height: 20px;
-  margin: 0 2px;
-}
-
-.ico-cart {
-  background: url(/images/ico/ico-cart.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 24px;
-  height: 21px;
-  margin: 0 2px;
-  vertical-align: top;
-}
-
-.ico-info {
-  cursor: pointer;
-  background: url(/images/ico/ico-info.svg) no-repeat;
-  vertical-align: super !important;
-  display: inline-block;
-  vertical-align: middle;
-  width: 12px;
-  height: 12px;
-  margin: 0 2px;
-}
-
-.ico-infomini {
-  background: url(/images/ico/ico-infomini.svg) no-repeat;
-  vertical-align: super !important;
-  display: inline-block;
-  vertical-align: middle;
-  width: 10px;
-  height: 10px;
-  margin: 0 2px;
-}
-
-.ico-arrowleft {
-  background: url(/images/ico/ico-arrowleft.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 5px;
-  height: 9px;
-  margin: 0 8px 0 0;
-}
-
-.ico-arrowright {
-  background: url(/images/ico/ico-arrowleft.svg) no-repeat;
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
-  display: inline-block;
-  vertical-align: middle;
-  width: 5px;
-  height: 9px;
-  margin: 0 2px;
-}
-
-.ico-arrowrightnext {
-  background: url(/images/ico/ico-arrowrightnext.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 10px;
-  height: 9px;
-  margin: 0 2px;
-}
-
-.ico-directionleft {
-  background: url(/images/ico/ico-directionleft.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 9px;
-  height: 9px;
-  margin: 0 2px;
-}
-
-.ico-buttonright {
-  background: url(/images/ico/ico-buttonright.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 19px;
-  height: 18px;
-  margin: 0 0 0 10px;
-}
-
-.ico-arrowrightorange {
-  background: url(/images/ico/ico-arrowrightorange.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 12px;
-  height: 6px;
-  margin: 0 2px;
-}
-
-.ico-leftorangemini {
-  background: url(/images/ico/ico-leftorangemini.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 5px;
-  height: 9px;
-  margin: 0 5px 0 0;
-}
-
-.ico-checkwhite {
-  background-image: url(/images/ico/ico-checkwhite.svg);
-  display: inline-block;
-  vertical-align: middle;
-  width: 6px;
-  height: 6px;
-  margin: 0 2px;
-}
-
-.ico-checkgray {
-  background-image: url(/images/ico/ico-checkgray.svg);
-  display: inline-block;
-  vertical-align: middle;
-  width: 6px;
-  height: 6px;
-  margin: 0 2px;
-}
-
-.ico-checkorange {
-  background-image: url(/images/ico/ico-checkorange.svg);
-  display: inline-block;
-  vertical-align: middle;
-  width: 20px;
-  height: 20px;
-  margin: 0 2px;
-}
-
-.ico-checkcircle {
-  background-image: url(/images/ico/ico-check-circle.svg);
-  display: inline-block;
-  vertical-align: middle;
-  width: 39px;
-  height: 39px;
-  margin: 0 0px;
-}
-
-.ico-circle-chevron {
-  background-image: url(/images/ico/ico-circle-chevron.svg);
-  display: inline-block;
-  vertical-align: middle;
-  width: 25px;
-  height: 25px;
-  margin: 0 0px;
-}
-
-.ico-facebook {
-  background: url(/images/ico/ico-facebook.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 16px;
-  height: 16px;
-  margin: 0 2px;
-}
-
-.ico-twitter {
-  background: url(/images/ico/ico-twitter.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 16px;
-  height: 16px;
-  margin: 0 2px;
-}
-
-.ico-youtube {
-  background: url(/images/ico/ico-youtube.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 16px;
-  height: 16px;
-  margin: 0 2px;
+  width: 40px;
+  height: 40px;
+  margin: 0 10px 0 0;
+  background: url(../../images/ico-email.png) no-repeat;
 }
 
 .ico-instagram {
-  background: url(/images/ico/ico-instagram.svg) no-repeat;
   display: inline-block;
   vertical-align: middle;
-  width: 16px;
-  height: 16px;
-  margin: 0 2px;
-}
-
-.ico-mail {
-  background: url(/images/ico/ico-mail.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 16px;
-  height: 16px;
-  margin: 0 2px;
-}
-
-.ico-mailcircle {
-  background: url(/images/ico/ico-mail-circle.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 39px;
-  height: 39px;
-  margin: 0 0px;
-}
-
-.ico-closecircle {
-  background: url(/images/ico/ico-close-circle.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 16px;
-  height: 16px;
-  margin: 0 0px;
-}
-
-.ico-delete {
-  background: url(/images/ico/ico-delete.svg) no-repeat;
-  opacity: 0.8;
-  display: inline-block;
-  vertical-align: middle;
-  width: 12px;
-  height: 12px;
-  margin: 0 2px;
-}
-
-.ico-delete:hover {
-  opacity: 1;
-}
-
-.ico-arrowbreadcrumb {
-  background: url(/images/ico/ico-arrowbreadcrumb.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 5px;
-  height: 7px;
-  margin: 0 7px;
-}
-
-.ico-facebook2 {
-  display: inline-block;
-  vertical-align: middle;
-  width: 25px;
-  height: 25px;
-  margin: 0 2px;
-  background: url(/images/ico/ico-facebook2.svg) no-repeat;
-}
-
-.ico-facebook2:hover {
-  background: url(/images/ico/ico-facebook2-orange.svg) no-repeat;
-}
-
-.ico-twitter2 {
-  display: inline-block;
-  vertical-align: middle;
-  width: 25px;
-  height: 25px;
-  margin: 0 2px;
-  background: url(/images/ico/ico-twitter2.svg) no-repeat;
-}
-
-.ico-twitter2:hover {
-  background: url(/images/ico/ico-twitter2-orange.svg) no-repeat;
-}
-
-.ico-youtube2 {
-  display: inline-block;
-  vertical-align: middle;
-  width: 25px;
-  height: 25px;
-  margin: 0 2px;
-  background: url(/images/ico/ico-youtube2.svg) no-repeat;
-}
-
-.ico-youtube2:hover {
-  background: url(/images/ico/ico-youtube2-orange.svg) no-repeat;
-}
-
-.ico-instagram2 {
-  display: inline-block;
-  vertical-align: middle;
-  width: 25px;
-  height: 25px;
-  margin: 0 2px;
-  background: url(/images/ico/ico-instagram2.svg) no-repeat;
-}
-
-.ico-instagram2:hover {
-  background: url(/images/ico/ico-instagram2-orange.svg) no-repeat;
-}
-
-.ico-maporange {
-  background: url(/images/ico/ico-maporange.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 10px;
-  height: 10px;
-  margin: 0 5px 0 0;
-}
-
-.ico-cartorange {
-  background: url(/images/ico/ico-cartorange.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 10px;
-  height: 10px;
-  margin: 0 5px 0 0;
-}
-
-.ico-cardorange {
-  background: url(/images/ico/ico-cardorange.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 10px;
-  height: 10px;
-  margin: 0 5px 0 0;
-}
-
-.ico-chevrondown {
-  background: url(/images/ico/ico-expandcollapse.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 9px;
-  height: 5px;
-  margin: auto 0px auto 5px;
-  background-size: 9px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-}
-
-.ico-home {
-  background: url(/images/ico/ico-home.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 20px;
-  height: 17px;
-  margin: 0 0 0 0;
-}
-
-.ico-office {
-  background: url(/images/ico/ico-office.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 18px;
-  height: 19px;
-  margin: 0 0 0 0;
-}
-
-.ico-circleoffice {
-  background: url(/images/ico/ico-circleoffice.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 46px;
-  height: 46px;
-  margin: 0 0 0 0;
-}
-
-.ico-circlehome {
-  background: url(/images/ico/ico-circlehome.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 46px;
-  height: 46px;
-  margin: 0 0 0 0;
-}
-
-.ico-circlegreencheck {
-  position: relative;
-  vertical-align: middle;
-  display: inline-block;
-  background-color: #21D380;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.ico-circlegreencheck:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 14px;
-  height: 14px;
-  background: url(/images/ico/ico-checkwhite.svg);
-  background-size: 100%;
-}
-
-.ico-spinner {
-  background: url(/images/ico/ico-spinner.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 17px;
-  height: 17px;
-  margin: 0;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  -webkit-animation: spin 0.8s linear infinite;
-  animation: spin 0.8s linear infinite;
-}
-
-.ico-spinnercircle {
-  background: url(/images/ico/ico-spinner-circle.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 39px;
-  height: 39px;
-  margin: 0;
-  position: absolute;
-  right: 0;
-  margin: auto;
-  -webkit-animation: spin 0.8s linear infinite;
-  animation: spin 0.8s linear infinite;
-}
-
-.ico-titletop {
-  position: relative;
-}
-
-.ico-titletop:before {
-  content: '';
-  background: url(/images/ico/ico-titletop.svg) no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 36px;
-  height: 15px;
-  margin: auto;
-  position: absolute;
-  top: -20px;
-  left: 0;
-  right: 0;
-}
-
-.ico-triangle-reverse {
-  display: inline-block;
-  position: relative;
-  top: -2px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 5px 5px 0 5px;
-  border-color: #808080 transparent transparent transparent;
-}
-
-.ico-channel-local {
-  background-image: url(/images/ico/ico-channel-local.svg);
-  display: inline-block;
-  vertical-align: middle;
-  width: 26px;
-  height: 36px;
-  margin: 0 5px 0 0;
-}
-
-.ico-channel-kids {
-  background-image: url(/images/ico/ico-channel-kids.svg);
-  display: inline-block;
-  vertical-align: middle;
-  width: 30px;
-  height: 30px;
-  margin: 0 5px 0 0;
-}
-
-.ico-channel-news {
-  background-image: url(/images/ico/ico-channel-news.svg);
-  display: inline-block;
-  vertical-align: middle;
-  width: 29px;
-  height: 29px;
-  margin: 0 5px 0 0;
-}
-
-.ico-channel-international {
-  background-image: url(/images/ico/ico-channel-international.svg);
-  display: inline-block;
-  vertical-align: middle;
-  width: 34px;
-  height: 34px;
-  margin: 0 5px 0 0;
-}
-
-.ico-channel-entertainment {
-  background-image: url(/images/ico/ico-channel-entertainment.svg);
-  display: inline-block;
-  vertical-align: middle;
-  width: 30px;
-  height: 30px;
-  margin: 0 5px 0 0;
-}
-
-.ico-channel-movie {
-  background-image: url(/images/ico/ico-channel-movie.svg);
-  display: inline-block;
-  vertical-align: middle;
-  width: 32px;
-  height: 28px;
-  margin: 0 5px 0 0;
-}
-
-.ico-channel-education {
-  background-image: url(/images/ico/ico-channel-education.svg);
-  display: inline-block;
-  vertical-align: middle;
-  width: 26px;
-  height: 30px;
-  margin: 0 5px 0 0;
-}
-
-.ico-channel-sport {
-  background-image: url(/images/ico/ico-channel-sport.svg);
-  display: inline-block;
-  vertical-align: middle;
-  width: 30px;
-  height: 30px;
-  margin: 0 5px 0 0;
-}
-
-.ico-roadcircle {
-  background-image: url(/images/ico/ico-roadcircle.svg);
-  display: inline-block;
-  vertical-align: middle;
-  width: 82px;
-  height: 82px;
-  margin: 0;
-}
-
-.ico-mapcircle {
-  background-image: url(/images/ico/ico-mapcircle.svg);
-  display: inline-block;
-  vertical-align: middle;
-  width: 120px;
-  height: 120px;
-  margin: 0;
-}
-
-.ico-videocircle {
-  background-image: url(/images/ico/ico-videocircle.svg);
-  display: inline-block;
-  vertical-align: middle;
-  width: 82px;
-  height: 82px;
-  margin: 0;
-}
-
-.ico-starred {
-  background-image: url(/images/ico/ico-starred.svg);
-  display: inline-block;
-  vertical-align: middle;
-  width: 17px;
-  height: 16px;
-  margin: 0 5px 0 0;
-}
-
-.ico-starborderorange {
-  background-image: url(/images/ico/ico-starborderorange.svg);
-  display: inline-block;
-  vertical-align: middle;
-  width: 17px;
-  height: 16px;
-  margin: 0 5px 0 0;
+  width: 40px;
+  height: 40px;
+  margin: 0 10px 0 0;
+  background: url(../../images/ico-instagram.png) no-repeat;
 }
 
 /* Partials */
@@ -869,13 +239,13 @@ a i ~ small {
   display: none;
 }
 
-.clearfix:before, .header .navbar ul:before, .clearfix:after, .header .navbar ul:after {
+.clearfix:before, .header .navbar ul:before, .footer .footer-menu:before, .clearfix:after, .header .navbar ul:after, .footer .footer-menu:after {
   display: table;
   line-height: 0;
   content: "";
 }
 
-.clearfix:after, .header .navbar ul:after {
+.clearfix:after, .header .navbar ul:after, .footer .footer-menu:after {
   clear: both;
 }
 
@@ -935,12 +305,12 @@ a i ~ small {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.float-left, .header .navbar li {
+.float-left, .header .navbar li, .footer .copyright, .footer .footer-menu li {
   display: inline;
   float: left;
 }
 
-.float-right {
+.float-right, .footer .footer-menu {
   display: inline;
   float: right;
 }
@@ -1117,6 +487,10 @@ a i ~ small {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.italic {
+  font-family: 'Roboto-Italic';
 }
 
 .light {
@@ -1816,6 +1190,35 @@ article code .code-element {
   width: 34px;
   top: initial;
   bottom: 0;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100%;
+  background: #363636;
+  color: #fff;
+  padding: 34px 20px;
+}
+
+.footer .footer-menu {
+  margin: 0;
+}
+
+.footer .footer-menu li {
+  border-right: 1px solid #fff;
+}
+
+.footer .footer-menu li:last-child {
+  border-right: 0;
+}
+
+.footer .footer-menu li a {
+  display: block;
+  padding: 0 15px;
 }
 
 /* Pages */

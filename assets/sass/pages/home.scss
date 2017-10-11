@@ -172,10 +172,10 @@
             z-index: 2;            
         }
         &.animate{
-            animation: thumb1 1.8s ease forwards;
-            &:before{ animation: thumbbefore1 1.8s ease forwards; }
-            &:after{ animation: thumbafter1 1.8s ease forwards; }
-            .splash{ animation: splash1 2.8s ease forwards; }
+            animation: thumb1 1.8s ease forwards 1s;
+            &:before{ animation: thumbbefore1 1.8s ease forwards 1.3s; }
+            &:after{ animation: thumbafter1 1.8s ease forwards 1.3s; }
+            .splash{ animation: splash1 2.8s ease forwards 1.3s; }
         } 
     }
     .tablink{
@@ -333,6 +333,10 @@
             width:29.95%;
             margin:0 5% 0 0;
             &:last-child{ margin:0; }
+
+            @keyframes newslistbefore {
+                to{ transform: translateX(25px) translateY(-25px); }
+            }
             &:before{
                 content:'';
                 position: absolute;
@@ -341,7 +345,6 @@
                 transform: translateX(0px) translateY(0px);
                 background:#f6c76d;
                 z-index:-1;
-                transition: 1.8s ease;
             }
             &:after{
                 content:'';
@@ -381,6 +384,10 @@
                     border-left:1px solid #fff;
                 }
             }
+
+            @keyframes splash2 {
+                to{ opacity:1; transform: rotate(-15deg) translateX(80%) translateY(-40px); }
+            }
             .splash2{
                 opacity:0;
                 position: absolute;
@@ -390,7 +397,10 @@
                 background-image: url(../../images/home/splash2.png);
                 background-size: 100%;
                 z-index: 1;
-                transition: 1.8s ease;
+            }
+
+            @keyframes splash3 {
+                to{ opacity:1; transform: translateX(-40%) translateY(-10%); }
             }
             .splash3{
                 opacity:0;
@@ -401,20 +411,68 @@
                 background-image: url(../../images/home/splash3.png);
                 background-size: 100%;
                 z-index: 1;
-                transition: 1.8s ease;
             }            
         }
         &.animate{
             .news__list{
-                &:before{ transform: translateX(25px) translateY(-25px); }
-                .splash2{ opacity:1; transform: rotate(-15deg) translateX(80%) translateY(-40px); }
-                .splash3{ opacity:1; transform: translateX(-40%) translateY(-10%); }
+                &:before{ animation: newslistbefore 1.8s ease forwards 1.3s; }
+                .splash2{ animation: splash2 1.8s ease forwards 1.3s; }
+                .splash3{ animation: splash3 1.8s ease forwards 1.3s; }
             }            
         }        
     }
 }
 #section5{
-    .section-cover{ background-color: #fff; }
+    .section-cover{ 
+        background-color: #fff; 
+        @keyframes sec5before{
+            to{
+                transform: translateX(0%) translateY(15%);
+                width: 40%; height: 59%;
+            }
+        }
+        &:before{
+            content:'';
+            position: absolute;
+            top:0; right:0;
+            transform: translateX(-12%) translateY(32%);
+            width: 40%; height: 59%;
+            background:#8560a8;
+            z-index:-1;            
+        }
+        &.animate{
+            &:before{ animation: sec5before 1.8s ease forwards 1.3s; }
+            .section{
+                .contact__map{
+                    .map{ animation: contactmap 1.8s ease forwards 1.3s; }
+                }
+            }
+        }
+    }
+    .section{
+        padding:0 8%;
+        .contact__caption{
+            ul{
+                li{ margin-bottom:12px; }
+            }
+        }
+
+        @keyframes contactmap{
+            to{ transform: translateX(0%) translateY(0%); }
+        }
+        .contact__map{
+            @extend .noflicker;
+            position:relative;
+            height:600px;            
+            .map{
+                position: absolute;
+                top: 0; right: 0;
+                transform: translateX(10%) translateY(-10%);
+                background:#dfdfdf;
+                width:100%; height:100%;
+            }
+        }
+    }
 }
 
 // responsive

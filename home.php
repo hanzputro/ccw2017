@@ -45,7 +45,7 @@
     
     <div class="section-page" id="section_page">       
   
-        <section class="cd-section" id="section1">
+        <section class="cd-section visible" id="section1">
             <div class="section-cover">
                 <div class="section container1600 center" id="section-cover1">
                     <h1 class="light white">CREATIVE CITY WORSHIP</h1>
@@ -123,7 +123,7 @@
             </div>
         </section>
 
-        <section class="cd-section visible" id="section4">
+        <section class="cd-section" id="section4">
             <div class="section-cover">
                 <div class="section">
                     <h1 class="s50 merriweather bold linetitle">Upcoming Events</h1>
@@ -165,11 +165,33 @@
 
         <section class="cd-section" id="section5">
             <div class="section-cover">
-                <div class="section container1600">
-                    <h2>Section 5</h2>
-                    <p>eeeeeeeeeeee</p>
+                <div class="section row">
+                    <div class="span6 contact__caption">
+                        <h1 class="s50 merriweather bold linetitle">Get Connected</h1>
+                        <p class="margin0 s24 myriadpro">ARTOTEL - Thamrin<br>
+                        JL. Sunda No.3,<br>
+                        Jakarta Pusat</p>
+                        <br>
+                        <ul>
+                            <li><a href="" class="s18 italic"><i class="ico-email"></i>creativecityworship@gmail.com</a></li>
+                            <li><a href="" class="s18 italic"><i class="ico-instagram"></i>@creativecityworship</a></li>
+                        </ul>
+                    </div>
+                    <div class="span6 contact__map">
+                        <iframe class="map" id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.564300037044!2d106.82254131535889!3d-6.189010995519481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f425cc5f2945%3A0x7bb495c84a711172!2sARTOTEL+THAMRIN-JAKARTA!5e0!3m2!1sen!2sid!4v1507702707895" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>                    
                 </div>
-            </div>
+                <div class="footer">
+                    <div class="container1600 clearfix">
+                        <div class="copyright"><h5 class="margin0 merriweather">Copyright 2017, Creative City Worship, All Right Reserved</h5></div>
+                        <ul class="footer-menu">
+                            <li><a href=""><h5 class="margin0 merriweather">Creative Community</h5></a></li>
+                            <li><a href=""><h5 class="margin0 merriweather">Services</h5></a></li>
+                            <li><a href=""><h5 class="margin0 merriweather">Get Connected</h5></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>            
         </section>
     </div>
 
