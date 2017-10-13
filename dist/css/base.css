@@ -1,4 +1,4 @@
-/* Modules */
+/* Base */
 /* ############ LemonTuesday ############ */
 @font-face {
   font-family: 'LemonTuesday';
@@ -91,25 +91,6 @@
   font-style: normal;
 }
 
-.ico-email {
-  display: inline-block;
-  vertical-align: middle;
-  width: 40px;
-  height: 40px;
-  margin: 0 10px 0 0;
-  background: url(../../images/ico-email.png) no-repeat;
-}
-
-.ico-instagram {
-  display: inline-block;
-  vertical-align: middle;
-  width: 40px;
-  height: 40px;
-  margin: 0 10px 0 0;
-  background: url(../../images/ico-instagram.png) no-repeat;
-}
-
-/* Partials */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -470,7 +451,7 @@ a i ~ small {
 }
 
 .white {
-  color: #FFF;
+  color: #fff;
 }
 
 .spacing2 {
@@ -971,147 +952,150 @@ article code .code-element {
   }
 }
 
-.row:before, .row:after {
+/* Utils */
+.grid:before, .grid:after {
   display: table;
   line-height: 0;
   content: "";
 }
 
-.row:after {
+.grid:after {
   clear: both;
 }
 
-.row [class*="span"] {
+.grid [class*="span"] {
   display: block;
   float: left;
   width: 100%;
   min-height: 5px;
-  margin-left: 2.127659574468085%;
+  margin-left: 2%;
   box-sizing: border-box;
 }
 
-.row [class*="span"]:first-child {
+.grid [class*="span"]:first-child {
   margin-left: 0;
 }
 
-.row .span1 {
-  width: 6.382978723404255%;
+.grid .span1 {
+  width: 6.5%;
 }
 
-.row .span2 {
-  width: 14.893617021276595%;
+.grid .span2 {
+  width: 15%;
 }
 
-.row .span3 {
-  width: 23.404255319148934%;
+.grid .span3 {
+  width: 23.5%;
 }
 
-.row .span4 {
-  width: 31.914893617021278%;
+.grid .span4 {
+  width: 32%;
 }
 
-.row .span5 {
-  width: 40.42553191489362%;
+.grid .span5 {
+  width: 40.5%;
 }
 
-.row .span6 {
-  width: 48.93617021276595%;
+.grid .span6 {
+  width: 49%;
 }
 
-.row .span7 {
-  width: 57.44680851063829%;
+.grid .span7 {
+  width: 57.5%;
 }
 
-.row .span8 {
-  width: 65.95744680851064%;
+.grid .span8 {
+  width: 66%;
 }
 
-.row .span9 {
-  width: 74.46808510638297%;
+.grid .span9 {
+  width: 74.5%;
 }
 
-.row .span10 {
-  width: 82.97872340425532%;
+.grid .span10 {
+  width: 83%;
 }
 
-.row .span11 {
-  width: 91.48936170212765%;
+.grid .span11 {
+  width: 91.5%;
 }
 
-.row .span12 {
+.grid .span12 {
   width: 100%;
 }
 
-.row-fluid:before, .row-fluid:after {
+.grid-fluid:before, .grid-fluid:after {
   display: table;
   line-height: 0;
   content: "";
 }
 
-.row-fluid:after {
+.grid-fluid:after {
   clear: both;
 }
 
-.row-fluid [class*="span"] {
+.grid-fluid [class*="span"] {
   display: block;
   float: left;
   width: 100%;
+  margin-left: 0;
   min-height: 5px;
   box-sizing: border-box;
 }
 
-.row-fluid [class*="span"]:first-child {
+.grid-fluid [class*="span"]:first-child {
   margin-left: 0;
 }
 
-.row-fluid .span1 {
-  width: 8.333333333333333%;
+.grid-fluid .span1 {
+  width: 8.3333333333%;
 }
 
-.row-fluid .span2 {
-  width: 16.66666666666667%;
+.grid-fluid .span2 {
+  width: 16.6666666667%;
 }
 
-.row-fluid .span3 {
+.grid-fluid .span3 {
   width: 25%;
 }
 
-.row-fluid .span4 {
-  width: 33.33333333333333%;
+.grid-fluid .span4 {
+  width: 33.3333333333%;
 }
 
-.row-fluid .span5 {
-  width: 41.66666666666667%;
+.grid-fluid .span5 {
+  width: 41.6666666667%;
 }
 
-.row-fluid .span6 {
+.grid-fluid .span6 {
   width: 50%;
 }
 
-.row-fluid .span7 {
-  width: 58.33333333333334%;
+.grid-fluid .span7 {
+  width: 58.3333333333%;
 }
 
-.row-fluid .span8 {
-  width: 66.66666666666667%;
+.grid-fluid .span8 {
+  width: 66.6666666667%;
 }
 
-.row-fluid .span9 {
-  width: 75.00000000000002%;
+.grid-fluid .span9 {
+  width: 75%;
 }
 
-.row-fluid .span10 {
-  width: 83.33333333333333%;
+.grid-fluid .span10 {
+  width: 83.3333333333%;
 }
 
-.row-fluid .span11 {
-  width: 91.66666666666666%;
+.grid-fluid .span11 {
+  width: 91.6666666667%;
 }
 
-.row-fluid .span12 {
+.grid-fluid .span12 {
   width: 100%;
 }
 
+/* Components */
 @-webkit-keyframes header {
   to {
     opacity: 1;
@@ -1119,7 +1103,6 @@ article code .code-element {
     transform: translateY(0px);
   }
 }
-
 @keyframes header {
   to {
     opacity: 1;
@@ -1221,7 +1204,6 @@ article code .code-element {
   padding: 0 15px;
 }
 
-/* Pages */
 /* vendor custom */
 /* -------------------------------- 
 
@@ -1457,5 +1439,7 @@ Main Components
 .slick-arrow.slick-hidden {
   display: none;
 }
+
+/* Pages */
 
 /*# sourceMappingURL=base.css.map */

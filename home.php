@@ -62,7 +62,7 @@
 
         <section class="cd-section" id="section2">
             <div class="section-cover">
-                <div class="section container1600 row" id="section-cover2">
+                <div class="section container1600 grid" id="section-cover2">
                     <div class="span6">
                         <div class="thumb">
                             <img class="" src="dist/images/home/section2-thumb.jpg" alt="">
@@ -165,7 +165,7 @@
 
         <section class="cd-section" id="section5">
             <div class="section-cover">
-                <div class="section row">
+                <div class="section grid">
                     <div class="span6 contact__caption">
                         <h1 class="s50 merriweather bold linetitle">Get Connected</h1>
                         <p class="margin0 s24 myriadpro">ARTOTEL - Thamrin<br>

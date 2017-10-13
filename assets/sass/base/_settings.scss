@@ -58,7 +58,7 @@ a, a:active, a:focus, input, p, p:active, p:focus, article { outline: none; }
 iframe{ border: none; }
 html,body{
     min-height: 100%;
-    background: #fff;
+    background: $color-white;
 }
 img, video, picture {
     max-width: 100%;
@@ -129,10 +129,10 @@ a{
 .boxshadow2{ box-shadow:0px 4px 10px rgba(0,0,0,0.2); }
 .float-left{ display:inline; float:left; }
 .float-right{ display:inline; float:right; }
-.text-danger { color: #cc3f44 !important; }
-.text-warning { color: #ffba00 !important; }
-.text-success { color: #8dc63f !important; }
-.text-info { color: #40bbea !important; }
+.text-danger { color: $color-red !important; }
+.text-warning { color: $color-yellow !important; }
+.text-success { color: $color-green !important; }
+.text-info { color: $color-blue !important; }
 .nowrap { white-space:nowrap; }
 .margin0{ margin:0 !important; }
 .padding0{ padding:0 !important; }

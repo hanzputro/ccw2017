@@ -569,8 +569,6 @@ var w = window,
         heightviewport = w.innerHeight || e.clientHeight || g.clientHeight;
         
 $(document).ready(function(){
-    
-    console.log($(window).height());
 
     if (widthviewport > 1024){
         $('.cd-section').each(function(){
@@ -604,7 +602,8 @@ $(document).ready(function(){
 var a=0;
 var b=0;
 $(window).bind('mousewheel', function(event) {
-    var pageNumber = ($('.cd-section.visible').id).substr(-1);
+    var pageNumber = (document.querySelector('.cd-section.visible').id).substr(-1);
+        pageNumber = parseInt(pageNumber);
     if (event.originalEvent.wheelDelta >= 0) {
         a=a+1;
         console.log('Scroll up: '+a);

@@ -1,12 +1,16 @@
-/* Modules */
-@import "modules/breakpoint";
-@import "modules/fonts";
-@import "modules/sprite";
+/* Base */
+@import "base/color";
+@import "base/fonts";
+@import "base/settings";
+@import "base/typography";
 
-/* Partials */
-@import "partials/base";
-@import "partials/typography";
-@import "partials/grid";
+/* Utils */
+@import "utils/function";
+@import "utils/grid";
+
+/* Components */
+@import "components/header";
+@import "components/footer";
 // @import "partials/form";
 // @import "partials/button";
 // @import "partials/tab";
@@ -14,11 +18,9 @@
 // @import "partials/dropdown";
 // @import "partials/tooltip";
 // @import "partials/popup";
-@import "partials/header";
-@import "partials/footer";
-
-/* Pages */
 
 /* vendor custom */
 @import "vendor/page-scroll-effects";
 @import "vendor/slick";
+
+/* Pages */
