@@ -26,7 +26,7 @@
     
     <div class="container header">
         <div class="container1600">
-            <div class="logo"><img src="dist/images/logo-ccw.png" alt=""></div>
+            <div class="logo"><img src="../dist/images/logo-ccw.png" alt=""></div>
             <div class="navbar">
                 <ul class="medium">
                     <li><a href="" class="">ABOUT US</a></li>
@@ -45,7 +45,7 @@
     
     <div class="section-page" id="section_page">       
   
-        <section class="cd-section visible" id="section1">
+        <section class="cd-section" id="section1">
             <div class="section-cover">
                 <div class="section container1600 center" id="section-cover1">
                     <h1 class="light white">CREATIVE CITY WORSHIP</h1>
@@ -62,10 +62,10 @@
 
         <section class="cd-section" id="section2">
             <div class="section-cover">
-                <div class="section container1600 grid" id="section-cover2">
+                <div class="section grid" id="section-cover2">
                     <div class="span6">
                         <div class="thumb">
-                            <img class="" src="dist/images/home/section2-thumb.jpg" alt="">
+                            <img class="" src="../dist/images/home/section2-thumb.jpg" alt="">
                             <div class="splash"></div>
                         </div>                    
                     </div>
@@ -88,9 +88,9 @@
             <div class="section-cover">
                 <div class="slider">
                     <div class="slide-bg">
-                        <div class="slide" style="background-image: url(dist/images/home/bg-section3.jpg);"></div>
-                        <div class="slide" style="background-image: url(dist/images/home/bg-section3.jpg);"></div>
-                        <div class="slide" style="background-image: url(dist/images/home/bg-section3.jpg);"></div>                    
+                        <div class="slide" style="background-image: url(../dist/images/home/bg-section3.jpg);"></div>
+                        <div class="slide" style="background-image: url(../dist/images/home/bg-section3.jpg);"></div>
+                        <div class="slide" style="background-image: url(../dist/images/home/bg-section3.jpg);"></div>                    
                     </div>
                     <div class="slide-caption">
                         <div class="slide">
@@ -132,7 +132,7 @@
                         <li class="news__list">
                             <div class="splash2"></div>
                             <a href="">
-                                <img src="dist/images/home/section4-thumb1.jpg" alt="" class="thumb">
+                                <img src="../dist/images/home/section4-thumb1.jpg" alt="" class="thumb">
                                 <div class="caption">
                                     <span class="s28 merriweather bold date"><span class="s60">12</span><br>AUG</span>
                                     <span class="s20 light title light">MEN'S MEETING</span>
@@ -141,7 +141,7 @@
                         </li>
                         <li class="news__list">
                             <a href="">
-                                <img src="dist/images/home/section4-thumb2.jpg" alt="" class="thumb">
+                                <img src="../dist/images/home/section4-thumb2.jpg" alt="" class="thumb">
                                 <div class="caption">
                                     <span class="s28 merriweather bold date"><span class="s60">12</span><br>NOV</span>
                                     <span class="s20 light title light">CCW'S ANNIVERSARY</span>
@@ -151,7 +151,7 @@
                         <li class="news__list">
                             <div class="splash3"></div>
                             <a href="">
-                                <img src="dist/images/home/section4-thumb3.jpg" alt="" class="thumb">
+                                <img src="../dist/images/home/section4-thumb3.jpg" alt="" class="thumb">
                                 <div class="caption">
                                     <span class="s28 merriweather bold date"><span class="s60">12</span><br>NOV</span>
                                     <span class="s20 light title light">COFFEE WORKSHOP</span>
@@ -163,8 +163,8 @@
             </div>
         </section>
 
-        <section class="cd-section" id="section5">
-            <div class="section-cover">
+        <section class="cd-section visible" id="section5">
+            <div class="section-cover animate">
                 <div class="section grid">
                     <div class="span6 contact__caption">
                         <h1 class="s50 merriweather bold linetitle">Get Connected</h1>
@@ -198,7 +198,7 @@
 </body>
 
 <!-- JS -->
-<script src="assets/vendor/jquery/jquery-1.11.3.min.js"></script>
+<script src="../assets/vendor/jquery/jquery-1.11.3.min.js"></script>
 <script src="<?php echo elixir('js/plugins.js'); ?>"></script>
 <script src="<?php echo elixir('js/home.js'); ?>"></script>
 

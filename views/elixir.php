@@ -11,11 +11,11 @@ function elixir($file){
     static $manifest = null;
  
     if (is_null($manifest)) {
-        $manifest = json_decode(file_get_contents('dist/build/rev-manifest.json'), true);
+        $manifest = json_decode(file_get_contents('../dist/build/rev-manifest.json'), true);
     }
  
     if (isset($manifest[$file])) {
-        return 'dist/build/'.$manifest[$file];
+        return '../dist/build/'.$manifest[$file];
     }
  
     throw new InvalidArgumentException("File {$file} not defined in asset manifest.");

@@ -123,6 +123,7 @@
 #section2{
     .section-cover{ background-color: $color-white; }
     .section__content{ position:relative; }
+    .section{ padding: 0 8%; }
     @keyframes thumb1 {
         to{ opacity:1; transform: translateY(0); }
     }
@@ -313,25 +314,50 @@
 #section4{
     .section-cover{ 
         background-color: $color-white; 
+
+        @keyframes sc4bg {
+            to{ top:10%; width:55%; opacity:1; }
+        }
         &:before{
             content:'';
+            opacity:0;
             position: absolute;
-            top:10%; right:0;
-            width:55%; height:100%;
+            top:30%; right:0;
+            width:35%; height:100%;
             background: $color-gray2;
             z-index:-1;
         }
+        &.animate{
+            &:before{ animation: sc4bg 1.8s ease forwards 1.3s; }
+            .news__list{
+                animation: news__list 1.8s ease forwards 1.3s;
+                &:before{ animation: newslistbefore 1.8s ease forwards 1.3s; }
+                .splash2{ animation: splash2 1.8s ease forwards 1.3s; }
+                .splash3{ animation: splash3 1.8s ease forwards 1.3s; }
+            }            
+        }  
     }
-    .section{ padding: 0 8%; }
+    .section{ 
+        padding: 0 8%;
+        h1, p{
+            position:relative;
+            z-index:2;
+        } 
+    }
     .linetitle{ margin-bottom:30px; }
     .news{
         @extend .clearfix;        
         margin:180px 0 0 0;
+
+        @keyframes news__list {
+            to{ transform: translate(0px,0px); }
+        }
         .news__list{
             @extend .float-left;
             position: relative;
             width:29.95%;
             margin:0 5% 0 0;
+            transform: translate(10px,-10px);
             &:last-child{ margin:0; }
 
             @keyframes newslistbefore {
@@ -396,7 +422,7 @@
                 width: 320px; height: 154px;
                 background-image: url(../../images/home/splash2.png);
                 background-size: 100%;
-                z-index: 1;
+                z-index: 2;
             }
 
             @keyframes splash3 {
@@ -412,38 +438,16 @@
                 background-size: 100%;
                 z-index: 1;
             }            
-        }
-        &.animate{
-            .news__list{
-                &:before{ animation: newslistbefore 1.8s ease forwards 1.3s; }
-                .splash2{ animation: splash2 1.8s ease forwards 1.3s; }
-                .splash3{ animation: splash3 1.8s ease forwards 1.3s; }
-            }            
-        }        
+        }              
     }
 }
 #section5{
     .section-cover{ 
         background-color: $color-white; 
-        @keyframes sec5before{
-            to{
-                transform: translateX(0%) translateY(15%);
-                width: 40%; height: 59%;
-            }
-        }
-        &:before{
-            content:'';
-            position: absolute;
-            top:0; right:0;
-            transform: translateX(-12%) translateY(32%);
-            width: 40%; height: 59%;
-            background:$color-purple;
-            z-index:-1;            
-        }
-        &.animate{
-            &:before{ animation: sec5before 1.8s ease forwards 1.3s; }
+        &.animate{            
             .section{
                 .contact__map{
+                    &:before{ animation: sec5before 1.8s ease forwards 1.3s; }
                     .map{ animation: contactmap 1.8s ease forwards 1.3s; }
                 }
             }
@@ -455,15 +459,33 @@
             ul{
                 li{ margin-bottom:12px; }
             }
-        }
-
-        @keyframes contactmap{
-            to{ transform: translateX(0%) translateY(0%); }
-        }
+        }        
         .contact__map{
             @extend .noflicker;
             position:relative;
-            height:600px;            
+            height:600px;
+            
+            @keyframes sec5before{
+                to{
+                    opacity:1;
+                    transform: translateX(20%) translateY(-15%);
+                    width: 150%; height: 100%;
+                }
+            }
+            &:before{
+                content:'';
+                opacity:0;
+                position: absolute;
+                top:0; left:0;
+                transform: translateX(10%) translateY(-10%);
+                width: 100%; height: 100%;
+                background:$color-purple;
+                z-index:-1;            
+            }
+
+            @keyframes contactmap{
+                to{ transform: translateX(0%) translateY(0%); }
+            }            
             .map{
                 position: absolute;
                 top: 0; right: 0;
@@ -490,11 +512,59 @@
             .splash{                
                 bottom: -210px;
                 width: 350px; height: 205px;
-            } 
+            }
         }
         .linetitle{ margin-bottom:40px; }
         .tablink{
             margin:60px 0 0 0;
+        }
+    }
+    #section3{
+        .slider{
+            .slide-caption{
+                bottom:280px;
+                .slide{ padding:0 1.1%; }
+            }
+            .slide__nav{
+                bottom:10px;
+            }
+        }
+    }
+    #section4{
+        .section-cover{
+            &:before{
+                top:12%;
+            }
+        }
+        .linetitle{ margin-bottom:20px; }
+        .news{        
+            margin:80px 0 0 0;
+            .news__list{
+                @keyframes splash2 {
+                    to{ opacity:1; transform: rotate(-15deg) translateX(75%) translateY(-20px); }
+                }
+                .splash2{
+                    transform: rotate(-15deg) translateX(55%) translateY(-20px);
+                    width: 280px; height: 124px;
+                }
+            }    
+        }
+    }
+    #section5{
+        .section-cover{ 
+            .linetitle{ margin-bottom:40px; }        
+        }
+        .section{
+            .contact__caption{
+                padding-bottom:150px;
+            }
+            @keyframes contactmap{
+                to{ transform: translateX(0%) translateY(0%); }
+            }
+            .contact__map{
+                height:340px;            
+                .map{ transform: translateX(10%) translateY(-10%); }
+            }
         }
     }
 }

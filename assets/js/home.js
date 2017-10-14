@@ -44,6 +44,20 @@ $(window).bind('mousewheel', function(event) {
     if (event.originalEvent.wheelDelta >= 0) {
         a=a+1;
         console.log('Scroll up: '+a);
+        console.log('Section: '+pageNumber);
+        if( a >= 3 ){
+            a = 0;
+            pageNumber = pageNumber - 1;
+            if( pageNumber == 2 ){
+                $('#section2 .thumb').addClass('animate');
+            }
+            else if( pageNumber == 4 ){
+                $('#section4 .section-cover').addClass('animate');
+            }
+            else if( pageNumber == 5 ){
+                $('#section5 .section-cover').addClass('animate');
+            }
+        }
     }
     else {
         b=b+1;
@@ -56,7 +70,7 @@ $(window).bind('mousewheel', function(event) {
                 $('#section2 .thumb').addClass('animate');
             }
             else if( pageNumber == 4 ){
-                $('#section4 .news').addClass('animate');
+                $('#section4 .section-cover').addClass('animate');
             }
             else if( pageNumber == 5 ){
                 $('#section5 .section-cover').addClass('animate');
