@@ -3,7 +3,7 @@ process.env.DISABLE_NOTIFIER = true;
 var elixir = require('laravel-elixir');
 elixir.config.assetsPath = 'assets';
 elixir.config.publicPath = 'dist';
-elixir.config.viewPath = './';
+// elixir.config.viewPath = './';
 
 // var browserSync = require('laravel-elixir-browsersync-official');
 var gulp = require("gulp");
