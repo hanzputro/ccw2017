@@ -16,9 +16,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon -->
     <!-- <link rel="icon" type="image/png" href="{{URL::asset('/favicon/favicon.png')}}"> -->
-    
-    <!-- <link rel="stylesheet" href="<?php echo elixir('css/plugins.css'); ?>"> -->
-    <link rel="stylesheet" href="<?php echo elixir('css/home.css'); ?>">
+    <link rel="stylesheet" href="../dist/css/core.css">
+    <link rel="stylesheet" href="../dist/css/home.css">
 </head>
 
 <!-- hijacking: on/off - animation: none/scaleDown/rotate/gallery/catch/opacity/fixed/parallax -->
@@ -45,7 +44,7 @@
     
     <div class="section-page" id="section_page">       
   
-        <section class="cd-section" id="section1">
+        <section class="cd-section visible" id="section1">
             <div class="section-cover">
                 <div class="section container1600 center" id="section-cover1">
                     <h1 class="light white">CREATIVE CITY WORSHIP</h1>
@@ -163,7 +162,7 @@
             </div>
         </section>
 
-        <section class="cd-section visible" id="section5">
+        <section class="cd-section" id="section5">
             <div class="section-cover animate">
                 <div class="section grid">
                     <div class="span6 contact__caption">
@@ -199,7 +198,7 @@
 
 <!-- JS -->
 <script src="../assets/vendor/jquery/jquery-1.11.3.min.js"></script>
-<script src="<?php echo elixir('js/plugins.js'); ?>"></script>
-<script src="<?php echo elixir('js/home.js'); ?>"></script>
+<script src="../dist/js/plugins.js"></script>
+<script src="../dist/js/home.js"></script>
 
 </html>

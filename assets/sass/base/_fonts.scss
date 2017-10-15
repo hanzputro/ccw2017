@@ -1,10 +1,10 @@
 /* ############ LemonTuesday ############ */
 @font-face {
     font-family: 'LemonTuesday';
-    src: url('../../dist/fonts/lemontuesday/LemonTuesday.eot');
-    src: url('../../dist/fonts/lemontuesday/LemonTuesday.eot?#iefix') format('embedded-opentype'),
-         url('../../dist/fonts/lemontuesday/LemonTuesday.woff') format('woff'),
-         url('../../dist/fonts/lemontuesday/LemonTuesday.svg#opensans-italic') format('svg');
+    src: url('../fonts/lemontuesday/LemonTuesday.eot');
+    src: url('../fonts/lemontuesday/LemonTuesday.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lemontuesday/LemonTuesday.woff') format('woff'),
+         url('../fonts/lemontuesday/LemonTuesday.svg#opensans-italic') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -12,37 +12,37 @@
 /* ############ Merriweather ############ */
 @font-face {
     font-family: 'Merriweather-Regular';
-    src: url('../../dist/fonts/merriweather/Merriweather-Regular.eot');
-    src: url('../../dist/fonts/merriweather/Merriweather-Regular.eot?#iefix') format('embedded-opentype'),
-         url('../../dist/fonts/merriweather/Merriweather-Regular.woff') format('woff'),
-         url('../../dist/fonts/merriweather/Merriweather-Regular.svg#opensans-italic') format('svg');
+    src: url('../fonts/merriweather/Merriweather-Regular.eot');
+    src: url('../fonts/merriweather/Merriweather-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/merriweather/Merriweather-Regular.woff') format('woff'),
+         url('../fonts/merriweather/Merriweather-Regular.svg#opensans-italic') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'Merriweather-Italic';
-    src: url('../../dist/fonts/merriweather/Merriweather-Italic.eot');
-    src: url('../../dist/fonts/merriweather/Merriweather-Italic.eot?#iefix') format('embedded-opentype'),
-         url('../../dist/fonts/merriweather/Merriweather-Italic.woff') format('woff'),
-         url('../../dist/fonts/merriweather/Merriweather-Italic.svg#opensans-italic') format('svg');
+    src: url('../fonts/merriweather/Merriweather-Italic.eot');
+    src: url('../fonts/merriweather/Merriweather-Italic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/merriweather/Merriweather-Italic.woff') format('woff'),
+         url('../fonts/merriweather/Merriweather-Italic.svg#opensans-italic') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'Merriweather-Light';
-    src: url('../../dist/fonts/merriweather/MerriweatherLight.eot');
-    src: url('../../dist/fonts/merriweather/MerriweatherLight.eot?#iefix') format('embedded-opentype'),
-         url('../../dist/fonts/merriweather/MerriweatherLight.woff') format('woff'),
-         url('../../dist/fonts/merriweather/MerriweatherLight.svg#opensans-italic') format('svg');
+    src: url('../fonts/merriweather/MerriweatherLight.eot');
+    src: url('../fonts/merriweather/MerriweatherLight.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/merriweather/MerriweatherLight.woff') format('woff'),
+         url('../fonts/merriweather/MerriweatherLight.svg#opensans-italic') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'Merriweather-Bold';
-    src: url('../../dist/fonts/merriweather/Merriweather-Bold.eot');
-    src: url('../../dist/fonts/merriweather/Merriweather-Bold.eot?#iefix') format('embedded-opentype'),
-         url('../../dist/fonts/merriweather/Merriweather-Bold.woff') format('woff'),
-         url('../../dist/fonts/merriweather/Merriweather-Bold.svg#opensans-italic') format('svg');
+    src: url('../fonts/merriweather/Merriweather-Bold.eot');
+    src: url('../fonts/merriweather/Merriweather-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/merriweather/Merriweather-Bold.woff') format('woff'),
+         url('../fonts/merriweather/Merriweather-Bold.svg#opensans-italic') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -51,46 +51,46 @@
 /* ############ Roboto ############ */
 @font-face {
     font-family: 'Roboto-Regular';
-    src: url('../../dist/fonts/roboto/Roboto-Regular.eot');
-    src: url('../../dist/fonts/roboto/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
-         url('../../dist/fonts/roboto/Roboto-Regular.woff') format('woff'),
-         url('../../dist/fonts/roboto/Roboto-Regular.svg#opensans-italic') format('svg');
+    src: url('../fonts/roboto/Roboto-Regular.eot');
+    src: url('../fonts/roboto/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto/Roboto-Regular.woff') format('woff'),
+         url('../fonts/roboto/Roboto-Regular.svg#opensans-italic') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'Roboto-Medium';
-    src: url('../../dist/fonts/roboto/Roboto-Medium.eot');
-    src: url('../../dist/fonts/roboto/Roboto-Medium.eot?#iefix') format('embedded-opentype'),
-         url('../../dist/fonts/roboto/Roboto-Medium.woff') format('woff'),
-         url('../../dist/fonts/roboto/Roboto-Medium.svg#opensans-italic') format('svg');
+    src: url('../fonts/roboto/Roboto-Medium.eot');
+    src: url('../fonts/roboto/Roboto-Medium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto/Roboto-Medium.woff') format('woff'),
+         url('../fonts/roboto/Roboto-Medium.svg#opensans-italic') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'Roboto-Italic';
-    src: url('../../dist/fonts/roboto/Roboto-Italic.eot');
-    src: url('../../dist/fonts/roboto/Roboto-Italic.eot?#iefix') format('embedded-opentype'),
-         url('../../dist/fonts/roboto/Roboto-Italic.woff') format('woff'),
-         url('../../dist/fonts/roboto/Roboto-Italic.svg#opensans-italic') format('svg');
+    src: url('../fonts/roboto/Roboto-Italic.eot');
+    src: url('../fonts/roboto/Roboto-Italic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto/Roboto-Italic.woff') format('woff'),
+         url('../fonts/roboto/Roboto-Italic.svg#opensans-italic') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'Roboto-Light';
-    src: url('../../dist/fonts/roboto/Roboto-Light.eot');
-    src: url('../../dist/fonts/roboto/Roboto-Light.eot?#iefix') format('embedded-opentype'),
-         url('../../dist/fonts/roboto/Roboto-Light.woff') format('woff'),
-         url('../../dist/fonts/roboto/Roboto-Light.svg#opensans-italic') format('svg');
+    src: url('../fonts/roboto/Roboto-Light.eot');
+    src: url('../fonts/roboto/Roboto-Light.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto/Roboto-Light.woff') format('woff'),
+         url('../fonts/roboto/Roboto-Light.svg#opensans-italic') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'Roboto-Bold';
-    src: url('../../dist/fonts/roboto/Roboto-Bold.eot');
-    src: url('../../dist/fonts/roboto/Roboto-Bold.eot?#iefix') format('embedded-opentype'),
-         url('../../dist/fonts/roboto/Roboto-Bold.woff') format('woff'),
-         url('../../dist/fonts/roboto/Roboto-Bold.svg#opensans-italic') format('svg');
+    src: url('../fonts/roboto/Roboto-Bold.eot');
+    src: url('../fonts/roboto/Roboto-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto/Roboto-Bold.woff') format('woff'),
+         url('../fonts/roboto/Roboto-Bold.svg#opensans-italic') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -99,10 +99,10 @@
 /* ############ myriad pro ############ */
 @font-face {
     font-family: 'MyriadPro-Regular';
-    src: url('../../dist/fonts/MyriadPro/MyriadPro-Regular.eot');
-    src: url('../../dist/fonts/MyriadPro/MyriadPro-Regular.eot?#iefix') format('embedded-opentype'),
-         url('../../dist/fonts/MyriadPro/MyriadPro-Regular.woff') format('woff'),
-         url('../../dist/fonts/MyriadPro/MyriadPro-Regular.svg#opensans-italic') format('svg');
+    src: url('../fonts/MyriadPro/MyriadPro-Regular.eot');
+    src: url('../fonts/MyriadPro/MyriadPro-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/MyriadPro/MyriadPro-Regular.woff') format('woff'),
+         url('../fonts/MyriadPro/MyriadPro-Regular.svg#opensans-italic') format('svg');
     font-weight: normal;
     font-style: normal;
 }

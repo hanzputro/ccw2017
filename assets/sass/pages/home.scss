@@ -32,7 +32,7 @@
     width:32px; height:100px;
     bottom:0; left:0; right:0;
     margin:0 auto;
-    background: url(../../dist/images/ico-scrolldown.png) no-repeat;
+    background: url(../../../dist/images/ico-scrolldown.png) no-repeat;
     background-size:100%;
     opacity:0;
     transform: translateY(25px);
@@ -89,7 +89,7 @@
     .section-cover{ 
         position: fixed;
         background-color: $color-purple2;
-        background-image: url(../../dist/images/home/bg-section1.jpg); 
+        background-image: url(../../../dist/images/home/bg-section1.jpg); 
     }
 
     @keyframes show {
@@ -169,7 +169,7 @@
             position: absolute;
             bottom: -200px;
             width: 650px; height: 381px;
-            background-image: url(../../dist/images/home/splash.png);
+            background-image: url(../../../dist/images/home/splash.png);
             background-size: 100%;
             z-index: 2;            
         }
@@ -242,7 +242,7 @@
                         position: absolute;
                         top: -10px; left: -12px;
                         width:45px; height:45px;
-                        background-image: url(../../dist/images/ico-circleplus.png);
+                        background-image: url(../../../dist/images/ico-circleplus.png);
                         background-size:100%;
                         transform:rotate(0deg);
                         transition:0.3s ease;
@@ -421,7 +421,7 @@
                 top:0; right:0;
                 transform: rotate(-15deg) translateX(60%) translateY(-40px);
                 width: 320px; height: 154px;
-                background-image: url(../../dist/images/home/splash2.png);
+                background-image: url(../../../dist/images/home/splash2.png);
                 background-size: 100%;
                 z-index: 2;
             }
@@ -435,7 +435,7 @@
                 bottom:0; left:0;
                 transform: translateX(-20%) translateY(-10%);
                 width: 320px; height: 114px;
-                background-image: url(../../dist/images/home/splash3.png);
+                background-image: url(../../../dist/images/home/splash3.png);
                 background-size: 100%;
                 z-index: 1;
             }            

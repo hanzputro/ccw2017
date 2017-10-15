@@ -1,71 +1,80 @@
 process.env.DISABLE_NOTIFIER = true;
 // elixir.config.sourcemaps = false;
-var elixir = require('laravel-elixir');
-elixir.config.assetsPath = 'assets';
-elixir.config.publicPath = 'dist';
-// elixir.config.viewPath = './';
 
-// var browserSync = require('laravel-elixir-browsersync-official');
-var gulp = require("gulp");
 var bowerDir = 'assets/vendor/';
+var gulp = require("gulp");
+var sass = require('gulp-sass');
+var concat = require('gulp-concat');
+var minify = require('gulp-minifier');    
+var livereload = require('gulp-livereload');
+
 
 /*
  |--------------------------------------------------------------------------
- | Elixir Asset Management
+ | SASS
  |--------------------------------------------------------------------------
- |
- | Elixir provides a clean, fluent API for defining some basic Gulp tasks
- | for your Laravel application. By default, we are compiling the Sass
- | file for our application, as well as publishing vendor resources.
- |
- */
-
-elixir(function(mix) {
-    //####################### CSS #######################//
-    /* From Plugin */
-    mix.styles(
-        [
-            'page-scroll-effects/css/style.css'
-        ],'dist/css/plugins.css',bowerDir);
-
-    /* core */
-    mix.sass( [ 'core.scss' ], 'dist/css/base.css' );
-    mix.sass( [ 'pages/home.scss' ], 'dist/css/home.css' );
-
-    //####################### JS #######################//
-    /* From Plugin */
-    mix.scripts(
-        [
-            // 'jquery/jquery-1.11.3.min.js',
-            'slick-carousel/slick/slick.min.js',
-            'responsive-img.js/responsive-img.js',
-            'page-scroll-effects/js/velocity.min.js',
-            'page-scroll-effects/js/velocity.ui.min.js'
-        ], 'dist/js/plugins.js',bowerDir);
-
-    /* main */
-    mix.scripts( [ 
-        '/../vendor/page-scroll-effects/js/main.js', 
-        'home.js' 
-        ],'dist/js/home.js');
+*/
+gulp.task('sass', function () { 
+    gulp.src([
+        'assets/sass/*.scss',
+        'assets/sass/pages/*.scss'
+        ]) 
+        .pipe(sass())
+        .pipe(minify({
+            minify: true,
+            collapseWhitespace: true,
+            conservativeCollapse: true,
+            minifyJS: true,
+            minifyCSS: true,
+            getKeptComment: function (content, filePath) {
+                var m = content.match(/\/\*![\s\S]*?\*\//img);
+                return m && m.join('\n') + '\n' || '';
+            }
+        }))
+        .pipe(gulp.dest('dist/css'));
+        // .pipe(livereload()); 
+}); 
+gulp.task('default', ['sass']);
 
 
-    //################### VERSIONING ###################//
-    mix.version([
-        "css/plugins.css",
-        "css/base.css",
-        "js/plugins.js", 
-
-        "css/home.css",
-        "js/home.js"
-    ]);
-
-    // mix.browserSync({
-    //     files: ['**/*.html', 'dist/js/**/*.js', 'dist/css/**/*.css'],
-    //     proxy: undefined,
-    //     server: {
-    //         baseDir: "./"
-    //     }
-    // });
+/*
+ |--------------------------------------------------------------------------
+ | JS
+ |--------------------------------------------------------------------------
+*/
+gulp.task('js', function () {
+    gulp.src([        
+        'assets/vendor/slick-carousel/slick/slick.min.js',
+        'assets/vendor/responsive-img.js/responsive-img.js',
+        'assets/vendor/page-scroll-effects/js/velocity.min.js',
+        'assets/vendor/page-scroll-effects/js/velocity.ui.min.js',
+        'assets/vendor/page-scroll-effects/js/main.js'
+    ])
+    .pipe(minify({
+        minify: true,
+        collapseWhitespace: true,
+        conservativeCollapse: true,
+        minifyJS: true,
+        minifyCSS: true,
+        getKeptComment: function (content, filePath) {
+            var m = content.match(/\/\*![\s\S]*?\*\//img);
+            return m && m.join('\n') + '\n' || '';
+        }
+    }))
+    .pipe(concat('plugins.js'))
+    .pipe(gulp.dest('dist/js'));
+    // .pipe(livereload());
 });
 
+
+/*
+ |--------------------------------------------------------------------------
+ | RUN 
+ |--------------------------------------------------------------------------
+*/
+// gulp.task('watch', function() {
+//     livereload.listen();
+//     gulp.watch('css/**.scss', ['sass']);
+//     gulp.watch('js/**.js', ['js']);
+// });
+gulp.task('default', ['sass', 'js']);
