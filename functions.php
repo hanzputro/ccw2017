@@ -16,7 +16,7 @@ $_REQUEST = array_map( 'stripslashes_deep', $_REQUEST );
 /*                      theme setup                      */
 /*********************************************************/
 function theme_setup() {
-  wp_enqueue_style( 'base', get_stylesheet_directory_uri().'/dist/css/base.css', '', '');
+  wp_enqueue_style( 'core', get_stylesheet_directory_uri().'/dist/css/core.css', '', '');
 }
 add_action( 'wp_enqueue_scripts', 'theme_setup' );
 
