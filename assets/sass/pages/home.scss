@@ -195,7 +195,7 @@
                 background-size:cover;
                 background-attachment: fixed;
                 height:100vh;
-                transition:1s ease;
+                // transition:1s ease;
                 &:after{
                     content:'';
                     position: absolute;
@@ -210,9 +210,9 @@
             bottom:325px; left:0;
             .slide{
                 padding: 0 1.4%;
-                opacity:0;
-                transition:1s ease;
-                &.slick-current{ opacity:1; }
+                // opacity:0;
+                // transition:1s ease;
+                // &.slick-current{ opacity:1; }
                 .linetitle{ 
                     // margin:0 0 25px 80px;
                     &:after{ top:20px; background:$color-white; } 
@@ -274,7 +274,7 @@
                     }
                 }
             }
-            ul.slick-slider{
+            ul{
                 @extend .float-left;
                 width:73%;
                 .slick-list{
@@ -304,6 +304,7 @@
                         border-top:2px solid $color-white;
                         white-space:nowrap;
                         text-align:center;
+                        user-select: none;
                         transition:0.3s ease;
                         &:hover{ color:$color-white; }
                     }

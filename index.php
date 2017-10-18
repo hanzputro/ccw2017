@@ -24,7 +24,7 @@
     
     <div class="section-page" id="section_page">       
   
-        <section class="cd-section visible" id="section1">
+        <section class="cd-section" id="section1">
             <div class="section-cover">
                 <div class="section container1600 center" id="section-cover1">
                     <h1 class="light white">CREATIVE CITY WORSHIP</h1>
@@ -63,13 +63,13 @@
             </div>
         </section>
 
-        <section class="cd-section" id="section3">
+        <section class="cd-section visible" id="section3">
             <div class="section-cover">
                 <div class="slider">
                     <div class="slide-bg">
-                        <div class="slide" style="background-image: url(<?php bloginfo('template_url'); ?>/dist/images/home/bg-section3.jpg);"></div>
-                        <div class="slide" style="background-image: url(<?php bloginfo('template_url'); ?>/dist/images/home/bg-section3.jpg);"></div>
-                        <div class="slide" style="background-image: url(<?php bloginfo('template_url'); ?>/dist/images/home/bg-section3.jpg);"></div>                    
+                        <div data-slide="0" class="slide" style="background-image: url(<?php bloginfo('template_url'); ?>/dist/images/home/bg-section3.jpg);"></div>
+                        <div data-slide="1" class="slide" style="background-image: url(<?php bloginfo('template_url'); ?>/dist/images/home/bg-section3.jpg);"></div>
+                        <div data-slide="2" class="slide" style="background-image: url(<?php bloginfo('template_url'); ?>/dist/images/home/bg-section3.jpg);"></div>                    
                     </div>
                     <div class="slide-caption">
                         <div class="slide">
@@ -93,9 +93,9 @@
                             </a>
                         </div>
                         <ul>
-                            <li class=""><a href="javascript:void(0)" class="s16 merriweather">SUNDAY SERVICE</a></li>
-                            <li class=""><a href="javascript:void(0)" class="s16 merriweather">CREATIVE KIDS</a></li>
-                            <li class=""><a href="javascript:void(0)" class="s16 merriweather">CREATIVE COMMUNITY</a></li>
+                            <li class="slick-current"><a href="javascript:void(0);" data-slide="0" class="s16 merriweather customPaging">SUNDAY SERVICE</a></li>
+                            <li class=""><a href="javascript:void(0);" data-slide="1" class="s16 merriweather customPaging">CREATIVE KIDS</a></li>
+                            <li class=""><a href="javascript:void(0);" data-slide="2" class="s16 merriweather customPaging">CREATIVE COMMUNITY</a></li>
                         </ul>
                     </nav>
                 </div>

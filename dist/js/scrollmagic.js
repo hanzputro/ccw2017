@@ -1,1 +1,0 @@
-var controller=new ScrollMagic.Controller;widthviewport>1024&&new ScrollMagic.Scene({triggerElement:".shareposition",triggerHook:"onLeave",duration:"100%"}).setClassToggle(".news__share","sticky").addTo(controller),widthviewport<600&&new ScrollMagic.Scene({triggerElement:".footer__socmed",triggerHook:"onEnter"}).setClassToggle(".news__othertopic","notsticky").addTo(controller);
