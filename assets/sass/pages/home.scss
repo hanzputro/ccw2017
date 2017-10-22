@@ -285,17 +285,18 @@
                     width:inherit !important;
                 }
                 li{
+                    position:relative;
                     width: 33.3% !important;
                     transition:1s ease;
+                    &:after{
+                        content:'';
+                        position: absolute;
+                        top:0; left:0;
+                        width:100%; height:0;
+                        background: $color-white;                          
+                    }
                     &.slick-current{
-                        position: relative;
-                        &:after{
-                            content:'';
-                            position: absolute;
-                            top:-3px; left:0;
-                            width:100%; height:5px;
-                            background: $color-white; 
-                        }
+                        &:after{ transition:0.3s ease; top:-3px; height:5px; }
                         a{ color: $color-white; }
                     }
                     a{                        
@@ -593,9 +594,52 @@
     }
     #section1{
         h1{ font-size:20px; }
-        svg{ width: 700px; }
+        svg{ 
+            width: 700px; 
+            margin-bottom: 80px;
+        }
     }
     #section2{
-        .thumb{ width: 380px; }
+        .thumb{ 
+            width: 380px; 
+            margin-bottom: 80px;
+            animation: thumb1 1.8s ease forwards 1s;
+            &:before{ animation: thumbbefore1 1.8s ease forwards 1.3s; }
+            &:after{ animation: thumbafter1 1.8s ease forwards 1.3s; }
+            .splash{ animation: splash1 2.8s ease forwards 1.3s; }
+        }
+    }
+    #section3{
+        height:600px;
+        .section-cover{
+            height:600px;
+            overflow:hidden;
+        }
+        .slider{
+            // display:flex;
+            // display:-webkit-flex;
+            .slide-bg .slide{
+                background-attachment: initial;
+            }
+        }
+    }
+    #section4{
+        .section-cover{
+            &:before{ animation: sc4bg 1.8s ease forwards 1.3s; }
+            .news__list{
+                animation: news__list 1.8s ease forwards 1.3s;
+                &:before{ animation: newslistbefore 1.8s ease forwards 1.3s; }
+                .splash2{ animation: splash2 1.8s ease forwards 1.3s; }
+                .splash3{ animation: splash3 1.8s ease forwards 1.3s; }
+            } 
+        }
+        .section{
+            margin-bottom:80px;
+        }
+    }
+    #section5{
+        .section{
+            margin-bottom:80px;
+        }
     }
 }

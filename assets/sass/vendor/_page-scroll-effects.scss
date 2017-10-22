@@ -5,13 +5,13 @@ Primary style
 -------------------------------- */
 body::before {
   /* never visible - this is used in jQuery to check the current MQ */
-  content: 'mobile';
+  // content: 'mobile';
   display: none;
 }
 @media only screen and (min-width: 1025px) {
   body::before {
     /* never visible - this is used in jQuery to check the current MQ */
-    content: 'desktop';
+    // content: 'desktop';
   }
 }
 
@@ -32,7 +32,7 @@ Main Components
 }
 .cd-section:first-of-type > div::before {
   /* alert -> all scrolling effects are not visible on small devices */
-  content: 'Effects not visible on mobile!';
+  // content: 'Effects not visible on mobile!';
   position: absolute;
   width: 100%;
   text-align: center;
@@ -97,12 +97,10 @@ Main Components
   }
 }
 
-@media only screen and (min-width: 1025px) {
+@media (min-width: 1025px) {
   .cd-section:first-of-type > div::before {
     display: none;
   }
-}
-@media only screen and (min-width: 1025px) {
   .cd-section > div {
     position: fixed;
     top: 0;
@@ -126,5 +124,15 @@ Main Components
     -ms-transform-origin: center bottom;
     -o-transform-origin: center bottom;
     transform-origin: center bottom;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cd-section{
+    height: initial;
+    .section-cover{
+      height: auto;
+      overflow-x: hidden;
+    }
   }
 }

@@ -27,4 +27,17 @@
 	}
 }
 
-// @media (max-width: 1024px) {}
+@media (max-width: 1024px) {
+	.footer{
+		position: relative;
+		text-align: center;
+		.copyright{
+			float:none;
+		}
+		.footer-menu{
+			float:none;
+			display: inline-block;
+			margin:13px 0 0 0;
+		}
+	}
+}

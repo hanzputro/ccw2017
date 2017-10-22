@@ -24,7 +24,7 @@
     
     <div class="section-page" id="section_page">       
   
-        <section class="cd-section" id="section1">
+        <section class="cd-section visible" id="section1">
             <div class="section-cover">
                 <div class="section container1600 center" id="section-cover1">
                     <h1 class="light white">CREATIVE CITY WORSHIP</h1>
@@ -63,7 +63,7 @@
             </div>
         </section>
 
-        <section class="cd-section visible" id="section3">
+        <section class="cd-section" id="section3">
             <div class="section-cover">
                 <div class="slider">
                     <div class="slide-bg">

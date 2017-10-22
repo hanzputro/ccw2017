@@ -14,10 +14,11 @@ var livereload = require('gulp-livereload');
  | SASS
  |--------------------------------------------------------------------------
 */
-gulp.task('sass', function () { 
+gulp.task('sass-compile', function () { 
     gulp.src([
         'assets/sass/*.scss',
-        'assets/sass/pages/*.scss'
+        'assets/sass/pages/*.scss',
+        'assets/sass/cms/*.scss'
         ]) 
         .pipe(sass())
         .pipe(minify({
@@ -33,8 +34,15 @@ gulp.task('sass', function () {
         }))
         .pipe(gulp.dest('dist/css'));
         // .pipe(livereload()); 
+});
+gulp.task('css-move', function () { 
+    gulp.src([
+        'dist/css/style.css',
+        'dist/css/panel.css'
+        ])
+        .pipe(gulp.dest('')); 
 }); 
-gulp.task('default', ['sass']);
+gulp.task('sass', ['sass-compile','css-move']);
 
 
 /*
