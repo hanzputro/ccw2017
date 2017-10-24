@@ -69,3 +69,10 @@
         }
     } 
 }
+@media (max-width:1024px) {
+    .header{
+        position:absolute;
+        opacity:1; transform: translateY(0px);
+        animation: none; 
+    }
+}

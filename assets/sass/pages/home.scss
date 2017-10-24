@@ -593,10 +593,13 @@
         }
     }
     #section1{
-        h1{ font-size:20px; }
+        .section-cover{
+            height:100%;
+        }
+        h1{ font-size:20px; margin-bottom:35px; }
         svg{ 
-            width: 700px; 
-            margin-bottom: 80px;
+            width: 500px; 
+            margin-bottom: 100px;
         }
     }
     #section2{
@@ -612,14 +615,27 @@
     #section3{
         height:600px;
         .section-cover{
-            height:600px;
+            height:100%;
             overflow:hidden;
         }
         .slider{
-            // display:flex;
-            // display:-webkit-flex;
-            .slide-bg .slide{
-                background-attachment: initial;
+            position: relative;
+            height:100%;
+            .slide-bg{
+                height:100%;
+                .slick-list {
+                    height:100%;
+                    .slick-track{
+                        height:100%;
+                        .slide{
+                            background-attachment: initial;
+                            height:100%;
+                        }
+                    }
+                }                
+            }
+            .slide-caption{
+                bottom: 275px;
             }
         }
     }

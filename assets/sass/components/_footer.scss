@@ -31,13 +31,15 @@
 	.footer{
 		position: relative;
 		text-align: center;
+		padding:20px;
+		h5{ font-size:12px; }
 		.copyright{
 			float:none;
 		}
 		.footer-menu{
 			float:none;
 			display: inline-block;
-			margin:13px 0 0 0;
+			margin:10px 0 0 0;
 		}
 	}
 }

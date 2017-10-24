@@ -47,11 +47,19 @@ $(document).ready(function(){
             var setmidS = (gethSC - gethS)/2;
             $('.section', this).css("cssText","margin-top:"+setmidS+"px;");
         });
-    }        
-    // $('.cd-section .section-cover').each(function(){
-    //     var getHsection = heightviewport;
-    //     $(this).css('cssText', 'height:'+getHsection+'px;');
-    // });
+    }
+
+    if (widthviewport <= 1024){
+        console.log(heightviewport);
+        $('.cd-section').each(function(){
+            var heightSection = $(this).height();
+            if( heightSection > heightviewport){
+                $(this).css('height', 'auto');
+            }else{
+                $(this).css('height', heightviewport);
+            }
+        });
+    }
 });
 
 
