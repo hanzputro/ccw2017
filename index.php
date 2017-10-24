@@ -143,7 +143,7 @@
         </section>
 
         <section class="cd-section" id="section5">
-            <div class="section-cover animate">
+            <div class="section-cover">
                 <div class="section grid">
                     <div class="span6 contact__caption">
                         <h1 class="s50 merriweather bold linetitle">Get Connected</h1>

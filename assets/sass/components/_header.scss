@@ -7,7 +7,7 @@
     z-index:10;
     opacity:0;
     padding: 0 20px 30px 20px;
-    background: linear-gradient(to bottom,rgba(0,0,0,.35) 0%,rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to bottom,rgba(0,0,0,.25) 0%,rgba(255, 255, 255, 0) 100%);
     transform: translateY(-10px);
     animation: header 2s ease forwards 5s; 
     .container1600{
@@ -16,7 +16,7 @@
     }
     .logo{
         margin:32px 0 0 0;
-        img{}
+        img{ filter: drop-shadow(0 0 5px rgba(0,0,0,.1)); }
     }
     .navbar{
         ul{ 
@@ -28,13 +28,30 @@
         li{
             @extend .float-left;
             a{
+                position:relative;
                 height:30px;
-                padding:14px 17px 0 17px;                
+                padding:14px 0 0 0;
+                margin:0 17px;
+                &:before{
+                    content:'';
+                    position:absolute;
+                    left:0; bottom:-8px;
+                    width:0%; height:3px;
+                    background:#8560a8;
+                    transition:0.4s ease;
+                }
+                &:hover{
+                    &:before{
+                        width:100%;
+                    }
+                }                
             }
             &:last-child{
                 a{
                     height:auto;
-                    padding:0 0 0 17px;
+                    margin:0 0 0 17px;
+                    padding:0;
+                    &:before{ display:none; }
                 }
             }
         }
@@ -43,7 +60,7 @@
 
 .ico-menu{
     position:relative;
-    width:38px; height:28px;
+    width:38px; height:30px;
     .ico-menu__line{
         position:absolute;
         top:0; right:0;

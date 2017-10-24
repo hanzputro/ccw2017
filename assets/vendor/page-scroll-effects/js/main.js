@@ -41,15 +41,15 @@ jQuery(document).ready(function($){
 			prevArrow.on('click', prevSection);
     		nextArrow.on('click', nextSection);
     		
-   //  		$(document).on('keydown', function(event){
-			// 	if( event.which=='40' && !nextArrow.hasClass('inactive') ) {
-			// 		event.preventDefault();
-			// 		nextSection();
-			// 	} else if( event.which=='38' && (!prevArrow.hasClass('inactive') || (prevArrow.hasClass('inactive') && $(window).scrollTop() != sectionsAvailable.eq(0).offset().top) ) ) {
-			// 		event.preventDefault();
-			// 		prevSection();
-			// 	}
-			// });
+    		$(document).on('keydown', function(event){
+				if( event.which=='40' && !nextArrow.hasClass('inactive') ) {
+					event.preventDefault();
+					nextSection();
+				} else if( event.which=='38' && (!prevArrow.hasClass('inactive') || (prevArrow.hasClass('inactive') && $(window).scrollTop() != sectionsAvailable.eq(0).offset().top) ) ) {
+					event.preventDefault();
+					prevSection();
+				}
+			});
 			//set navigation arrows visibility
 			checkNavigation();
 		} else if( MQ == 'mobile' ) {

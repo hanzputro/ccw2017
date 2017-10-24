@@ -105,3 +105,18 @@ $(window).bind('mousewheel', function(event) {
         }
     }
 });
+
+$(document).on('keydown', function(event){
+    var pageNumber = (document.querySelector('.cd-section.visible').id).substr(-1);
+        pageNumber = parseInt(pageNumber);
+    pageNumber = pageNumber + 1;
+    if( pageNumber == 2 ){
+        $('#section2 .thumb').addClass('animate');
+    }
+    else if( pageNumber == 4 ){
+        $('#section4 .section-cover').addClass('animate');
+    }
+    else if( pageNumber == 5 ){
+        $('#section5 .section-cover').addClass('animate');
+    }
+});
