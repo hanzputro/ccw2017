@@ -133,7 +133,8 @@ Main Components
   .cd-section{
     height: initial;
     .section-cover{
-      height: auto;
+      // height: auto;
+      height: 100%;
       overflow-x: hidden;
     }
   }

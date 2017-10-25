@@ -392,6 +392,7 @@
                 color: $color-white;
                 position: absolute;
                 bottom:0; left:0;
+                width: 100%;
                 padding:20px;
                 z-index:1;                
                 .thumb{}
@@ -578,9 +579,10 @@
         .section-cover{
             position:relative !important;
             background-attachment: initial !important;
+            padding:50px 0 0 0;
         }
     }
-    .ico-scrolldown{ 
+    .ico-scrolldown{
         width:24px; height:60px;
     }
     .section{        
@@ -595,6 +597,8 @@
     #section1{
         .section-cover{
             height:100%;
+            padding:100px 0 0 0;
+            margin:0 0 0 0;
         }
         h1{ font-size:20px; margin-bottom:35px; }
         svg{ 
@@ -613,7 +617,7 @@
         }
     }
     #section3{
-        height:600px;
+        height:600px !important;
         .section-cover{
             height:100%;
             overflow:hidden;
@@ -636,6 +640,36 @@
             }
             .slide-caption{
                 bottom: 275px;
+                height:113px;
+                overflow:hidden;
+            }
+            .slide__nav{
+                .read-more{
+                    position:absolute;
+                    bottom:-27px;
+                    float:none;
+                    width:initial;
+                    margin:0;
+                    .ico-plus{
+                        width:10px; height:10px;
+                        line-height: 24px;
+                        font-size: 20px;
+                        margin: 0 15px 0 6px;                  
+                        &:before{
+                            content:'';
+                            position: absolute;
+                            top: 2px; left: -6px;
+                            width: 23px; height: 23px;
+                        }
+                    }
+                    h1{ margin:0; font-size: 16px; }
+                }
+                ul{
+                    width:100%;
+                    li{
+                        a{ padding: 20px 0; }
+                    }
+                }
             }
         }
     }
@@ -652,10 +686,41 @@
         .section{
             margin-bottom:80px;
         }
+        .news{
+            margin:120px 0 0 0;
+        }
     }
     #section5{
+        .section-cover{
+            margin:0 0 0 0;
+        }
         .section{
             margin-bottom:80px;
+            .span6{
+                width:100%;
+                margin-left:0;
+            }
+            .contact__map{
+                height:300px;
+                margin-top:80px;
+                &:before{ animation: sec5before 1.8s ease forwards 1.3s; }
+                .map{ animation: contactmap 1.8s ease forwards 1.3s; }
+            }
+        }
+    }
+}
+
+@media (max-width:767px){
+    #section4{
+        .news{
+            padding:0 10%;
+            margin:70px 0 0 0;
+            .news__list{
+                width:100%;                
+                margin:0 auto 40px auto;
+                .splash2,
+                .splash3{ display:none; }
+            }
         }
     }
 }

@@ -40,26 +40,20 @@ $(document).ready(function(){
     });
 
 
-    if (widthviewport > 1024){
-        $('.cd-section').each(function(){
-            var gethSC = $('.section-cover', this).height();
-            var gethS = $('.section', this).height();
-            var setmidS = (gethSC - gethS)/2;
-            $('.section', this).css("cssText","margin-top:"+setmidS+"px;");
-        });
-    }
+    $('.cd-section').each(function(){
+        var heightSection = $(this).height();
+        var gethSC = $('.section-cover', this).height();
+        var gethS = $('.section', this).height();
+        var setmidS = (gethSC - gethS)/2;
 
-    if (widthviewport <= 1024){
-        console.log(heightviewport);
-        $('.cd-section').each(function(){
-            var heightSection = $(this).height();
-            if( heightSection > heightviewport){
-                $(this).css('height', 'auto');
-            }else{
-                $(this).css('height', heightviewport);
-            }
-        });
-    }
+        // console.log(gethSC+' - '+gethS);
+        if( heightSection > heightviewport){
+            $(this).css('height', 'auto');            
+        }else{
+            $(this).css('height', heightviewport);
+            $('.section', this).css("cssText","margin-top:"+setmidS+"px;");
+        }
+    });
 });
 
 
