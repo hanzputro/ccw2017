@@ -7,8 +7,10 @@
   "devDependencies": {
     "bootstrap-sass": "^3.3.7",
     "bower": "^1.8.2",
+    "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
+    "gulp-connect-php": "^1.0.1",
     "gulp-jshint": "^2.0.4",
     "gulp-livereload": "^3.8.1",
     "gulp-minifier": "^0.2.2",

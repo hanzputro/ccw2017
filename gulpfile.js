@@ -3,10 +3,12 @@ process.env.DISABLE_NOTIFIER = true;
 
 var bowerDir = 'assets/vendor/';
 var gulp = require("gulp");
+var php = require('gulp-connect-php');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
-var minify = require('gulp-minifier');    
-var livereload = require('gulp-livereload');
+var minify = require('gulp-minifier');
+var wait = require('gulp-wait');   
+var browserSync = require('browser-sync').create();
 
 
 /*
@@ -19,7 +21,8 @@ gulp.task('sass-compile', function () {
         'assets/sass/*.scss',
         'assets/sass/pages/*.scss',
         'assets/sass/cms/*.scss'
-        ]) 
+        ])
+        .pipe(wait(2000))
         .pipe(sass())
         .pipe(minify({
             minify: true,
@@ -32,14 +35,15 @@ gulp.task('sass-compile', function () {
                 return m && m.join('\n') + '\n' || '';
             }
         }))
-        .pipe(gulp.dest('dist/css'));
-        // .pipe(livereload()); 
+        .pipe(gulp.dest('dist/css'))
+        .pipe(browserSync.stream());
 });
 gulp.task('css-move', function () { 
     gulp.src([
         'dist/css/style.css',
         'dist/css/panel.css'
         ])
+        .pipe(wait(2000))
         .pipe(gulp.dest('')); 
 }); 
 gulp.task('sass', ['sass-compile','css-move']);
@@ -71,7 +75,6 @@ gulp.task('js-plugin', function () {
     }))
     .pipe(concat('plugins.js'))
     .pipe(gulp.dest('dist/js'));
-    // .pipe(livereload());
 });
 gulp.task('js-script', function () {
     gulp.src([        
@@ -88,8 +91,18 @@ gulp.task('js-script', function () {
             return m && m.join('\n') + '\n' || '';
         }
     }))
-    .pipe(gulp.dest('dist/js'));
-    // .pipe(livereload());
+    .pipe(gulp.dest('dist/js'))
+    .pipe(browserSync.stream());
+});
+
+
+/*
+ |--------------------------------------------------------------------------
+ | PHP
+ |--------------------------------------------------------------------------
+*/
+gulp.task('php', function() {
+    php.server({ base: '', port: 3000, keepalive: true});
 });
 
 
@@ -98,9 +111,13 @@ gulp.task('js-script', function () {
  | RUN 
  |--------------------------------------------------------------------------
 */
-// gulp.task('watch', function() {
-//     livereload.listen();
-//     gulp.watch('css/**.scss', ['sass']);
-//     gulp.watch('js/**.js', ['js']);
-// });
+gulp.task('serve', ['sass', 'js-plugin', 'js-script'], function() {
+    browserSync.init({
+        proxy: "http://localhost/wordpress/ccw2017"
+    });
+    gulp.watch(['assets/sass/*/**.scss'], ['sass']);
+    gulp.watch('assets/js/*.js', ['js-script']);
+    gulp.watch('*.php', ['php']).on('change', browserSync.reload);
+});
+
 gulp.task('default', ['sass', 'js-plugin', 'js-script']);

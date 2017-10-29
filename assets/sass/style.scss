@@ -1,8 +1,9 @@
 /* Base */
+@import "base/reset";
 @import "base/color";
 @import "base/fonts";
-@import "base/settings";
 @import "base/typography";
+@import "base/settings";
 
 /* Utils */
 @import "utils/function";

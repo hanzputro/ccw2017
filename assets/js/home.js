@@ -15,24 +15,32 @@ $(document).ready(function(){
         autoplaySpeed: 4000,
         arrows: false,
         fade: true,
+        swipe: false,
         speed:1600    
     });
     $('#section3 .slide-caption').slick({
         arrows: false,
         speed:1600
     });
+
+    // set .read-more__link
+    var currentlink = $('#section3 .slide-bg .slick-current').attr('data-link');
+    $('.read-more__link').attr('href', currentlink);
+
     $('#section3 .slide-bg').on('beforeChange', function(){
         $('.slide__nav li').removeClass('slick-current');
     });
     $('#section3 .slide-bg').on('afterChange', function(){
         var currentSlide = $('#section3 .slide-bg .slick-current').attr('data-slide');
+        var currentlink = $('#section3 .slide-bg .slick-current').attr('data-link');
         // console.log(currentSlide);            
         $('.slide__nav a[data-slide='+currentSlide+']').parent().addClass('slick-current');
+        $('.read-more__link').attr('href', currentlink);
         if( $('.slide__nav ul').hasClass('disabled') ){
             $('.slide__nav ul').removeClass('disabled');
         }
     });        
-    $('.slide__nav a').click(function(e) {
+    $('.slide__nav a').click(function(e){
         e.preventDefault();
         $('.slide__nav ul').addClass('disabled');
         var dataSlide = $(this).attr('data-slide');
@@ -84,7 +92,7 @@ $(window).bind('mousewheel', function(event) {
         b=b+1;
         console.log('Scroll down: '+b);
         console.log('Section: '+pageNumber);
-        if( b >= 3 ){
+        if( b >= 2 ){
             b = 0;
             pageNumber = pageNumber + 1;
             if( pageNumber == 2 ){

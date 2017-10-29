@@ -5,18 +5,24 @@
     
     <div class="container header">
         <div class="container1600">
-            <div class="logo"><img src="<?php bloginfo('template_url'); ?>/dist/images/logo-ccw.png" alt=""></div>
+            <div class="logo"><a href="<?php echo site_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/dist/images/logo-ccw.png" alt=""></a></div>
             <div class="navbar">
                 <ul class="medium">
-                    <li><a href="" class="">ABOUT US</a></li>
-                    <li><a href="" class="">CONNECT</a></li>
-                    <li><a href="">
+                    <li><a href="#notset" class="">ABOUT US</a></li>
+                    <li><a href="#notset" class="">CONNECT</a></li>
+                    <li>
                         <div class="ico-menu">
                             <div class="ico-menu__line ico-menu__line1"></div>
                             <div class="ico-menu__line ico-menu__line2"></div>
                             <div class="ico-menu__line ico-menu__line3"></div>
                         </div>
-                    </a></li>
+                        <div class="ico-menu__content">
+                            <ul>
+                                <li><a href="#notset" class="">About Us</a></li>
+                                <li><a href="#notset" class="">Connect</a></li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -53,9 +59,9 @@
                         <p class="s30">Pastor Walter is our lead pastor. Creative City Worship lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
                         <nav class="tablink">
                             <ul>
-                                <li class=""><a href=""><h1 class="margin0">About Us</h1></a></li>
-                                <li class=""><a href=""><h1 class="margin0">Music</h1></a></li>
-                                <li class=""><a href=""><h1 class="margin0">Vision</h1></a></li>
+                                <li class=""><a href="#notset"><h1 class="margin0">About Us</h1></a></li>
+                                <li class=""><a href="#notset"><h1 class="margin0">Music</h1></a></li>
+                                <li class=""><a href="#notset"><h1 class="margin0">Vision</h1></a></li>
                             </ul>
                         </nav>                    
                     </div>
@@ -67,9 +73,9 @@
             <div class="section-cover">
                 <div class="slider">
                     <div class="slide-bg">
-                        <div data-slide="0" class="slide" style="background-image: url(<?php bloginfo('template_url'); ?>/dist/images/home/bg-section3.jpg);"></div>
-                        <div data-slide="1" class="slide" style="background-image: url(<?php bloginfo('template_url'); ?>/dist/images/home/bg-section3.jpg);"></div>
-                        <div data-slide="2" class="slide" style="background-image: url(<?php bloginfo('template_url'); ?>/dist/images/home/bg-section3.jpg);"></div>                    
+                        <div data-slide="0" data-link="link_aaa" class="slide" style="background-image: url(<?php bloginfo('template_url'); ?>/dist/images/home/bg-section3.jpg);"></div>
+                        <div data-slide="1" data-link="link_bbb" class="slide" style="background-image: url(<?php bloginfo('template_url'); ?>/dist/images/home/bg-section3.jpg);"></div>
+                        <div data-slide="2" data-link="link_ccc" class="slide" style="background-image: url(<?php bloginfo('template_url'); ?>/dist/images/home/bg-section3.jpg);"></div>                    
                     </div>
                     <div class="slide-caption">
                         <div class="slide">
@@ -87,7 +93,7 @@
                     </div>
                     <nav class="clearfix slide__nav">
                         <div class="read-more">
-                            <a href="" class="clearfix">
+                            <a href="" class="clearfix read-more__link">
                                 <div class="ico-plus">+</div>
                                 <h1 class="s24 merriweather italic">READ MORE</h1>
                             </a>
@@ -178,6 +184,7 @@
 
 <!-- JS -->
 <?php wp_footer(); ?>
+<script src="<?php bloginfo('template_url'); ?>/dist/js/base.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/dist/js/home.js"></script>
 
 </html>

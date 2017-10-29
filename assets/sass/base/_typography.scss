@@ -5,17 +5,30 @@
 .spacing0{ letter-spacing:0 !important; }
 .uppercase{ text-transform: uppercase; }
 
-.italic{ font-family: 'Roboto-Italic'; }
-.light{ font-family: 'Roboto-Light'; }
-.medium{ font-family: 'Roboto-Medium'; }
-.bold{ font-family: 'Roboto-Bold'; }
-.merriweather{
-    font-family: 'Merriweather-Regular';
-    &.italic{ font-family: 'Merriweather-Italic'; }
-    &.light{ font-family: 'Merriweather-Light'; }
-    &.bold{ font-family: 'Merriweather-Bold'; }
+.italic{
+    font-family: 'Roboto', sans-serif;
+    font-weight:400;
+    font-style:italic;
 }
-.myriadpro{ font-family: 'MyriadPro-Regular'; }
+.light{
+    font-family: 'Roboto', sans-serif;
+    font-weight:300;
+}
+.medium{
+    font-family: 'Roboto', sans-serif;
+    font-weight:500;
+}
+.bold{
+    font-family: 'Roboto', sans-serif;
+    font-weight:700;
+}
+.merriweather{
+    font-family: 'Merriweather-Regular'; font-weight:normal;
+    &.italic{ font-family: 'Merriweather-Italic'; font-weight:normal; }
+    &.light{ font-family: 'Merriweather-Light'; font-weight:normal; }
+    &.bold{ font-family: 'Merriweather-Bold'; font-weight:normal; }
+}
+.myriadpro{ font-family: 'MyriadPro-Regular'; font-weight:normal; }
 
 .s12{ font-size:12px; }
 .s14{ font-size:14px; }
@@ -33,7 +46,8 @@
 .s72{ font-size:72px; line-height:82px; }
 
 body {
-    font-family: 'Roboto-Regular';
+    font-family: 'Roboto', sans-serif;
+    font-weight:400;
     font-size: 14px;
     letter-spacing:0.5px;
     color:#292929;
@@ -349,7 +363,7 @@ article{
     .s22{ font-size:22px; }
     .s24{ font-size:20px; line-height:28px; }
     .s30{ font-size:22px; line-height:30px; }
-    .s38{ font-size:24px; line-height:32px; }
+    .s38{ font-size:28px; line-height:32px; }
     .s50{ font-size:36px; line-height:40px; }
 
     h1{ font-size:20px; }

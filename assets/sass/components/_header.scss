@@ -6,10 +6,10 @@
     left:0; right:0;
     z-index:10;
     opacity:0;
-    padding: 0 20px 30px 20px;
-    background: linear-gradient(to bottom,rgba(0,0,0,.25) 0%,rgba(255, 255, 255, 0) 100%);
+    padding: 0 20px 20px 20px;
+    background: linear-gradient(to bottom,rgba(0,0,0,.1) 0%,rgba(255, 255, 255, 0) 100%);
     transform: translateY(-10px);
-    animation: header 2s ease forwards 5s; 
+    animation: header 2s ease forwards 5s;
     .container1600{
         @extend .flex;
         @extend .between;
@@ -32,23 +32,26 @@
                 height:30px;
                 padding:14px 0 0 0;
                 margin:0 17px;
+                transition:0.4s ease;                
                 &:before{
                     content:'';
+                    opacity:0;
                     position:absolute;
                     left:0; bottom:-8px;
                     width:0%; height:3px;
-                    background:#8560a8;
+                    background:$color-green;
                     transition:0.4s ease;
                 }
                 &:hover{
+                    color:$color-green;
                     &:before{
-                        width:100%;
+                        opacity:1; width:100%;
                     }
                 }                
             }
             &:last-child{
                 a{
-                    height:auto;
+                    height:initial;
                     margin:0 0 0 17px;
                     padding:0;
                     &:before{ display:none; }
@@ -56,22 +59,94 @@
             }
         }
     }
-}
 
-.ico-menu{
-    position:relative;
-    width:38px; height:30px;
-    .ico-menu__line{
-        position:absolute;
+    .ico-menu{
+        position:relative;
+        z-index:100;
+        cursor:pointer;
+        width:38px; height:30px;
+        margin-left:17px;
+        &.active{
+            .ico-menu__line{ 
+                background:$color-green;           
+                &:last-child{ margin:0; }
+                &1{ width:38px; transform:rotate(-45deg) translate(-8px,8px); }
+                &2{ opacity:0; }
+                &3{ width:38px; top:initial; bottom:0; transform:rotate(45deg) translate(-8px,-9px); }
+            }
+            &:hover{
+                .ico-menu__line{
+                    &2{ opacity:0; }
+                    &3{ width:38px; }
+                }
+            }
+            &~ .ico-menu__content{
+                opacity:1; visibility:visible;
+                transform:translate(0, 0);
+                box-shadow: 0 0 10px rgba(0,0,0,0.07);
+            }
+        }
+        &:hover{
+            .ico-menu__line{ 
+                background:$color-green;           
+                &:last-child{ margin:0; }
+                &1{ width:38px; }
+                &2{ width:25px; }
+                &3{ width:32px; top:initial; bottom:0; }
+            }
+        }        
+        .ico-menu__line{
+            position:absolute;            
+            top:0; right:0;
+            height:6px;
+            background:#FFF;
+            border-radius:3px;
+            margin:auto;
+            transition:0.4s ease;
+            &:last-child{ margin:0; }
+            &1{ width:100%; }
+            &2{ width:100%; bottom:0; }
+            &3{ width:100%; top:initial; bottom:0; }
+        }
+    }
+
+    .ico-menu__content{
+        opacity:0; visibility:hidden;
+        position:fixed;
         top:0; right:0;
-        height:6px;
-        background:#FFF;
-        border-radius:3px;
-        margin:auto;
-        &:last-child{ margin:0; }
-        &1{ width:38px; }
-        &2{ width:25px; bottom:0; }
-        &3{ width:34px; top:initial; bottom:0; }
+        transform: translate(150px,0);
+        width:320px; height:100vh;
+        background:white;
+        transition:0.3s ease;
+        ul{
+            margin:110px 0 0 0 !important;
+        }
+        li{
+            width:100%;
+            margin:10px 0;
+            a{
+                @extend .merriweather.bold;
+                position:relative;
+                padding:0 135px 0 30px !important;
+                color:$color-black;
+                font-size:22px;
+                text-align:right;
+                &:after{
+                    content:'';
+                    position:absolute;
+                    top:0; bottom:0; right:90px;
+                    margin:auto;
+                    width:20px; height:2px;
+                    background:$color-green;
+                    transition:0.3s ease;
+                }
+                &:hover{
+                    &:after{
+                        width:28px;
+                    }
+                }
+            }            
+        }        
     }
 }
 
