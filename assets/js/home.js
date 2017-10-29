@@ -74,7 +74,7 @@ $(window).bind('mousewheel', function(event) {
         a=a+1;
         console.log('Scroll up: '+a);
         console.log('Section: '+pageNumber);
-        if( a >= 3 ){
+        if( a >= 2 ){
             a = 0;
             pageNumber = pageNumber - 1;
             if( pageNumber == 2 ){

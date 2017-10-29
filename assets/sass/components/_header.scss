@@ -137,12 +137,13 @@
                     top:0; bottom:0; right:90px;
                     margin:auto;
                     width:20px; height:2px;
-                    background:$color-green;
+                    background:$color-gray;
                     transition:0.3s ease;
                 }
                 &:hover{
                     &:after{
                         width:28px;
+                        background:$color-green;
                     }
                 }
             }            
