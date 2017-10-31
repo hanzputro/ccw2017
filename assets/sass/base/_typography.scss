@@ -74,6 +74,7 @@ h4 {
 h5 {
     font-size:16px;
     margin:0 0 8px 0;
+    line-height:22px;
 }
 h6{  
     font-size:14px;
@@ -360,15 +361,18 @@ article{
     .s14{ font-size:14px; }
     .s16{ font-size:16px; }
     .s18{ font-size:18px; }
-    .s22{ font-size:22px; }
+    .s22{ font-size:20px; }
     .s24{ font-size:20px; line-height:28px; }
     .s30{ font-size:22px; line-height:30px; }
     .s38{ font-size:28px; line-height:32px; }
     .s50{ font-size:36px; line-height:40px; }
-
     h1{ font-size:20px; }
 }
 
 @media (max-width:767px){
+    .s24{ font-size:18px; line-height:28px; }
+    .s30{ font-size:18px; line-height:28px; }
+    .s38{ font-size:22px; line-height:32px; }
+    .s50{ font-size:30px; line-height:38px; }
 }
 

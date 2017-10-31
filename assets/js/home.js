@@ -20,6 +20,7 @@ $(document).ready(function(){
     });
     $('#section3 .slide-caption').slick({
         arrows: false,
+        swipe: false,
         speed:1600
     });
 

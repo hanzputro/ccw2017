@@ -70,14 +70,14 @@
             .ico-menu__line{ 
                 background:$color-green;           
                 &:last-child{ margin:0; }
-                &1{ width:38px; transform:rotate(-45deg) translate(-8px,8px); }
+                &1{ width:100%; transform:rotate(-45deg) translate(-8px,8px); }
                 &2{ opacity:0; }
-                &3{ width:38px; top:initial; bottom:0; transform:rotate(45deg) translate(-8px,-9px); }
+                &3{ width:100%; top:initial; bottom:0; transform:rotate(45deg) translate(-8px,-9px); }
             }
             &:hover{
                 .ico-menu__line{
                     &2{ opacity:0; }
-                    &3{ width:38px; }
+                    &3{ width:100%; }
                 }
             }
             &~ .ico-menu__content{
@@ -90,9 +90,9 @@
             .ico-menu__line{ 
                 background:$color-green;           
                 &:last-child{ margin:0; }
-                &1{ width:38px; }
-                &2{ width:25px; }
-                &3{ width:32px; top:initial; bottom:0; }
+                &1{ width:100%; }
+                &2{ width:65%; }
+                &3{ width:80%; top:initial; bottom:0; }
             }
         }        
         .ico-menu__line{
@@ -164,8 +164,46 @@
 }
 @media (max-width:1024px) {
     .header{
-        position:absolute;
+        position:fixed;
         opacity:1; transform: translateY(0px);
         animation: none; 
+    }
+}
+@media (max-width:767px) {
+    .header{
+        padding: 0;
+        .container1600{
+            padding:0 10px;
+        }
+        .logo{
+            margin:8px 0 0 0;
+            img{ width:90px; height:auto; }
+        }
+        .navbar{
+            ul{ margin:15px 0 0 0; }
+            li{
+                display:none;
+                &:last-child{
+                    display:block;
+                }
+            }
+            .ico-menu{
+                width:30px; 
+                height:25px;
+                &.active{
+                    .ico-menu__line{
+                        &1{ width:100%; transform:rotate(-45deg) translate(-8px,6px); }
+                        &2{ opacity:0; }
+                        &3{ width:100%; top:initial; bottom:0; transform:rotate(45deg) translate(-8px,-6px); }
+                    }
+                }
+                .ico-menu__line{
+                    height:5px;
+                }
+            }
+            .ico-menu__content{
+                li{ display:block; }
+            }
+        }
     }
 }
