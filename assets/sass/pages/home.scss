@@ -88,8 +88,7 @@
 #section1{
     .section-cover{ 
         position: fixed;
-        background-color: $color-purple2;
-        background-image: url(../../dist/images/home/bg-section1.jpg); 
+        background-color: $color-purple2;         
     }
 
     @keyframes show {

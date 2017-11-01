@@ -32,7 +32,7 @@
   
         <section class="cd-section visible" id="section1">
             <div class="section-cover">
-                <div class="section container1600 center" id="section-cover1">
+                <div class="section container1600 center" id="section-cover1" style="background-image: url(../../dist/images/home/bg-section1.jpg);">
                     <h1 class="light white">CREATIVE CITY WORSHIP</h1>
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="830px" height="460px" viewBox="0 0 830 460" enable-background="new 0 0 830 460" xml:space="preserve">
                         <rect x="404" y="10" fill="none" width="444" height="234.424"></rect>
