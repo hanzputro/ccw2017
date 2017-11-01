@@ -7,14 +7,14 @@
 	color:#fff;
 	padding: 34px 20px;
 	.copyright{
-		@extend .float-left;
+		@extend %float-left;
 	}
 	.footer-menu{
-		@extend .clearfix;
-		@extend .float-right;
+		@extend %clearfix;
+		@extend %float-right;
 		margin:0;
 		li{
-			@extend .float-left;
+			@extend %float-left;
 			border-right:1px solid #fff;
 			&:last-child{
 				border-right:0;
@@ -37,12 +37,25 @@
 			float:none;
 		}
 		.footer-menu{
-			float:none;
-			display: inline-block;
-			margin:10px 0 0 0;
-			li{
-				float:none;
-			}
+			display:none;
+			// float:none;
+			// display: inline-block;
+			// margin:10px 0 0 0;
+			// li{
+			// 	position:relative;
+			// 	display:inherit;
+			// 	float:none;
+			// 	border:none;
+			// 	&:before{
+			// 		content:',';
+			// 		position:absolute;
+			// 		right:1px; bottom:4px;
+			// 	}
+			// 	&:last-child{
+			// 		&:before{ display:none; }
+			// 	}
+			// 	a{ padding:0 5px 0 0; }
+			// }
 		}
 	}
 }

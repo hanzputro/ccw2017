@@ -1,5 +1,5 @@
 @import "../base/color";
-@import "../base/settings";
+@import "../base/extend-only";
 
 .cd-section{
     .section-cover{ 
@@ -232,11 +232,11 @@
             padding: 0 8%;
             z-index:1;
             .read-more{
-                @extend .float-left;
+                @extend %float-left;
                 width:27%;
                 margin: -24px 0 0 0;
                 .ico-plus{
-                    @extend .float-left;
+                    @extend %float-left;
                     position: relative;
                     width:25px; height:25px;
                     line-height: 24px;
@@ -255,7 +255,7 @@
                     }
                 }
                 h1{
-                    @extend .float-left;
+                    @extend %float-left;
                     position: relative;
                     margin: 10px 0 0 0;
                     &:before{
@@ -281,7 +281,7 @@
                 }
             }
             ul{
-                @extend .float-left;
+                @extend %float-left;
                 width:73%;
                 .slick-list{
                     padding:0 !important;
@@ -358,14 +358,14 @@
     }
     .linetitle{ margin-bottom:30px; }
     .news{
-        @extend .clearfix;        
+        @extend %clearfix;        
         margin:180px 0 0 0;
 
         @keyframes news__list {
             to{ transform: translate(0px,0px); }
         }
         .news__list{
-            @extend .float-left;
+            @extend %float-left;
             position: relative;
             width:29.95%;
             margin:0 5% 0 0;
@@ -393,11 +393,11 @@
                 z-index:0;
             }            
             a{ 
-                @extend .clearfix;
+                @extend %clearfix;
                 display:block; 
             }
             .caption{
-                @extend .clearfix;
+                @extend %clearfix;
                 color: $color-white;
                 position: absolute;
                 bottom:0; left:0;
@@ -406,13 +406,13 @@
                 z-index:1;                
                 .thumb{}
                 .date{
-                    @extend .float-left;
+                    @extend %float-left;
                     width: 73px;
                     line-height:21px;
                     .s60{ line-height: 65px; }
                 }
                 .title{
-                    @extend .float-left;
+                    @extend %float-left;
                     width:73%;
                     width: calc(100% - 73px);
                     white-space: nowrap;
@@ -475,7 +475,7 @@
             }
         }        
         .contact__map{
-            @extend .noflicker;
+            @extend %noflicker;
             position:relative;
             height:600px;
             

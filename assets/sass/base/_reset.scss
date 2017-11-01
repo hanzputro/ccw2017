@@ -1,13 +1,3 @@
-/*
-Theme Name: CCW 2017 (Creative City Worship)
-Description: A responsive theme
-Version: 2017
-Author: hanzputro (Hanif Putra)
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: ccw, Creative City Worship, wordpress theme
-*/
-
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -29,8 +19,8 @@ time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
-    // font-size: 100%;
-    // font: inherit;
+    font-size: 100%;
+    font: inherit;
     vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -66,3 +56,20 @@ table {
 }
 a, a:active, a:focus, input, p, p:active, p:focus, article { outline: none; }
 iframe{ border: none; }
+
+// ####################################
+// reset custom
+// ####################################
+html,body{
+    min-height: 100%;
+}
+img, video, picture {
+    max-width: 100%;
+    height:auto;
+    outline: none;
+}
+img[src=''], 
+img:not([src]){ opacity:0; }
+a{
+    i~small{ display:inline-block; margin-top:0; }
+}

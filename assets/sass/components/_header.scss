@@ -11,8 +11,8 @@
     transform: translateY(-10px);
     animation: header 2s ease forwards 5s;
     .container1600{
-        @extend .flex;
-        @extend .between;
+        @extend %flex;
+        @extend %between;
     }
     .logo{
         margin:32px 0 0 0;
@@ -20,13 +20,13 @@
     }
     .navbar{
         ul{ 
-            @extend .clearfix;
+            @extend %clearfix;
             @extend .s18;
             color:white;
             margin:41px 0 0 0; 
         }
         li{
-            @extend .float-left;
+            @extend %float-left;
             a{
                 position:relative;
                 height:30px;
