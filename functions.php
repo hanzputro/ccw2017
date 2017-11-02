@@ -25,8 +25,9 @@ function js_setup() {
 	wp_register_script( 'jquery','','');
 	wp_register_script('jquery2', get_template_directory_uri().'/assets/vendor/jquery/jquery-1.11.3.min.js', '', '') ;
 	wp_register_script('plugins', get_template_directory_uri().'/dist/js/plugins.js', '', '') ;
+   wp_register_script('base', get_template_directory_uri().'/dist/js/base.js', '', '') ;
 
-	wp_enqueue_script( array('jquery', 'jquery2', 'plugins', 'scripts'));   
+	wp_enqueue_script( array('jquery', 'jquery2', 'plugins', 'base'));   
 }  
 add_action('wp_enqueue_scripts', 'js_setup');
 
@@ -56,7 +57,8 @@ add_action( 'admin_menu', 'add_settings_page' );
 /* ----------------------------------------------------------
    Declare vars
 ------------------------------------------------------------- */
-// $themename = "CCW 2017";
+// $themename = "Theme Name";
+$themename = "";
 $shortname = "shortname";
 $categories = get_categories('hide_empty=0&orderby=name');
 $all_cats = array();
@@ -278,7 +280,8 @@ function theme_settings_page() {
 						case 'textarea': ?>
 							<div class="option_input option_textarea">
    							<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
-   							<textarea name="<?php echo $value['id']; ?>" rows="3" cols=""><?php if ( get_settings( $value['id'] ) != "") { echo stripslashes(get_settings( $value['id']) ); } else { echo $value['std']; } ?></textarea>
+   							<textarea name="<?php echo $value['id']; ?>" rows="" cols=""><?php if ( get_settings( $value['id'] ) != "") { echo stripslashes(get_settings( $value['id']) ); } else { echo $value['std']; } ?>
+                        </textarea>
    							<small><?php echo $value['desc']; ?></small>
    							<div class="clearfix"></div>
 							</div>
@@ -299,7 +302,7 @@ function theme_settings_page() {
 					
 						case "checkbox": ?>
 							<div class="option_input option_checkbox">
-								<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>								
+								<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
 								<input id="<?php echo $value['id']; ?>" type="checkbox" name="<?php echo $value['id']; ?>" value="true" <?php echo $checked; ?> /> 
 								<small><?php echo $value['desc']; ?></small>
 								<div class="clearfix"></div>
@@ -308,10 +311,10 @@ function theme_settings_page() {
 
                   case "upload": ?>
                      <div class="option_input option_upload">
-                        <label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>                        
-                        <input id="<?php echo $value['id']; ?>" type="file" name="<?php echo $value['id']; ?>" style="" />
-                        <!-- <label for="<?php echo $value['id']; ?>" style="width:70%; padding:5px 10px; background:#f3f3f3; border: 1px solid #ddd; box-shadow: inset 0 1px 2px rgba(0,0,0,.07);">sec1-mainbanner.jpg</label> -->
-                        <small><?php echo $value['desc']; ?></small>
+                        <label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
+                        
+                        <?php media_uploader() ?>
+
                         <div class="clearfix"></div>
                      </div>
                      <?php break;
@@ -369,9 +372,56 @@ function set_option_menu() {
    register_nav_menus(
       array(
          'header-menu' => __( 'Header Menu' )
-			// 'another-menu' => __( 'Another Menu' ),
-			// 'an-extra-menu' => __( 'An Extra Menu' )
+         // 'another-menu' => __( 'Another Menu' ),
+         // 'an-extra-menu' => __( 'An Extra Menu' )
       )
    );
 }
 add_action( 'init', 'set_option_menu' );
+
+
+
+/*********************************************************/
+/*                Integration Media Upload              */
+/*********************************************************/
+function media_uploader() {
+   ?><?php
+   global $post;
+
+   // Get WordPress' media upload URL
+   $upload_link = esc_url( get_upload_iframe_src( 'image', $post->ID ) );
+
+   // See if there's a media id already saved as post meta
+   $your_img_id = get_post_meta( $post->ID, '_your_img_id', true );
+
+   // Get the image src
+   $your_img_src = wp_get_attachment_image_src( $your_img_id, 'full' );
+
+   // For convenience, see if the array is valid
+   $you_have_img = is_array( $your_img_src );
+   ?>
+
+   <!-- Your image container, which can be manipulated with js -->
+   <div class="custom-img-container">
+       <?php if ( $you_have_img ) : ?>
+           <img src="<?php echo $your_img_src[0] ?>" alt="" style="max-width:100%;" />
+       <?php endif; ?>
+   </div>
+
+   <!-- Your add & remove image links -->
+   <p class="hide-if-no-js">
+       <a class="upload-custom-img <?php if ( $you_have_img  ) { echo 'hidden'; } ?>" 
+          href="<?php echo $upload_link ?>">
+           <?php _e('Set custom image') ?>
+       </a>
+       <a class="delete-custom-img <?php if ( ! $you_have_img  ) { echo 'hidden'; } ?>" 
+         href="#">
+           <?php _e('Remove this image') ?>
+       </a>
+   </p>
+
+   <!-- A hidden input to set and post the chosen image id -->
+   <input class="custom-img-id" name="custom-img-id" type="hidden" value="<?php echo esc_attr( $your_img_id ); ?>" />
+   <?php
+}
+

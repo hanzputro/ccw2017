@@ -29,10 +29,14 @@
     </div>    
     
     <div class="section-page" id="section_page">       
-  
+        <style>
+            #section1 .section-cover{
+                background-image: url('<?php bloginfo('template_url'); ?>/dist/images/home/bg-section1.jpg');
+            }
+        </style>
         <section class="cd-section visible" id="section1">
             <div class="section-cover">
-                <div class="section container1600 center" id="section-cover1" style="background-image: url(../../dist/images/home/bg-section1.jpg);">
+                <div class="section container1600 center" id="section-cover1">
                     <h1 class="light white">CREATIVE CITY WORSHIP</h1>
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="830px" height="460px" viewBox="0 0 830 460" enable-background="new 0 0 830 460" xml:space="preserve">
                         <rect x="404" y="10" fill="none" width="444" height="234.424"></rect>
@@ -55,8 +59,8 @@
                         </div>                    
                     </div>
                     <div class="span6 section__content">
-                        <h1 class="linetitle s50 merriweather bold">Come as<br> You Are</h1>
-                        <p class="s30">Pastor Walter is our lead pastor. Creative City Worship lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                        <h1 class="linetitle s50 merriweather bold"><?php echo get_option('shortname_sc2ttl'); ?></h1>
+                        <p class="s30"><?php echo get_option('shortname_sc2capt'); ?></p>
                         <nav class="tablink">
                             <ul>
                                 <li class=""><a href="#notset"><h1 class="margin0">About Us</h1></a></li>
@@ -111,8 +115,8 @@
         <section class="cd-section" id="section4">
             <div class="section-cover">
                 <div class="section">
-                    <h1 class="s50 merriweather bold linetitle">Upcoming Events</h1>
-                    <p class="margin0 s24">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+                    <h1 class="s50 merriweather bold linetitle"><?php echo get_option('shortname_sc4ttl'); ?></h1>
+                    <p class="margin0 s24"><?php echo get_option('shortname_sc4capt'); ?></p>
                     <ul class="news">
                         <li class="news__list">
                             <div class="splash2"></div>
@@ -152,15 +156,13 @@
             <div class="section-cover">
                 <div class="section grid">
                     <div class="span6 contact__caption">
-                        <h1 class="s50 merriweather bold linetitle">Get Connected</h1>
-                        <p class="margin0 s24 myriadpro">ARTOTEL - Thamrin<br>
-                        JL. Sunda No.3,<br>
-                        Jakarta Pusat</p>
-                        <br>
+                        <h1 class="s50 merriweather bold linetitle"><?php echo get_option('shortname_sc5ttl'); ?></h1>
+                        <p class="margin0 s24 myriadpro"><?php echo get_option('shortname_sc5capt'); ?></p>
+                        <!-- <br>
                         <ul>
                             <li><a href="" class="s18 italic"><i class="ico-email"></i>creativecityworship@gmail.com</a></li>
                             <li><a href="" class="s18 italic"><i class="ico-instagram"></i>@creativecityworship</a></li>
-                        </ul>
+                        </ul> -->
                     </div>
                     <div class="span6 contact__map">
                         <iframe class="map" id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.564300037044!2d106.82254131535889!3d-6.189010995519481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f425cc5f2945%3A0x7bb495c84a711172!2sARTOTEL+THAMRIN-JAKARTA!5e0!3m2!1sen!2sid!4v1507702707895" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -184,7 +186,6 @@
 
 <!-- JS -->
 <?php wp_footer(); ?>
-<script src="<?php bloginfo('template_url'); ?>/dist/js/base.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/dist/js/home.js"></script>
 
 </html>
