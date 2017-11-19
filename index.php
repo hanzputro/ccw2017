@@ -1,11 +1,14 @@
 <?php get_header(); ?>
 
+<!-- specific page -->
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/dist/css/home.css">
+
 <!-- hijacking: on/off - animation: none/scaleDown/rotate/gallery/catch/opacity/fixed/parallax -->
 <body data-hijacking="on" data-animation="catch">
     
     <div class="container header">
         <div class="container1600">
-            <div class="logo"><a href="<?php echo site_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/dist/images/logo-ccw.png" alt=""></a></div>
+            <div class="logo"><a href="<?php echo site_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/dist/images/logo-ccw-black.png" alt=""></a></div>
             <div class="navbar">
                 <ul class="medium">
                     <li><a href="#notset" class="">ABOUT US</a></li>

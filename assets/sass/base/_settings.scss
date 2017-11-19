@@ -22,6 +22,10 @@
     max-width:100%;
     margin: 0 auto;
     padding:0 20px;
+    &940{
+        @extend .container;
+        width:940px;
+    }
     &1600{
         @extend .container;
         width:1600px;
@@ -71,6 +75,12 @@
         background:rgba(255,255,255,0.8) !important;
         z-index:60;
     }
+}
+.hr55{
+    display:inline-block;
+    height:3px; width:55px;
+    margin:20px 0;
+    background-color:#292929;
 }
 .g-recaptcha{ display:initial !important; }
 

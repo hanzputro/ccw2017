@@ -1,4 +1,6 @@
 .white{ color:$color-white; }
+.purple{ color:#8560a8; }
+.grey{ color:#999; }
 
 .spacing2{ letter-spacing:2px !important; }
 .spacing1{ letter-spacing:1px !important; }
@@ -365,7 +367,7 @@ article{
     .s24{ font-size:20px; line-height:28px; }
     .s30{ font-size:22px; line-height:30px; }
     .s38{ font-size:28px; line-height:32px; }
-    .s50{ font-size:36px; line-height:40px; }
+    .s50{ font-size:36px; line-height:40px; margin-bottom:40px; }
     h1{ font-size:20px; }
 }
 

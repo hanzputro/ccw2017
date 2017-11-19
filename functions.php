@@ -25,7 +25,7 @@ function js_setup() {
 	wp_register_script( 'jquery','','');
 	wp_register_script('jquery2', get_template_directory_uri().'/assets/vendor/jquery/jquery-1.11.3.min.js', '', '') ;
 	wp_register_script('plugins', get_template_directory_uri().'/dist/js/plugins.js', '', '') ;
-   wp_register_script('base', get_template_directory_uri().'/dist/js/base.js', '', '') ;
+	wp_register_script('base', get_template_directory_uri().'/dist/js/base.js', '', '') ;
 
 	wp_enqueue_script( array('jquery', 'jquery2', 'plugins', 'base'));   
 }  
@@ -307,37 +307,56 @@ function theme_settings_page() {
 								<small><?php echo $value['desc']; ?></small>
 								<div class="clearfix"></div>
 							</div>
-							<?php break;
+						<?php break;
 
-                  case "upload": ?>
-                     <div class="option_input option_upload">
-                        <label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
-                        
-                        <?php media_uploader() ?>
+              			case "upload": ?>
+              			<?php
+global $post;
 
-                        <div class="clearfix"></div>
-                     </div>
-                     <?php break;
-					
-						case "section": 
-							$i++; ?>
-							<div class="input_section">
-								<div class="input_title">									
-								   <h2 style="display:inline-block; margin:9px 0;"><?php echo $value['name']; ?></h2>
-								   <span class="submit" style="margin:4px 0;"><input name="save<?php echo $i; ?>" type="submit" class="button-primary" value="Save changes" /></span>
-								   <div class="clearfix"></div>
-                        </div>
+// Get WordPress' media upload URL
+$upload_link = esc_url( get_upload_iframe_src( 'image', $post->ID ) );
+
+// See if there's a media id already saved as post meta
+$your_img_id = get_post_meta( $post->ID, '_your_img_id', true );
+
+// Get the image src
+$your_img_src = wp_get_attachment_image_src( $your_img_id, 'full' );
+
+// For convenience, see if the array is valid
+$you_have_img = is_array( $your_img_src );
+?>
+
+<!-- Your image container, which can be manipulated with js -->
+<div class="custom-img-container">
+    <?php if ( $you_have_img ) : ?>
+        <img src="<?php echo $your_img_src[0] ?>" alt="" style="max-width:100%;" />
+    <?php endif; ?>
+</div>
+
+<!-- Your add & remove image links -->
+<p class="hide-if-no-js">
+    <a class="upload-img <?php if ( $you_have_img  ) { echo 'hidden'; } ?>" 
+       href="<?php echo $upload_link ?>">
+        <?php _e('Set custom image') ?>
+    </a>
+    <a class="delete-img <?php if ( ! $you_have_img  ) { echo 'hidden'; } ?>" 
+      href="#">
+        <?php _e('Remove this image') ?>
+    </a>
+</p>
+
+<!-- A hidden input to set and post the chosen image id -->
+<input class="custom-img-id" name="custom-img-id" type="hidden" value="<?php echo esc_attr( $your_img_id ); ?>" />
+						<?php break;
+
+						case "section-child": ?>
+	                     	<div class="input_section">
+	                        	<div class="input_title">                          
+		                           	<h3><?php echo $value['name']; ?></h3>
+		                           	<div class="clearfix"></div>
+		                        </div>
 							<div class="all_options">
-							<?php break;
-
-                  case "section-child": ?>
-                     <div class="input_section">
-                        <div class="input_title">                          
-                           <h3><?php echo $value['name']; ?></h3>
-                           <div class="clearfix"></div>
-                        </div>
-                     <div class="all_options">
-                     <?php break;
+						<?php break;
 					}
 				}?>
 				<input type="hidden" name="action" value="save" />
@@ -384,44 +403,5 @@ add_action( 'init', 'set_option_menu' );
 /*********************************************************/
 /*                Integration Media Upload              */
 /*********************************************************/
-function media_uploader() {
-   ?><?php
-   global $post;
-
-   // Get WordPress' media upload URL
-   $upload_link = esc_url( get_upload_iframe_src( 'image', $post->ID ) );
-
-   // See if there's a media id already saved as post meta
-   $your_img_id = get_post_meta( $post->ID, '_your_img_id', true );
-
-   // Get the image src
-   $your_img_src = wp_get_attachment_image_src( $your_img_id, 'full' );
-
-   // For convenience, see if the array is valid
-   $you_have_img = is_array( $your_img_src );
-   ?>
-
-   <!-- Your image container, which can be manipulated with js -->
-   <div class="custom-img-container">
-       <?php if ( $you_have_img ) : ?>
-           <img src="<?php echo $your_img_src[0] ?>" alt="" style="max-width:100%;" />
-       <?php endif; ?>
-   </div>
-
-   <!-- Your add & remove image links -->
-   <p class="hide-if-no-js">
-       <a class="upload-custom-img <?php if ( $you_have_img  ) { echo 'hidden'; } ?>" 
-          href="<?php echo $upload_link ?>">
-           <?php _e('Set custom image') ?>
-       </a>
-       <a class="delete-custom-img <?php if ( ! $you_have_img  ) { echo 'hidden'; } ?>" 
-         href="#">
-           <?php _e('Remove this image') ?>
-       </a>
-   </p>
-
-   <!-- A hidden input to set and post the chosen image id -->
-   <input class="custom-img-id" name="custom-img-id" type="hidden" value="<?php echo esc_attr( $your_img_id ); ?>" />
-   <?php
-}
+include('functions/upload.php'); ?>
 

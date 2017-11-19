@@ -580,6 +580,9 @@
                 .map{ transform: translateX(10%) translateY(-10%); }
             }
         }
+        .footer{
+            position: absolute;
+        }
     }
 }
 
@@ -719,6 +722,9 @@
                 &:before{ animation: sec5before 1.8s ease forwards 1.3s; }
                 .map{ animation: contactmap 1.8s ease forwards 1.3s; }
             }
+        }
+        .footer{
+            position: absolute;
         }
     }
 }

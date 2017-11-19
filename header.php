@@ -20,7 +20,6 @@
     <!-- <meta name="author" content="" />
     <meta name="keywords" content="" />  -->
     <link rel="icon" type="image/png" href="<?php bloginfo('template_url'); ?>/assets/images/favicon.png">
-    <!-- Custom css -->
-    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/dist/css/home.css">
+    
     <?php wp_head(); ?>    
 </head>
