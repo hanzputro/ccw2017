@@ -52,7 +52,7 @@ function optionsframework_options() {
 
 	// Typography Defaults
 	$typography_defaults = array(
-		'size' => '15px',
+		'size' => '12px',
 		'face' => 'georgia',
 		'style' => 'bold',
 		'color' => '#bada55' );
@@ -98,6 +98,51 @@ function optionsframework_options() {
 	/* ####### HOME tab ####### */
 	/* ######################## */
 
+	// main
+
+	$options[] = array(
+		'name' => __( 'Main', 'theme-textdomain' ),
+		'type' => 'heading'
+	);
+
+	$options[] = array(
+		'name' => __( 'HEADER', 'theme-textdomain' ),
+		'type' => 'info'
+	);
+
+	$options[] = array(
+		'name' => __( 'Logo', 'theme-textdomain' ),
+		'std' => $imagepath . '/logo-ccw-black.png',
+		'id' => 'logo',
+		'type' => 'upload'
+	);
+
+	$options[] = array(
+		'name' => __( 'FOOTER', 'theme-textdomain' ),
+		'type' => 'info'
+	);
+
+	$options[] = array(
+		'name' => __( 'Creative Community Link', 'theme-textdomain' ),
+		'id' => 'footer-cc-link',
+		'std' => '<?php echo site_url(); ?>',
+		'type' => 'text'
+	);
+
+	$options[] = array(
+		'name' => __( 'Services Link', 'theme-textdomain' ),
+		'id' => 'footer-s-link',
+		'std' => '<?php echo site_url(); ?>',
+		'type' => 'text'
+	);
+
+	$options[] = array(
+		'name' => __( 'Get Connected Link', 'theme-textdomain' ),
+		'id' => 'footer-gc-link',
+		'std' => '<?php echo site_url(); ?>',
+		'type' => 'text'
+	);
+
 	// section 1	
 
 	$options[] = array(
@@ -111,16 +156,9 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
-		'name' => __( 'Logo', 'theme-textdomain' ),
-		'std' => $imagepath . '/logo-ccw-black.png',
-		'id' => 'logo',
-		'type' => 'upload'
-	);
-
-	$options[] = array(
 		'name' => __( 'Background', 'theme-textdomain' ),
 		'std' => $imagepath . '/home/bg-section1.jpg',
-		'id' => 'bg-section1',
+		'id' => 'home-sec1-bg',
 		'type' => 'upload'
 	);
 
@@ -132,9 +170,16 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __( 'Title', 'theme-textdomain' ),
-		'id' => 'title-section2',
+		'id' => 'home-sec2-title',
 		'std' => 'Come As You Are',
 		'type' => 'text'
+	);
+
+	$options[] = array(
+		'name' => __( 'Image', 'theme-textdomain' ),
+		'std' => $imagepath . '/home/section2-thumb.jpg',
+		'id' => 'home-sec2-img',
+		'type' => 'upload'
 	);
 
 	$wp_editor_descsec2_settings = array(
@@ -144,7 +189,7 @@ function optionsframework_options() {
 	);
 	$options[] = array(
 		'name' => __( 'Description', 'theme-textdomain' ),
-		'id' => 'desc-section2',
+		'id' => 'home-sec2-desc',
 		'type' => 'editor',
 		'std' => 'Pastor Walter is our lead pastor. Creative City Worship lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
 		'settings' => $wp_editor_descsec2_settings
@@ -163,7 +208,7 @@ function optionsframework_options() {
 	);
 	$options[] = array(
 		'name' => __( 'News 1', 'theme-textdomain' ),
-		'id' => 'desc-section3-news1',
+		'id' => 'home-sec3-desc1',
 		'type' => 'editor',
 		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
 		'settings' => $wp_editor_descsec3_settings
@@ -172,7 +217,7 @@ function optionsframework_options() {
 	$options[] = array(
 		'name' => __( 'Background News 1', 'theme-textdomain' ),
 		'std' => $imagepath . '/home/bg-section3.jpg',
-		'id' => 'bg-section3-news1',
+		'id' => 'home-sec3-bg1',
 		'type' => 'upload'
 	);
 
@@ -183,7 +228,7 @@ function optionsframework_options() {
 	);
 	$options[] = array(
 		'name' => __( 'News 2', 'theme-textdomain' ),
-		'id' => 'desc-section3-news2',
+		'id' => 'home-sec3-desc2',
 		'type' => 'editor',
 		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
 		'settings' => $wp_editor_descsec3_settings
@@ -192,7 +237,7 @@ function optionsframework_options() {
 	$options[] = array(
 		'name' => __( 'Background News 2', 'theme-textdomain' ),
 		'std' => $imagepath . '/home/bg-section3.jpg',
-		'id' => 'bg-section3-news2',
+		'id' => 'home-sec3-bg2',
 		'type' => 'upload'
 	);
 
@@ -203,7 +248,7 @@ function optionsframework_options() {
 	);
 	$options[] = array(
 		'name' => __( 'News 3', 'theme-textdomain' ),
-		'id' => 'desc-section3-news3',
+		'id' => 'home-sec3-desc3',
 		'type' => 'editor',
 		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
 		'settings' => $wp_editor_descsec3_settings
@@ -212,7 +257,7 @@ function optionsframework_options() {
 	$options[] = array(
 		'name' => __( 'Background News 3', 'theme-textdomain' ),
 		'std' => $imagepath . '/home/bg-section3.jpg',
-		'id' => 'bg-section3-news3',
+		'id' => 'home-sec3-bg3',
 		'type' => 'upload'
 	);
 
@@ -224,7 +269,7 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __( 'Title', 'theme-textdomain' ),
-		'id' => 'title-section4',
+		'id' => 'home-sec4-title',
 		'std' => 'Upcoming Events',
 		'type' => 'text'
 	);
@@ -236,7 +281,7 @@ function optionsframework_options() {
 	);
 	$options[] = array(
 		'name' => __( 'Description', 'theme-textdomain' ),
-		'id' => 'desc-section4',
+		'id' => 'home-sec4-desc',
 		'type' => 'editor',
 		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
 		'settings' => $wp_editor_descsec4_settings
@@ -250,7 +295,7 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __( 'Title', 'theme-textdomain' ),
-		'id' => 'title-section5',
+		'id' => 'home-sec5-title',
 		'std' => 'Upcoming Events',
 		'type' => 'text'
 	);
@@ -262,7 +307,7 @@ function optionsframework_options() {
 	);
 	$options[] = array(
 		'name' => __( 'Description', 'theme-textdomain' ),
-		'id' => 'desc-section5',
+		'id' => 'home-sec5-desc',
 		'type' => 'editor',
 		'std' => 'ARTOTEL - Thamrin
 JL. Sunda No.3,
@@ -283,107 +328,154 @@ creativecityworship@gmail.com
 	);
 
 	$options[] = array(
-		'name' => __( 'Check to Show a Hidden Text Input', 'theme-textdomain' ),
-		'desc' => __( 'Click here and see what happens.', 'theme-textdomain' ),
-		'id' => 'example_showhidden',
-		'type' => 'checkbox'
+		'name' => __( 'OUR SERVICE', 'theme-textdomain' ),
+		'type' => 'info'
 	);
 
 	$options[] = array(
-		'name' => __( 'Hidden Text Input', 'theme-textdomain' ),
-		'desc' => __( 'This option is hidden unless activated by a checkbox click.', 'theme-textdomain' ),
-		'id' => 'example_text_hidden',
-		'std' => 'Hello',
-		'class' => 'hidden',
+		'name' => __( 'Title', 'theme-textdomain' ),
+		'id' => 'service-title1',
+		'std' => 'Our Services',
 		'type' => 'text'
 	);
 
 	$options[] = array(
-		'name' => __( 'Uploader Test', 'theme-textdomain' ),
-		'desc' => __( 'This creates a full size uploader that previews the image.', 'theme-textdomain' ),
-		'id' => 'example_uploader',
+		'name' => __( 'Title', 'theme-textdomain' ),
+		'id' => 'service-desc1',
+		'std' => 'Kami punya ibadah hari minggu, Ibadah anak-anak atau Creative Kids dan Creative Community',
+		'type' => 'textarea'
+	);
+
+	$options[] = array(
+		'name' => __( 'SUNDAY SERVICE', 'theme-textdomain' ),
+		'type' => 'info'
+	);
+
+	$options[] = array(
+		'name' => __( 'Title', 'theme-textdomain' ),
+		'id' => 'service-title2',
+		'std' => 'Sunday Service',
+		'type' => 'text'
+	);
+
+	$wp_editor_service_settings = array(
+		'wpautop' => true, // Default
+		'textarea_rows' => 3,
+		'tinymce' => array( 'plugins' => 'wordpress,wplink' )
+	);
+	$options[] = array(
+		'name' => __( 'Description', 'theme-textdomain' ),
+		'id' => 'service-desc2',
+		'type' => 'editor',
+		'std' => 'Pastor Walter is our lead pastor. Creative City Worship lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+		'settings' => $wp_editor_service_settings
+	);
+
+	$options[] = array(
+		'name' => __( 'Image 1', 'theme-textdomain' ),
+		'std' => $imagepath . '/home/section2-thumb.jpg',
+		'id' => 'service-image1',
 		'type' => 'upload'
 	);
 
 	$options[] = array(
-		'name' => "Example Image Selector",
-		'desc' => "Images for layout.",
-		'id' => "example_images",
-		'std' => "2c-l-fixed",
-		'type' => "images",
-		'options' => array(
-			'1col-fixed' => $imagepath . '/1col.png',
-			'2c-l-fixed' => $imagepath . '/2cl.png',
-			'2c-r-fixed' => $imagepath . '/2cr.png'
-		)
+		'name' => __( 'Image 2', 'theme-textdomain' ),
+		'std' => $imagepath . '/home/section2-thumb.jpg',
+		'id' => 'service-image2',
+		'type' => 'upload'
 	);
 
 	$options[] = array(
-		'name' =>  __( 'Example Background', 'theme-textdomain' ),
-		'desc' => __( 'Change the background CSS.', 'theme-textdomain' ),
-		'id' => 'example_background',
-		'std' => $background_defaults,
-		'type' => 'background'
-	);
+		'name' => __( 'Image 3', 'theme-textdomain' ),
+		'std' => $imagepath . '/home/section2-thumb.jpg',
+		'id' => 'service-image3',
+		'type' => 'upload'
+	);	
 
+
+	/* ############################## */
+	/* ####### WHO WE ARE tab ####### */
+	/* ############################## */
 	$options[] = array(
-		'name' => __( 'Multicheck', 'theme-textdomain' ),
-		'desc' => __( 'Multicheck description.', 'theme-textdomain' ),
-		'id' => 'example_multicheck',
-		'std' => $multicheck_defaults, // These items get checked by default
-		'type' => 'multicheck',
-		'options' => $multicheck_array
-	);
-
-	$options[] = array(
-		'name' => __( 'Colorpicker', 'theme-textdomain' ),
-		'desc' => __( 'No color selected by default.', 'theme-textdomain' ),
-		'id' => 'example_colorpicker',
-		'std' => '',
-		'type' => 'color'
-	);
-
-	$options[] = array( 'name' => __( 'Typography', 'theme-textdomain' ),
-		'desc' => __( 'Example typography.', 'theme-textdomain' ),
-		'id' => "example_typography",
-		'std' => $typography_defaults,
-		'type' => 'typography'
-	);
-
-	$options[] = array(
-		'name' => __( 'Custom Typography', 'theme-textdomain' ),
-		'desc' => __( 'Custom typography options.', 'theme-textdomain' ),
-		'id' => "custom_typography",
-		'std' => $typography_defaults,
-		'type' => 'typography',
-		'options' => $typography_options
-	);
-
-	$options[] = array(
-		'name' => __( 'Text Editor', 'theme-textdomain' ),
+		'name' => __( 'Who We Are', 'theme-textdomain' ),
 		'type' => 'heading'
 	);
 
-	/**
-	 * For $settings options see:
-	 * http://codex.wordpress.org/Function_Reference/wp_editor
-	 *
-	 * 'media_buttons' are not supported as there is no post to attach items to
-	 * 'textarea_name' is set by the 'id' you choose
-	 */
-
-	$wp_editor_settings = array(
-		'wpautop' => true, // Default
-		'textarea_rows' => 5,
-		'tinymce' => array( 'plugins' => 'wordpress,wplink' )
+	$options[] = array(
+		'name' => __( 'WHO WE ARE', 'theme-textdomain' ),
+		'type' => 'info'
 	);
 
 	$options[] = array(
-		'name' => __( 'Default Text Editor', 'theme-textdomain' ),
-		'desc' => sprintf( __( 'You can also pass settings to the editor.  Read more about wp_editor in <a href="%1$s" target="_blank">the WordPress codex</a>', 'theme-textdomain' ), 'http://codex.wordpress.org/Function_Reference/wp_editor' ),
-		'id' => 'example_editor',
+		'name' => __( 'Title', 'theme-textdomain' ),
+		'id' => 'whoweare-title',
+		'std' => 'Creative City Worship',
+		'type' => 'text'
+	);
+
+	$options[] = array(
+		'name' => __( 'Title', 'theme-textdomain' ),
+		'id' => 'whoweare-minititle',
+		'std' => 'WHO WE ARE',
+		'type' => 'text'
+	);	
+
+	$wp_editor_whowearedesc1_settings = array(
+		'wpautop' => true, // Default
+		'textarea_rows' => 3,
+		'tinymce' => array( 'plugins' => 'wordpress,wplink' )
+	);
+	$options[] = array(
+		'name' => __( 'Description', 'theme-textdomain' ),
+		'id' => 'whoweare-desc',
 		'type' => 'editor',
-		'settings' => $wp_editor_settings
+		'std' => 'Pastor Walter is our lead pastor. Creative City Worship started with a bunch of people who are passionate about God and passionate to serve others. We strongly believe that our God-given talents should be used to serve the city we are in, so that people can come to know who Jesus is and can worship Him in spirit and in truth.<br><br>We started our first Creative City Worship service on November 10th, 2013 with only 12 members. Having only a small amount of volunteers meant that everyone had to multi-task, and on every Sunday one person could have up to 3 ministries! But this has caused us to grow closer to one another and Sunday service became more than just an ordinary church service - it became our extended family gathering to worship God and rejoice in His presence.<br><br>Ever since then we have had tremendous miracles in the house of God - new members were added, many volunteered to serve, and we have even been given the opportunity to dedicate 4 young children to God and to baptize our first member on Easter Sunday, 20 April 2014.',
+		'settings' => $wp_editor_whowearedesc1_settings
+	);
+
+	$options[] = array(
+		'name' => __( 'OUR VISION', 'theme-textdomain' ),
+		'type' => 'info'
+	);
+
+	$options[] = array(
+		'name' => __( 'Background', 'theme-textdomain' ),
+		'std' => $imagepath . '/bg-whoweare.jpg',
+		'id' => 'whoweare-bg',
+		'type' => 'upload'
+	);
+
+	$options[] = array(
+		'name' => __( 'Title', 'theme-textdomain' ),
+		'id' => 'whoweare-title2',
+		'std' => 'Our Vision',
+		'type' => 'text'
+	);
+
+	$options[] = array(
+		'name' => __( 'Title', 'theme-textdomain' ),
+		'id' => 'whoweare-desc2',
+		'std' => 'Discovering and Maximizing Our God-Given TALENTS to Serve The CITY We Are In, and to Bring People to WORSHIP God in Spirit and in Truth',
+		'type' => 'textarea'
+	);
+
+	$options[] = array(
+		'name' => __( 'OUR MISSION', 'theme-textdomain' ),
+		'type' => 'info'
+	);
+
+	$options[] = array(
+		'name' => __( 'Title', 'theme-textdomain' ),
+		'id' => 'whoweare-title3',
+		'std' => 'Our Mission',
+		'type' => 'text'
+	);
+
+	$options[] = array(
+		'name' => __( 'Title', 'theme-textdomain' ),
+		'id' => 'whoweare-desc3',
+		'std' => 'Love God and Love People',
+		'type' => 'textarea'
 	);
 
 	return $options;

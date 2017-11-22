@@ -8,31 +8,6 @@ Template Name: Service Page
 <!-- specific page -->
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/dist/css/service.css">
 
-<body>
-	<div class="container header">
-        <div class="container1600">
-            <div class="logo"><a href="<?php echo site_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/dist/images/logo-ccw-black.png" alt=""></a></div>
-            <div class="navbar">
-                <ul class="medium">
-                    <li><a href="#notset" class="">ABOUT US</a></li>
-                    <li><a href="#notset" class="">CONNECT</a></li>
-                    <li>
-                        <div class="ico-menu">
-                            <div class="ico-menu__line ico-menu__line1"></div>
-                            <div class="ico-menu__line ico-menu__line2"></div>
-                            <div class="ico-menu__line ico-menu__line3"></div>
-                        </div>
-                        <div class="ico-menu__content">
-                            <ul>
-                                <li><a href="#notset" class="">About Us</a></li>
-                                <li><a href="#notset" class="">Connect</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
 
 	<div class="container1600" id="section1">
 		<div class="container__content grid">
@@ -70,7 +45,13 @@ Template Name: Service Page
             </div>
             <div class="span6">
                 <div class="thumb animate">
-                    <img class="" src="<?php bloginfo('template_url'); ?>/dist/images/home/section2-thumb.jpg" alt="">
+                    <div class="slider">
+                        <div class="slide-bg">
+                            <div data-slide="0" data-link="link_aaa" class="slide" style="background-image: url(<?php bloginfo('template_url'); ?>/dist/images/home/section2-thumb.jpg);"></div>
+                            <div data-slide="1" data-link="link_bbb" class="slide" style="background-image: url(<?php bloginfo('template_url'); ?>/dist/images/home/section2-thumb.jpg);"></div>
+                            <div data-slide="2" data-link="link_ccc" class="slide" style="background-image: url(<?php bloginfo('template_url'); ?>/dist/images/home/section2-thumb.jpg);"></div>                    
+                        </div>
+                    </div>
                     <div class="splash"></div>
                 </div>                    
             </div>

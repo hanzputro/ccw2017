@@ -29,7 +29,8 @@
             @extend %float-left;
             a{
                 position:relative;
-                height:30px;
+                height:30px;                
+                font-weight:400;
                 padding:14px 0 0 0;
                 margin:0 17px;
                 transition:0.4s ease;                
@@ -43,7 +44,7 @@
                     transition:0.4s ease;
                 }
                 &:hover{
-                    color:$color-green;
+                    color:$color-purple;
                     &:before{
                         opacity:1; width:100%;
                     }
@@ -117,33 +118,70 @@
         transform: translate(150px,0);
         width:320px; height:100vh;
         background:white;
-        transition:0.3s ease;
+        transition:0.2s ease;
         ul{
             margin:110px 0 0 0 !important;
         }
         li{
             width:100%;
-            margin:10px 0;
+            margin:14px 0;
             a{
-                @extend .merriweather.bold;
                 position:relative;
-                padding:0 135px 0 30px !important;
-                color:$color-black;
-                font-size:22px;
-                text-align:right;
+                padding:0 25px 0 80px !important;
+                color:#5e5e5e;
+                font-size:20px;
+                font-weight:400;
+                text-align:left;
                 &:after{
                     content:'';
                     position:absolute;
-                    top:0; bottom:0; right:90px;
+                    top:0; bottom:0; left:30px;
                     margin:auto;
-                    width:20px; height:2px;
-                    background:$color-gray;
-                    transition:0.3s ease;
+                    width:28px; height:2px;
+                    background:$color-purple;
+                    transition:0.2s ease;
                 }
                 &:hover{
+                    font-weight:600;
                     &:after{
                         width:28px;
-                        background:$color-green;
+                        background:$color-purple;
+                    }
+                }
+            }
+            .ico-menu__submenu{
+                display:none;
+                margin:20px 0 5px 0 !important;
+                li{
+                    margin:7px 0;
+                    a{
+                        font-weight:400;
+                        padding:0 30px 0 110px !important;
+                        &:after{ display:none; }
+                    }
+                }
+            }
+            &.active{
+                a{
+                    color:$color-purple;
+                    font-weight:600;
+                    &:before{
+                        opacity:1; width:100%;
+                    }
+                    &:after{
+                        width:28px;
+                        background:$color-purple;
+                    }
+                }
+                .ico-menu__submenu{
+                    display:block;
+                    li{
+                        a{
+                            color:#5e5e5e;
+                            &:hover{
+                                color:$color-purple;
+                            }
+                        }
                     }
                 }
             }            

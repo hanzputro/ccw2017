@@ -23,3 +23,39 @@
     
     <?php wp_head(); ?>    
 </head>
+
+<body>
+    
+    <div class="container header">
+        <div class="container1600">
+            <div class="logo"><a href="<?php echo site_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/dist/images/logo-ccw-black.png" alt=""></a></div>
+            <div class="navbar">
+                <ul class="medium">
+                    <li><a href="#notset" class="">ABOUT US</a></li>
+                    <li><a href="#notset" class="">CONNECT</a></li>
+                    <li>
+                        <div class="ico-menu">
+                            <div class="ico-menu__line ico-menu__line1"></div>
+                            <div class="ico-menu__line ico-menu__line2"></div>
+                            <div class="ico-menu__line ico-menu__line3"></div>
+                        </div>
+                        <div class="ico-menu__content">
+                            <ul>
+                                <li class="active">
+                                    <a href="#notset" class="">ABOUT US</a>
+                                    <ul class="ico-menu__submenu">
+                                        <li><a href="#notset">Who We Are</a></li>
+                                        <li><a href="#notset">Services</a></li>
+                                        <li><a href="#notset">Our Leaders</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#notset" class="">MINISTRY</a></li>
+                                <li><a href="#notset" class="">MEDIA</a></li>
+                                <li><a href="#notset" class="">CONTACT</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
