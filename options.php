@@ -478,5 +478,73 @@ creativecityworship@gmail.com
 		'type' => 'textarea'
 	);
 
+
+	/* ############################### */
+	/* ####### THE LEADERS tab ####### */
+	/* ############################### */
+	$options[] = array(
+		'name' => __( 'The Leaders', 'theme-textdomain' ),
+		'type' => 'heading'
+	);
+
+	$options[] = array(
+		'name' => __( 'Title', 'theme-textdomain' ),
+		'id' => 'theleaders-title',
+		'std' => 'The Leaders',
+		'type' => 'text'
+	);	
+
+	$wp_editor_theleader_settings = array(
+		'wpautop' => true, // Default
+		'textarea_rows' => 3,
+		'tinymce' => array( 'plugins' => 'wordpress,wplink' )
+	);
+	$options[] = array(
+		'name' => __( 'Description', 'theme-textdomain' ),
+		'id' => 'theleaders-desc',
+		'type' => 'editor',
+		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum lorem a volutpat euismod.<br>
+				Vivamus blandit metus eu sem blandit, eget dictum neque commodo. Cras fermentum sollicitudin laoreet. Aliquam quis tellus ultricies, iaculis justo ut, vulputate nibh. Fusce convallis odio vitae justo volutpat dictum. Sed non ligula odio. Praesent dapibus lobortis vestibulum. Ut accumsan sem nibh, dapibus mollis nisi ultrices ut.',
+		'settings' => $wp_editor_theleader_settings
+	);
+
+	$options[] = array(
+		'name' => __( 'Committee', 'theme-textdomain' ),
+		'type' => 'info'
+	);
+
+	$options[] = array(
+		'name' => __( 'Title', 'theme-textdomain' ),
+		'id' => 'theleaders-committee-title',
+		'std' => 'Committee',
+		'type' => 'text'
+	);
+
+	$options[] = array(
+		'name' => __( 'Background', 'theme-textdomain' ),
+		'std' => $imagepath . '/leaders.jpg',
+		'id' => 'theleaders-committee-bg',
+		'type' => 'upload'
+	);
+
+	$options[] = array(
+		'name' => __( 'Head of Departments', 'theme-textdomain' ),
+		'type' => 'info'
+	);
+
+	$options[] = array(
+		'name' => __( 'Title', 'theme-textdomain' ),
+		'id' => 'theleaders-hod-title',
+		'std' => 'Head of Departments',
+		'type' => 'text'
+	);
+
+	$options[] = array(
+		'name' => __( 'Background', 'theme-textdomain' ),
+		'std' => $imagepath . '/leaders.jpg',
+		'id' => 'theleaders-hod-bg',
+		'type' => 'upload'
+	);
+
 	return $options;
 }
