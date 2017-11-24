@@ -215,6 +215,46 @@ class Options_Framework_Interface {
 
 				break;
 
+			case 'multiple-upload':
+				// $sum = 0;
+				// $id = esc_attr( $value['id'] . '_multi['.$sum.']' );
+				foreach($group as $key=>$value){
+					$sum+= $value;
+					$output .= Options_Framework_Media_Uploader::optionsframework_uploader( $id, $val, null );
+					$output .= '<div class="addmore">add</div>';
+				}
+				echo $sum;
+
+				break;
+
+			case 'filmcredit':	
+				$film_stored = $val;
+				$output .= '<div id="filmtpl" style="display: none"><div class="item" style="margin: 20px 5px">';
+				$output .= '<select class="of-typography of-typography-size" name="' . esc_attr( $option_name . '[' . $value['id'] . '][filmyear]' ) . '" id="' . esc_attr( $value['id'] . '_filmyear' ) . '">';
+
+				for ($i = 2011; $i > 1949; $i--) { 
+				$filmyear = $i;
+				$output .= '<option value="' . esc_attr( $filmyear ) . '" ' . selected( $film_stored['filmyear'], $filmyear, false ) . '>' . esc_html( $filmyear ) . '</option>';
+				}
+
+				$output .= '</select>';
+
+				$theroles_array = array("" => "Role","Actor/Actress" => "Actor/Actress","Reality Participant" => "Reality Participant","Dancer" => "Dancer","Model" => "Model","Singer" => "Singer");
+
+				$output .= '<select style="width: 200px" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . '][filmrole]' ) . '" id="' . esc_attr( $value['id'] . '_filmrole' ) . '">';
+
+				foreach ($theroles_array as $key => $theroles ) {
+				$output .= '<option value="' . esc_attr( $key ) . '" ' . selected( $film_stored['filmrole'], $key, false ) . '>'. $theroles .'</option>';
+				}
+
+				$output .= '</select>';
+				$output .= '<input style="width: 290px" id="' . esc_attr( $value['id'] . '_filmproduction' ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . '][filmproduction]' ) . '" type="text" value="' . esc_attr( $film_stored['filmproduction']) . '" />';
+				$output .= '<div class="commands" style="display: inline"><a rel="delete" class="button">-</a> <a rel="add" class="button">+</a></div>';
+				$output .= '</div></div>';
+				$output .= '<div id="filmplaceholder"></div>';
+
+				break;	
+
 			// Typography
 			case 'typography':
 

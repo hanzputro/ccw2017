@@ -77,4 +77,3 @@ Template Name: Who We Are Page
 <?php wp_footer(); ?>
 
 </html>
-		

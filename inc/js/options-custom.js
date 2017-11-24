@@ -68,4 +68,11 @@ jQuery(document).ready(function($) {
 		});
 	}
 
+	$(".addmore").on('click',function(){
+		// var $output .= Options_Framework_Media_Uploader::optionsframework_uploader( $id, $val, null );
+		$(this).before('<input id="logo-theleader_multi[]" class="upload" name="options-framework-theme[logo11]" value="" placeholder="No file chosen" type="text">'+
+			'<input id="upload-logo11-theleader" class="button upload-button" value="Upload" type="button">'+
+			'<div class="screenshot" id="logo-theleader-image11"></div>');
+	});
+
 });

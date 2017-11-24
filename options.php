@@ -487,64 +487,166 @@ creativecityworship@gmail.com
 		'type' => 'heading'
 	);
 
-	$options[] = array(
-		'name' => __( 'Title', 'theme-textdomain' ),
-		'id' => 'theleaders-title',
-		'std' => 'The Leaders',
-		'type' => 'text'
-	);	
-
-	$wp_editor_theleader_settings = array(
-		'wpautop' => true, // Default
-		'textarea_rows' => 3,
-		'tinymce' => array( 'plugins' => 'wordpress,wplink' )
-	);
-	$options[] = array(
-		'name' => __( 'Description', 'theme-textdomain' ),
-		'id' => 'theleaders-desc',
-		'type' => 'editor',
-		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum lorem a volutpat euismod.<br>
-				Vivamus blandit metus eu sem blandit, eget dictum neque commodo. Cras fermentum sollicitudin laoreet. Aliquam quis tellus ultricies, iaculis justo ut, vulputate nibh. Fusce convallis odio vitae justo volutpat dictum. Sed non ligula odio. Praesent dapibus lobortis vestibulum. Ut accumsan sem nibh, dapibus mollis nisi ultrices ut.',
-		'settings' => $wp_editor_theleader_settings
-	);
+	// $options[] = array( 
+	// 	"name" => __('Custom multifield','portfoliopress'),
+	// 	"desc" => __('Test Flight.','portfoliopress'),
+	// 	"id" => "testflight",
+	// 	"type" => "filmcredit"
+	// );
 
 	$options[] = array(
-		'name' => __( 'Committee', 'theme-textdomain' ),
-		'type' => 'info'
-	);
-
-	$options[] = array(
-		'name' => __( 'Title', 'theme-textdomain' ),
-		'id' => 'theleaders-committee-title',
-		'std' => 'Committee',
-		'type' => 'text'
-	);
-
-	$options[] = array(
-		'name' => __( 'Background', 'theme-textdomain' ),
-		'std' => $imagepath . '/leaders.jpg',
-		'id' => 'theleaders-committee-bg',
+		'name' => __( 'Logo', 'theme-textdomain' ),
+		'std' => '',
+		'id' => 'logo-theleader',
 		'type' => 'upload'
 	);
 
-	$options[] = array(
-		'name' => __( 'Head of Departments', 'theme-textdomain' ),
-		'type' => 'info'
-	);
+	// $options[] = array(
+	// 	'name' => __( 'Logo', 'theme-textdomain' ),
+	// 	'std' => '',
+	// 	'id' => 'logo-theleader',
+	// 	'type' => 'multiple-upload'
+	// );
 
-	$options[] = array(
-		'name' => __( 'Title', 'theme-textdomain' ),
-		'id' => 'theleaders-hod-title',
-		'std' => 'Head of Departments',
-		'type' => 'text'
-	);
+	// $options[] = array(
+	// 	'name' => __( 'Title', 'theme-textdomain' ),
+	// 	'id' => 'theleaders-title',
+	// 	'std' => 'The Leaders',
+	// 	'type' => 'text'
+	// );	
 
-	$options[] = array(
-		'name' => __( 'Background', 'theme-textdomain' ),
-		'std' => $imagepath . '/leaders.jpg',
-		'id' => 'theleaders-hod-bg',
-		'type' => 'upload'
-	);
+	// $wp_editor_theleader_settings = array(
+	// 	'wpautop' => true, // Default
+	// 	'textarea_rows' => 3,
+	// 	'tinymce' => array( 'plugins' => 'wordpress,wplink' )
+	// );
+	// $options[] = array(
+	// 	'name' => __( 'Description', 'theme-textdomain' ),
+	// 	'id' => 'theleaders-desc',
+	// 	'type' => 'editor',
+	// 	'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum lorem a volutpat euismod.<br>
+	// 			Vivamus blandit metus eu sem blandit, eget dictum neque commodo. Cras fermentum sollicitudin laoreet. Aliquam quis tellus ultricies, iaculis justo ut, vulputate nibh. Fusce convallis odio vitae justo volutpat dictum. Sed non ligula odio. Praesent dapibus lobortis vestibulum. Ut accumsan sem nibh, dapibus mollis nisi ultrices ut.',
+	// 	'settings' => $wp_editor_theleader_settings
+	// );
+
+	// $options[] = array(
+	// 	'name' => __( 'Committee', 'theme-textdomain' ),
+	// 	'type' => 'info'
+	// );
+
+	// $options[] = array(
+	// 	'name' => __( 'Title', 'theme-textdomain' ),
+	// 	'id' => 'theleaders-committee-title',
+	// 	'std' => 'Committee',
+	// 	'type' => 'text'
+	// );
+
+	// $options[] = array(
+	// 	'name' => __( 'Background', 'theme-textdomain' ),
+	// 	'std' => $imagepath . '/leaders.jpg',
+	// 	'id' => 'theleaders-committee-bg',
+	// 	'type' => 'upload'
+	// );
+
+	// $options[] = array(
+	// 	'name' => __( 'Head of Departments', 'theme-textdomain' ),
+	// 	'type' => 'info'
+	// );
+
+	// $options[] = array(
+	// 	'name' => __( 'Title', 'theme-textdomain' ),
+	// 	'id' => 'theleaders-hod-title',
+	// 	'std' => 'Head of Departments',
+	// 	'type' => 'text'
+	// );
+
+	// $options[] = array(
+	// 	'name' => __( 'Background', 'theme-textdomain' ),
+	// 	'std' => $imagepath . '/leaders.jpg',
+	// 	'id' => 'theleaders-hod-bg',
+	// 	'type' => 'upload'
+	// );
 
 	return $options;
 }
+
+/*add_action('admin_footer-appearance_page_options-framework', 'add_admin_footer');
+
+function add_admin_footer(){
+?>
+<script>
+(function($)
+{
+var lines = 0;
+var template = 0;
+
+function items_init(){
+	<?php $data = ''; // get the stored data ?> 
+
+	<?php if ( empty($data) ) : ?> 
+	items_add();
+	<?php else: ?>
+ 
+	// Show stored records
+	<?php foreach ($data as $item) : ?>
+		items_add({
+			title: '<?php echo $item['testflight_filmproduction'] ?>', 
+		});
+
+	<?php endforeach ?>
+	<?php endif ?>
+
+	// Delete the "-" button in first row
+	$('#filmplaceholder .item .commands a[rel="delete"]').remove();
+}
+
+function items_add()
+{ 
+$('#filmtpl .item').clone().appendTo('#filmplaceholder');
+
+lines++;
+
+if (arguments.length > 0) {
+options = arguments[0];
+
+$('.testflight_filmproduction', obj).val( options.title ); // to fill values
+}
+}
+
+$('#filmplaceholder').delegate('.commands a', 'click', function()
+{
+var action = $(this).attr('rel');
+var confirm_delete = true;
+
+// Add action
+if ('add' == action) {
+items_add();
+}
+
+// Delete action
+if ('delete' == action) {
+// La TR en la tabla
+var oTr = $(this).parent().parent();
+
+
+if ( !confirm('Are you sure you want to delete this item ?') ) {
+confirm_delete = false;
+}
+
+if (confirm_delete) {
+oTr.remove();
+lines--;
+}
+}
+});
+
+$(document).ready(function()
+{
+items_init();
+});
+
+})(jQuery);
+
+</script>
+<?php
+}*/
