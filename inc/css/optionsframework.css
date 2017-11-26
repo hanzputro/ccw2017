@@ -252,3 +252,18 @@
 	margin: 10px 20px 20px 20px;
 	background-color:#f5f5f5;
 }
+
+#optionsframework .controls .to-copy { display: none; }
+
+#optionsframework .controls .of-repeat-group {
+	overflow: hidden;
+	margin-bottom: 5px;
+}
+#optionsframework .controls .of-repeat-group .of-input {
+	width: 75%;
+	width:calc(100% - 85px);
+}
+
+#optionsframework .controls .of-repeat-group .dodelete {
+	float: right;
+}

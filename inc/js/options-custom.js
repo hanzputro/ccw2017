@@ -68,11 +68,38 @@ jQuery(document).ready(function($) {
 		});
 	}
 
-	$(".addmore").on('click',function(){
-		// var $output .= Options_Framework_Media_Uploader::optionsframework_uploader( $id, $val, null );
-		$(this).before('<input id="logo-theleader_multi[]" class="upload" name="options-framework-theme[logo11]" value="" placeholder="No file chosen" type="text">'+
-			'<input id="upload-logo11-theleader" class="button upload-button" value="Upload" type="button">'+
-			'<div class="screenshot" id="logo-theleader-image11"></div>');
-	});
+
+	// repeat field
+	jQuery(function($){
+        $(".docopy").on("click", function(e){
+
+            // the loop object
+            $loop = $(this).parent();
+
+            // the group to copy
+            $group = $loop.find('.to-copy').clone().insertBefore($(this)).removeClass('to-copy');
+
+            // the new input
+            $input = $group.find('input');            
+            count = $loop.children('.of-repeat-group').not('.to-copy').length;
+
+            if($input.hasClass('upload')){
+            	$input = $group.find('input.upload');    
+            	input_name = $(this).parent().find('.to-copy input.upload').attr('id');
+            	$input.attr('id', input_name + ( count - 1 ));
+            	$input.next().attr('id', 'upload-' + input_name + ( count - 1 ));
+            	$input.next().next().attr('id', input_name + ( count - 1 ) + '-image');
+            }else{
+            	input_name = $input.attr('data-rel');
+            	$input.attr('name', input_name + '[' + ( count - 1 ) + ']');
+            }
+
+        });
+
+        $(".controls").on("click", ".dodelete", function(e){
+            $(this).parent('.of-repeat-group').remove();
+        });
+
+    });
 
 });

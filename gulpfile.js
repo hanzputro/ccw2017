@@ -113,8 +113,9 @@ gulp.task('php', function() {
 */
 gulp.task('serve', ['sass', 'js-plugin', 'js-script'], function() {
     browserSync.init({
+        proxy: "http://localhost/wordpress/ccw2017"
         // proxy: "http://localhost/hanzputro/wordpress/ccw2017"
-        proxy: "wp.dev/wp-admin"
+        // proxy: "wp.dev/wp-admin"
     });
     gulp.watch(['assets/sass/*/**.scss'], ['sass']);
     gulp.watch('assets/js/*.js', ['js-script']);

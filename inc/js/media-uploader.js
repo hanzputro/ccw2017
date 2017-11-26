@@ -42,7 +42,7 @@ jQuery(document).ready(function($){
 				optionsframework_selector.find('.upload-button').unbind().addClass('remove-file').removeClass('upload-button').val(optionsframework_l10n.remove);
 				optionsframework_selector.find('.of-background-properties').slideDown();
 				optionsframework_selector.find('.remove-image, .remove-file').on('click', function() {
-					optionsframework_remove_file( $(this).parents('.section') );
+					optionsframework_remove_file( $(this).parents('.controls') );
 				});
 			});
 
@@ -63,17 +63,17 @@ jQuery(document).ready(function($){
 		if ( $('.section-upload .upload-notice').length > 0 ) {
 			$('.upload-button').remove();
 		}
-		selector.find('.upload-button').on('click', function(event) {
-			optionsframework_add_file(event, $(this).parents('.section'));
+		selector.find('.controls').on('click', '.upload-button', function(event) {
+			optionsframework_add_file(event, $(this).parents('.controls'));
 		});
 	}
 
-	$('.remove-image, .remove-file').on('click', function() {
-		optionsframework_remove_file( $(this).parents('.section') );
+	$('.controls').on('click', '.remove-image, .remove-file', function() {
+		optionsframework_remove_file( $(this).parents('.controls') );
     });
 
-    $('.upload-button').click( function( event ) {
-    	optionsframework_add_file(event, $(this).parents('.section'));
+    $('.controls').on('click', '.upload-button', function(event) {
+    	optionsframework_add_file(event, $(this).parents('.controls'));
     });
 
 });

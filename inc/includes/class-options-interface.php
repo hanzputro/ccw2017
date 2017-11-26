@@ -215,45 +215,42 @@ class Options_Framework_Interface {
 
 				break;
 
-			case 'multiple-upload':
-				// $sum = 0;
-				// $id = esc_attr( $value['id'] . '_multi['.$sum.']' );
-				foreach($group as $key=>$value){
-					$sum+= $value;
-					$output .= Options_Framework_Media_Uploader::optionsframework_uploader( $id, $val, null );
-					$output .= '<div class="addmore">add</div>';
+			// Repeat Uploader
+			case "repeat_upload":
+				$counter = 0;
+
+				// $output = '<div class="of-repeat-loop">';
+
+				if( is_array( $values ) ) foreach ( (array)$values as $value ){
+
+					$output .= '<div class="of-repeat-group">';
+					$output .= Options_Framework_Media_Uploader::optionsframework_uploader( $value['id'].$counter, $val, null );
+					$output .= '<a class="button icon delete dodelete">'. __('Remove') .'</a>';					
+					$output .= '</div><!--.of-repeat-group-->';
+
+					$counter++;
 				}
-				echo $sum;
+
+				if( $counter == 0 ){
+					$output .= '<div class="of-repeat-group">';
+					$output .= Options_Framework_Media_Uploader::optionsframework_uploader( $value['id'].$counter, $val, null );
+					$output .= '</div><!--.of-repeat-group-->';
+				}
+
+				$output .= '<div class="of-repeat-group to-copy">';
+				$output .= Options_Framework_Media_Uploader::optionsframework_uploader( $value['id'], $val, null );
+				$output .= '<a class="button icon delete dodelete">'. __('Remove') .'</a>';
+				$output .= '</div><!--.of-repeat-group-->';
+
+				$output .= '<a class="button icon add docopy">Add</a>';
+
+				// $output .= '</div>';
+
+				// return $output;
+
+				// $output .= Options_Framework_Media_Uploader::optionsframework_uploader( $value['id'], $val, null );
 
 				break;
-
-			case 'filmcredit':	
-				$film_stored = $val;
-				$output .= '<div id="filmtpl" style="display: none"><div class="item" style="margin: 20px 5px">';
-				$output .= '<select class="of-typography of-typography-size" name="' . esc_attr( $option_name . '[' . $value['id'] . '][filmyear]' ) . '" id="' . esc_attr( $value['id'] . '_filmyear' ) . '">';
-
-				for ($i = 2011; $i > 1949; $i--) { 
-				$filmyear = $i;
-				$output .= '<option value="' . esc_attr( $filmyear ) . '" ' . selected( $film_stored['filmyear'], $filmyear, false ) . '>' . esc_html( $filmyear ) . '</option>';
-				}
-
-				$output .= '</select>';
-
-				$theroles_array = array("" => "Role","Actor/Actress" => "Actor/Actress","Reality Participant" => "Reality Participant","Dancer" => "Dancer","Model" => "Model","Singer" => "Singer");
-
-				$output .= '<select style="width: 200px" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . '][filmrole]' ) . '" id="' . esc_attr( $value['id'] . '_filmrole' ) . '">';
-
-				foreach ($theroles_array as $key => $theroles ) {
-				$output .= '<option value="' . esc_attr( $key ) . '" ' . selected( $film_stored['filmrole'], $key, false ) . '>'. $theroles .'</option>';
-				}
-
-				$output .= '</select>';
-				$output .= '<input style="width: 290px" id="' . esc_attr( $value['id'] . '_filmproduction' ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . '][filmproduction]' ) . '" type="text" value="' . esc_attr( $film_stored['filmproduction']) . '" />';
-				$output .= '<div class="commands" style="display: inline"><a rel="delete" class="button">-</a> <a rel="add" class="button">+</a></div>';
-				$output .= '</div></div>';
-				$output .= '<div id="filmplaceholder"></div>';
-
-				break;	
 
 			// Typography
 			case 'typography':
@@ -459,3 +456,227 @@ class Options_Framework_Interface {
 	}
 
 }
+
+
+/**
+* Repeat Text Field
+* https://www.kathyisawesome.com/add-repeating-text-field-to-options-framework/
+*/
+function repeat_text_option_type( $option_name, $option, $values ){
+  	$counter = 0;
+
+	$output = '<div class="of-repeat-loop">';
+
+	if( is_array( $values ) ) foreach ( (array)$values as $value ){
+
+		$output .= '<div class="of-repeat-group">';
+		$output .= '<input class="of-input" name="' . esc_attr( $option_name . '[' . $option['id'] . ']['.$counter.']' ) . '" type="text" value="' . esc_attr( $value ) . '" />';
+
+		$output .= '<a class="button icon delete dodelete">'. __('Remove') .'</a>';
+		$output .= '</div><!--.of-repeat-group-->';
+
+		$counter++;
+	}
+
+	if( $counter == 0 ){
+		$output .= '<div class="of-repeat-group">';
+		$output .= '<input class="of-input" name="' . esc_attr( $option_name . '[' . $option['id'] . ']['.$counter.']' ) . '" type="text" value="' . esc_attr( $option['std'] ) . '" />';
+		$output .= '</div><!--.of-repeat-group-->';
+	}
+
+	$output .= '<div class="of-repeat-group to-copy">';
+	$output .= '<input class="of-input" data-rel="' . esc_attr( $option_name . '[' . $option['id'] . ']' ) . '" type="text" value="' . esc_attr( $value ) . '" />';
+	$output .= '<a class="button icon delete dodelete">'. __('Remove') .'</a>';
+	$output .= '</div><!--.of-repeat-group-->';
+
+	$output .= '<a class="button icon add docopy">Add</a>';
+	$output .= '</div><!--.of-repeat-loop-->';
+
+	return $output;
+}
+add_filter( 'optionsframework_repeat_text', 'repeat_text_option_type', 10, 3 );
+
+
+
+
+/**
+* Repeat Upload Field
+* By Hanzputro
+*/
+// function repeat_upload_option_type(){
+//   	global $allowedtags;
+
+// 	$options_framework = new Options_Framework;
+// 	$option_name = $options_framework->get_option_name();
+// 	$settings = get_option( $option_name );
+// 	$options = & Options_Framework::_optionsframework_options();
+
+// 	$counter = 0;
+// 	$menu = '';
+
+// 	foreach ( $options as $value ) {
+
+// 		$val = '';
+// 		$select_value = '';
+// 		$output = '';
+
+// 		// Wrap all options
+// 		if ( ( $value['type'] != "heading" ) && ( $value['type'] != "info" ) ) {
+
+// 			// Keep all ids lowercase with no spaces
+// 			$value['id'] = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($value['id']) );
+
+// 			$id = 'section-' . $value['id'];
+
+// 			$class = 'section';
+// 			if ( isset( $value['type'] ) ) {
+// 				$class .= ' section-' . $value['type'];
+// 			}
+// 			if ( isset( $value['class'] ) ) {
+// 				$class .= ' ' . $value['class'];
+// 			}
+
+// 			$output .= '<div id="' . esc_attr( $id ) .'" class="' . esc_attr( $class ) . '">'."\n";
+// 			if ( isset( $value['name'] ) ) {
+// 				$output .= '<h4 class="heading">' . esc_html( $value['name'] ) . '</h4>' . "\n";
+// 			}
+// 			if ( $value['type'] != 'editor' ) {
+// 				$output .= '<div class="option">' . "\n" . '<div class="controls">' . "\n";
+// 			}
+// 			else {
+// 				$output .= '<div class="option">' . "\n" . '<div>' . "\n";
+// 			}
+// 		}
+
+// 		// Set default value to $val
+// 		if ( isset( $value['std'] ) ) {
+// 			$val = $value['std'];
+// 		}
+
+// 		// If the option is already saved, override $val
+// 		if ( ( $value['type'] != 'heading' ) && ( $value['type'] != 'info') ) {
+// 			if ( isset( $settings[($value['id'])]) ) {
+// 				$val = $settings[($value['id'])];
+// 				// Striping slashes of non-array options
+// 				if ( !is_array($val) ) {
+// 					$val = stripslashes( $val );
+// 				}
+// 			}
+// 		}
+
+// 		// If there is a description save it for labels
+// 		$explain_value = '';
+// 		if ( isset( $value['desc'] ) ) {
+// 			$explain_value = $value['desc'];
+// 		}
+
+// 		// Set the placeholder if one exists
+// 		$placeholder = '';
+// 		if ( isset( $value['placeholder'] ) ) {
+// 			$placeholder = ' placeholder="' . esc_attr( $value['placeholder'] ) . '"';
+// 		}
+
+// 		if ( has_filter( 'optionsframework_' . $value['type'] ) ) {
+// 			$output .= apply_filters( 'optionsframework_' . $value['type'], $option_name, $value, $val );
+// 		}
+
+// 		$output .= Options_Framework_Media_Uploader::optionsframework_uploader( $value['id'], $val, null );
+// 		return $output;
+// 	}
+	// // $output = '<div class="of-repeat-loop">';
+
+	// if( is_array( $values ) ) foreach ( (array)$values as $value ){
+
+	// 	// $output .= '<div class="of-repeat-group">';
+	
+	// 	// $output .= '<a class="button icon delete dodelete">'. __('Remove') .'</a>';
+	// 	// $output .= '</div><!--.of-repeat-group-->';
+
+	// 	$counter++;
+	// }
+
+	// if( $counter == 0 ){
+	// 	// $output .= '<div class="of-repeat-group">';
+	// 	$output .= Options_Framework_Media_Uploader::optionsframework_uploader( $option['id'].$counter, $option['std'], null, $option_name );
+	// 	// $output .= '</div><!--.of-repeat-group-->';
+	// }
+
+	// // $output .= '<div class="of-repeat-group to-copy">';
+	// $output .= Options_Framework_Media_Uploader::optionsframework_uploader( $option['id'], $value, null, $option_name );
+
+	// // $output .= '<a class="button icon delete dodelete">'. __('Remove') .'</a>';
+	// // $output .= '</div><!--.of-repeat-group-->';
+
+	// $output .= '<a class="button icon add docopy">Add</a>';
+	// // $output .= '</div><!--.of-repeat-loop-->';
+
+	// return $output;
+
+	// Gets the unique option id
+		// $options_framework = new Options_Framework;
+	 //    $option_name = $options_framework->get_option_name();
+
+		// $output = '';
+		// $id = '';
+		// $class = '';
+		// $int = '';
+		// $value = '';
+		// $name = '';
+
+		// $id = strip_tags( strtolower( $_id ) );
+
+		// // If a value is passed and we don't have a stored value, use the value that's passed through.
+		// if ( $_value != '' && $value == '' ) {
+		// 	$value = $_value;
+		// }
+
+		// if ($_name != '') {
+		// 	$name = $_name;
+		// }
+		// else {
+		// 	$name = $option_name.'['.$id.']';
+		// }
+
+		// if ( $value ) {
+		// 	$class = ' has-file';
+		// }
+		// $output .= '<input id="' . $id . '" class="upload' . $class . '" type="text" name="'.$name.'" value="' . $value . '" placeholder="' . __('No file chosen', 'theme-textdomain') .'" />' . "\n";
+		// if ( function_exists( 'wp_enqueue_media' ) ) {
+		// 	if ( ( $value == '' ) ) {
+		// 		$output .= '<input id="upload-' . $id . '" class="upload-button button" type="button" value="' . __( 'Upload', 'theme-textdomain' ) . '" />' . "\n";
+		// 	} else {
+		// 		$output .= '<input id="remove-' . $id . '" class="remove-file button" type="button" value="' . __( 'Remove', 'theme-textdomain' ) . '" />' . "\n";
+		// 	}
+		// } else {
+		// 	$output .= '<p><i>' . __( 'Upgrade your version of WordPress for full media support.', 'theme-textdomain' ) . '</i></p>';
+		// }
+
+		// if ( $_desc != '' ) {
+		// 	$output .= '<span class="of-metabox-desc">' . $_desc . '</span>' . "\n";
+		// }
+
+		// $output .= '<div class="screenshot" id="' . $id . '-image">' . "\n";
+
+		// if ( $value != '' ) {
+		// 	$remove = '<a class="remove-image">Remove</a>';
+		// 	$image = preg_match( '/(^.*\.jpg|jpeg|png|gif|ico*)/i', $value );
+		// 	if ( $image ) {
+		// 		$output .= '<img src="' . $value . '" alt="" />' . $remove;
+		// 	} else {
+		// 		$parts = explode( "/", $value );
+		// 		for( $i = 0; $i < sizeof( $parts ); ++$i ) {
+		// 			$title = $parts[$i];
+		// 		}
+
+		// 		// No output preview if it's not an image.
+		// 		$output .= '';
+
+		// 		// Standard generic output if it's not an image.
+		// 		$title = __( 'View File', 'theme-textdomain' );
+		// 		$output .= '<div class="no-image"><span class="file_link"><a href="' . $value . '" target="_blank" rel="external">'.$title.'</a></span></div>';
+		// 	}
+		// }
+		// $output .= '</div>' . "\n";
+		
+// }
+// add_filter( 'optionsframework_repeat_upload', 'repeat_upload_option_type', 10, 3 );

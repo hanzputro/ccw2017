@@ -43,6 +43,18 @@ add_filter( 'of_sanitize_radio', 'of_sanitize_enum', 10, 2 );
 add_filter( 'of_sanitize_images', 'of_sanitize_enum', 10, 2 );
 
 /**
+* Sanitize Repeat Text Fields
+* https://www.kathyisawesome.com/add-repeating-text-field-to-options-framework/
+*/
+function sanitize_repeat_field( $input, $option ){
+	$clean = '';
+	if( is_array( $input ) )
+	$clean = array_map( 'sanitize_text_field', $input);
+	return $clean;
+}
+add_filter( 'of_sanitize_repeat_text', 'sanitize_repeat_field', 10, 2 );
+
+/**
  * Sanitization for textarea field
  *
  * @param $input string
@@ -110,6 +122,33 @@ function of_sanitize_upload( $input ) {
 	return $output;
 }
 add_filter( 'of_sanitize_upload', 'of_sanitize_upload' );
+
+/**
+* Sanitize Repeat Upload Fields
+* by Hanzputro
+*/
+function sanitize_repeat_upload( $input, $option ){
+
+	$output = '';
+	$filetype = wp_check_filetype( $input );
+	if ( $filetype["ext"] ) {
+		$output = esc_url( $input );
+	}
+	return $output;
+	
+	// $clean = '';
+	// $filetype = wp_check_filetype( $input );
+	// if ( $filetype["ext"] ) {
+	// 	$clean = array_map( esc_url( $input ) );
+	// }
+	// return $clean;
+
+	// $clean = '';
+	// if( is_array( $input ) )
+	// $clean = array_map( 'sanitize_text_field', $input);
+	// return $clean;
+}
+add_filter( 'of_sanitize_repeat_upload', 'sanitize_repeat_upload', 10, 2 );
 
 /**
  * Sanitization for editor input.

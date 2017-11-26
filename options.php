@@ -91,6 +91,9 @@ function optionsframework_options() {
 	// If using image radio buttons, define a directory path
 	$imagepath =  get_template_directory_uri() . '/dist/images';
 
+	// for repeatable
+	$prefix = 'custom_';
+
 	$options = array();
 
 
@@ -487,18 +490,18 @@ creativecityworship@gmail.com
 		'type' => 'heading'
 	);
 
-	// $options[] = array( 
-	// 	"name" => __('Custom multifield','portfoliopress'),
-	// 	"desc" => __('Test Flight.','portfoliopress'),
-	// 	"id" => "testflight",
-	// 	"type" => "filmcredit"
-	// );
+	$options[] = array(
+		'name' => __( 'Title', 'theme-textdomain' ),
+		'id'	=> 'repeat_text',
+		'std' => 'Test Multiple',
+		'type' => 'repeat_text'
+	);
 
 	$options[] = array(
 		'name' => __( 'Logo', 'theme-textdomain' ),
 		'std' => '',
-		'id' => 'logo-theleader',
-		'type' => 'upload'
+		'id' => 'theleader',
+		'type' => 'repeat_upload'
 	);
 
 	// $options[] = array(
@@ -569,84 +572,3 @@ creativecityworship@gmail.com
 
 	return $options;
 }
-
-/*add_action('admin_footer-appearance_page_options-framework', 'add_admin_footer');
-
-function add_admin_footer(){
-?>
-<script>
-(function($)
-{
-var lines = 0;
-var template = 0;
-
-function items_init(){
-	<?php $data = ''; // get the stored data ?> 
-
-	<?php if ( empty($data) ) : ?> 
-	items_add();
-	<?php else: ?>
- 
-	// Show stored records
-	<?php foreach ($data as $item) : ?>
-		items_add({
-			title: '<?php echo $item['testflight_filmproduction'] ?>', 
-		});
-
-	<?php endforeach ?>
-	<?php endif ?>
-
-	// Delete the "-" button in first row
-	$('#filmplaceholder .item .commands a[rel="delete"]').remove();
-}
-
-function items_add()
-{ 
-$('#filmtpl .item').clone().appendTo('#filmplaceholder');
-
-lines++;
-
-if (arguments.length > 0) {
-options = arguments[0];
-
-$('.testflight_filmproduction', obj).val( options.title ); // to fill values
-}
-}
-
-$('#filmplaceholder').delegate('.commands a', 'click', function()
-{
-var action = $(this).attr('rel');
-var confirm_delete = true;
-
-// Add action
-if ('add' == action) {
-items_add();
-}
-
-// Delete action
-if ('delete' == action) {
-// La TR en la tabla
-var oTr = $(this).parent().parent();
-
-
-if ( !confirm('Are you sure you want to delete this item ?') ) {
-confirm_delete = false;
-}
-
-if (confirm_delete) {
-oTr.remove();
-lines--;
-}
-}
-});
-
-$(document).ready(function()
-{
-items_init();
-});
-
-})(jQuery);
-
-</script>
-<?php
-}*/
