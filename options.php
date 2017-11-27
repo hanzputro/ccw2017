@@ -499,9 +499,26 @@ creativecityworship@gmail.com
 
 	$options[] = array(
 		'name' => __( 'Logo', 'theme-textdomain' ),
-		'std' => '',
+		'std' => array(
+			'img' => $imagepath . '/logo-ccw-black.png',
+			'img' => $imagepath . '/logo-ccw-black.png',
+			'img' => $imagepath . '/logo-ccw-black.png'
+		),
 		'id' => 'theleader',
 		'type' => 'repeat_upload'
+	);
+
+	$options[] = array(
+		'name' => "Example Image Selector",
+		'desc' => "Images for layout.",
+		'id' => "example_images",
+		'std' => "2c-l-fixed",
+		'type' => "images",
+		'options' => array(
+			'1col-fixed' => $imagepath . '/1col.png',
+			'2c-l-fixed' => $imagepath . '/2cl.png',
+			'2c-r-fixed' => $imagepath . '/2cr.png'
+		)
 	);
 
 	// $options[] = array(

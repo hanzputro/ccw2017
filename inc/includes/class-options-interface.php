@@ -217,32 +217,33 @@ class Options_Framework_Interface {
 
 			// Repeat Uploader
 			case "repeat_upload":
-				$counter = 0;
-
-				// $output = '<div class="of-repeat-loop">';
-
-				if( is_array( $values ) ) foreach ( (array)$values as $value ){
-
-					$output .= '<div class="of-repeat-group">';
-					$output .= Options_Framework_Media_Uploader::optionsframework_uploader( $value['id'].$counter, $val, null );
-					$output .= '<a class="button icon delete dodelete">'. __('Remove') .'</a>';					
-					$output .= '</div><!--.of-repeat-group-->';
-
-					$counter++;
-				}
-
-				if( $counter == 0 ){
-					$output .= '<div class="of-repeat-group">';
-					$output .= Options_Framework_Media_Uploader::optionsframework_uploader( $value['id'].$counter, $val, null );
-					$output .= '</div><!--.of-repeat-group-->';
-				}
-
-				$output .= '<div class="of-repeat-group to-copy">';
 				$output .= Options_Framework_Media_Uploader::optionsframework_uploader( $value['id'], $val, null );
-				$output .= '<a class="button icon delete dodelete">'. __('Remove') .'</a>';
-				$output .= '</div><!--.of-repeat-group-->';
+				// $counter = 0;
 
-				$output .= '<a class="button icon add docopy">Add</a>';
+				// // $output = '<div class="of-repeat-loop">';
+
+				// if( is_array( $values ) ) foreach ( (array)$values as $value ){
+
+				// 	$output .= '<div class="of-repeat-group">';
+				// 	$output .= Options_Framework_Media_Uploader::optionsframework_uploader( $value['id'].$counter, $val, null );
+				// 	$output .= '<a class="button icon delete dodelete">'. __('Remove') .'</a>';					
+				// 	$output .= '</div><!--.of-repeat-group-->';
+
+				// 	$counter++;
+				// }
+
+				// if( $counter == 0 ){
+				// 	$output .= '<div class="of-repeat-group">';
+				// 	$output .= Options_Framework_Media_Uploader::optionsframework_uploader( $value['id'].$counter, $val, null );
+				// 	$output .= '</div><!--.of-repeat-group-->';
+				// }
+
+				// $output .= '<div class="of-repeat-group to-copy">';
+				// $output .= Options_Framework_Media_Uploader::optionsframework_uploader( $value['id'], $val, null );
+				// $output .= '<a class="button icon delete dodelete">'. __('Remove') .'</a>';
+				// $output .= '</div><!--.of-repeat-group-->';
+
+				// $output .= '<a class="button icon add docopy">Add</a>';
 
 				// $output .= '</div>';
 
