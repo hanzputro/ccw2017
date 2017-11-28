@@ -41,8 +41,6 @@ jQuery(document).ready(function($){
 	                return attachment;
 	            });
 				optionsframework_upload.close();
-				// optionsframework_selector.find('.upload').val(attachments.attributes.url);
-
 
 				// if ( attachments.attributes.type == 'image' ) {
 					console.log(attachments);
@@ -51,12 +49,14 @@ jQuery(document).ready(function($){
 					//loop through the array and do things with each attachment
 					var i;
 					for (i = 0; i < attachments.length; ++i) {
+
 		                //sample function 1: add image preview
 		                // $('.screenshot').empty().hide().after('<img src="' + attachments[i].attributes.url + '"><a class="remove-image">Remove</a>').slideDown('fast');
-		                optionsframework_selector.find('.screenshot').append( '<div class="myplugin-image-preview"><img src="' + attachments[i].attributes.url + '" ></div>' );
-
-		                //sample function 2: add hidden input for each image
-		                optionsframework_selector.find('.screenshot').append( '<input id="myplugin-image-input' + attachments[i].id + '" type="hidden" name="myplugin_attachment_id_array[]"  value="' + attachments[i].id + '">' );
+		                optionsframework_selector.find('.multiple-preview').append('<div class="multiple-each">'+
+		                	'<img src="' + attachments[i].attributes.url + '" >'+
+		                	'<input id="' + attachments[i].id + '" type="text" name="upload-multiple[]"  value="' + attachments[i].attributes.url + '">'+
+		                	'<a class="remove-image">Remove</a></div>' );
+		                // optionsframework_selector.find('.upload-multiple-preview').append( '' );
 					}
 				// }
 
@@ -66,31 +66,6 @@ jQuery(document).ready(function($){
 					optionsframework_remove_file( $(this).parents('.section') );
 				});
 			});
-
-
-			/**
-	         *THE KEY BUSINESS
-	         *When multiple images are selected, get the multiple attachment objects
-	         *and convert them into a usable array of attachments
-	         */
-	   //      myplugin_media_upload.on( 'select', function(){
-	   //          var attachments = myplugin_media_upload.state().get('selection').map(  function( attachment ) {
-	   //      		myplugin_media_upload.close();                    
-	   //              attachment.toJSON();
-	   //              return attachment;
-	   //          });
-	   //          //loop through the array and do things with each attachment
-	   //          var i;
-	   //          for (i = 0; i < attachments.length; ++i) {
-	   //              //sample function 1: add image preview
-	   //              $('.screenshot').after(
-	   //                  '<div class="myplugin-image-preview"><img src="' + 
-	   //                  attachments[i].attributes.url + '" ></div>'
-	   //                  );
-	   //              //sample function 2: add hidden input for each image
-	   //              $('.screenshot').after( '<input id="myplugin-image-input' + attachments[i].id + '" type="hidden" name="myplugin_attachment_id_array[]"  value="' + attachments[i].id + '">' );
-				// }
-	   //      });
 
 		}
 
@@ -103,13 +78,13 @@ jQuery(document).ready(function($){
 		selector.find('.upload').val('');
 		selector.find('.of-background-properties').hide();
 		selector.find('.screenshot').slideUp();
-		selector.find('.remove-file').unbind().addClass('upload-button').removeClass('remove-file').val(optionsframework_l10n.upload);
+		selector.find('.remove-file').unbind().addClass('multiple-upload').removeClass('remove-file').val(optionsframework_l10n.upload);
 		// We don't display the upload button if .upload-notice is present
 		// This means the user doesn't have the WordPress 3.5 Media Library Support
 		if ( $('.section-upload .upload-notice').length > 0 ) {
-			$('.upload-button').remove();
+			$('.multiple-upload').remove();
 		}
-		selector.find('.upload-button').on('click', function(event) {
+		selector.find('.multiple-upload').on('click', function(event) {
 			optionsframework_add_file(event, $(this).parents('.section'));
 		});
 	}
@@ -118,7 +93,7 @@ jQuery(document).ready(function($){
 		optionsframework_remove_file( $(this).parents('.section') );
     });
 
-    $('.upload-button').click( function( event ) {
+    $('.multiple-upload').click( function( event ) {
     	optionsframework_add_file(event, $(this).parents('.section'));
     });
 
