@@ -127,7 +127,7 @@ class Options_Framework_Interface {
 
 			// Textarea
 			case 'textarea':
-				$rows = '8';
+				$rows = '5';
 
 				if ( isset( $value['settings']['rows'] ) ) {
 					$custom_rows = $value['settings']['rows'];
@@ -217,41 +217,9 @@ class Options_Framework_Interface {
 
 			// Repeat Uploader
 			// case "repeat_upload":
-			// 	$output .= Options_Framework_Media_Uploader::optionsframework_uploader( $value['id'], $val, null );
-				// $counter = 0;
+			// 	$output .= Options_Framework_Media_Uploader::optionsframework_multiuploader( $value['id'], $val, null );
 
-				// // $output = '<div class="of-repeat-loop">';
-
-				// if( is_array( $values ) ) foreach ( (array)$values as $value ){
-
-				// 	$output .= '<div class="of-repeat-group">';
-				// 	$output .= Options_Framework_Media_Uploader::optionsframework_uploader( $value['id'].$counter, $val, null );
-				// 	$output .= '<a class="button icon delete dodelete">'. __('Remove') .'</a>';					
-				// 	$output .= '</div><!--.of-repeat-group-->';
-
-				// 	$counter++;
-				// }
-
-				// if( $counter == 0 ){
-				// 	$output .= '<div class="of-repeat-group">';
-				// 	$output .= Options_Framework_Media_Uploader::optionsframework_uploader( $value['id'].$counter, $val, null );
-				// 	$output .= '</div><!--.of-repeat-group-->';
-				// }
-
-				// $output .= '<div class="of-repeat-group to-copy">';
-				// $output .= Options_Framework_Media_Uploader::optionsframework_uploader( $value['id'], $val, null );
-				// $output .= '<a class="button icon delete dodelete">'. __('Remove') .'</a>';
-				// $output .= '</div><!--.of-repeat-group-->';
-
-				// $output .= '<a class="button icon add docopy">Add</a>';
-
-				// $output .= '</div>';
-
-				// return $output;
-
-				// $output .= Options_Framework_Media_Uploader::optionsframework_uploader( $value['id'], $val, null );
-
-				// break;
+			// 	break;
 
 			// Typography
 			case 'typography':
@@ -504,37 +472,31 @@ add_filter( 'optionsframework_repeat_text', 'repeat_text_option_type', 10, 3 );
 * Repeat Upload Field
 * By Hanzputro
 */
-function repeat_upload_option_type(){
+function repeat_upload_option_type( $option_name, $option, $values ){
   	$counter = 0;
 
 	$output = '<div class="of-repeat-loop">';
+	$output .= '<a class="button icon add multiple-upload">Multiple Upload</a><br>';
+	
+	if( is_array( $values ) ) foreach ( (array)$values as $value ){
 
-	// if( is_array( $values ) ) foreach ( (array)$values as $value ){
+		$output .= '<div class="multiple-each">';
+		$output .= '<img name="' . esc_attr( $option_name . '[' . $option['id'] . ']['.$counter.']' ) . '"  src="' . esc_attr( $value ) . '" >';
+		$output .= '<input class="of-input" type="hidden" name="' . esc_attr( $option_name . '[' . $option['id'] . ']['.$counter.']' ) . '" value="' . esc_attr( $value ) . '" />';
+		$output .= '<a class="multiple-remove">'. __('Remove') .'</a>';
+		$output .= '</div><!--.multiple-each-->';
 
-	// 	$output .= '<div class="of-repeat-group">';
-	// 	$output .= '<input class="of-input" name="' . esc_attr( $option_name . '[' . $option['id'] . ']['.$counter.']' ) . '" type="text" value="' . esc_attr( $value ) . '" />';
+		$counter++;
+	}
 
-	// 	$output .= '<a class="button icon delete dodelete">'. __('Remove') .'</a>';
-	// 	$output .= '</div><!--.of-repeat-group-->';
+	$output .= '<div class="multiple-each to-copy">';
+	$output .= '<img data-rel="' . esc_attr( $option_name . '[' . $option['id'] . ']' ) . '"  src="' . esc_attr( $value ) . '" >';
+	$output .= '<input class="of-input" type="hidden" data-rel="' . esc_attr( $option_name . '[' . $option['id'] . ']' ) . '" value="' . esc_attr( $value ) . '" />';
+	$output .= '<a class="multiple-remove">'. __('Remove') .'</a>';
+	$output .= '</div><!--.multiple-each-->';
 
-	// 	$counter++;
-	// }
-
-	// if( $counter == 0 ){
-	// 	$output .= '<div class="of-repeat-group">';
-	// 	$output .= '<input class="of-input" name="' . esc_attr( $option_name . '[' . $option['id'] . ']['.$counter.']' ) . '" type="text" value="' . esc_attr( $option['std'] ) . '" />';
-	// 	$output .= '</div><!--.of-repeat-group-->';
-	// }
-
-	// $output .= '<div class="of-repeat-group to-copy">';
-	// $output .= '<input class="of-input" data-rel="' . esc_attr( $option_name . '[' . $option['id'] . ']' ) . '" type="text" value="' . esc_attr( $value ) . '" />';
-	// $output .= '<a class="button icon delete dodelete">'. __('Remove') .'</a>';
-	// $output .= '</div><!--.of-repeat-group-->';
-
-	$output .= '<a class="button icon add multiple-upload">Multiple Upload</a>';
-	$output .= '<div class="multiple-preview"></div>';
 	$output .= '</div><!--.of-repeat-loop-->';
-
+	
 	return $output;
 		
 }

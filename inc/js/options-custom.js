@@ -83,16 +83,8 @@ jQuery(document).ready(function($) {
             $input = $group.find('input');            
             count = $loop.children('.of-repeat-group').not('.to-copy').length;
 
-            if($input.hasClass('upload')){
-            	$input = $group.find('input.upload');    
-            	input_name = $(this).parent().find('.to-copy input.upload').attr('id');
-            	$input.attr('id', input_name + ( count - 1 ));
-            	$input.next().attr('id', 'upload-' + input_name + ( count - 1 ));
-            	$input.next().next().attr('id', input_name + ( count - 1 ) + '-image');
-            }else{
-            	input_name = $input.attr('data-rel');
-            	$input.attr('name', input_name + '[' + ( count - 1 ) + ']');
-            }
+        	input_name = $input.attr('data-rel');
+        	$input.attr('name', input_name + '[' + ( count - 1 ) + ']');
 
         });
 
@@ -101,5 +93,6 @@ jQuery(document).ready(function($) {
         });
 
     });
+
 
 });

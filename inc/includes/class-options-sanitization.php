@@ -128,24 +128,26 @@ add_filter( 'of_sanitize_upload', 'of_sanitize_upload' );
 * by Hanzputro
 */
 function sanitize_repeat_upload( $input, $option ){
-	// $output = '';
+	// $clean = '';
 	// $filetype = wp_check_filetype( $input );
 	// if ( $filetype["ext"] ) {
-	// 	$output = esc_url( $input );
+	// 	$clean = esc_url( $input );
 	// }
-	// return $output;
+	// if( is_array( $input ) )
+	// $clean = array_map( 'sanitize_text_field', $input);
+	// return $clean;
 	
+	$clean = '';
+	if( is_array( $input ) )
+	$clean = array_map( 'sanitize_text_field', $input);
+	return $clean;
+
 	// $clean = '';
 	// $filetype = wp_check_filetype( $input );
 	// if ( $filetype["ext"] ) {
 	// 	$clean = array_map( esc_url( $input ) );
 	// }
 	// return $clean;
-
-	$clean = '';
-	if( is_array( $input ) )
-	$clean = array_map( 'sanitize_text_field', $input);
-	return $clean;
 }
 add_filter( 'of_sanitize_repeat_upload', 'sanitize_repeat_upload', 10, 2 );
 

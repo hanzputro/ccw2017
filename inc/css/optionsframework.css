@@ -193,6 +193,7 @@
 #optionsframework .screenshot .remove-image {
 	background:url("../images/ico-delete.png") no-repeat;
 	border:medium none;
+	cursor:pointer;
 	bottom:4px;
 	display:block;
 	float:left;
@@ -266,4 +267,42 @@
 
 #optionsframework .controls .of-repeat-group .dodelete {
 	float: right;
+}
+
+#optionsframework .section-textarea .controls,
+#optionsframework .section-repeat_upload .controls{
+	width:100%;
+}
+#optionsframework .section-repeat_upload .controls .multiple-each{
+	position:relative;
+	display:inline-block;
+	width:80px; height:80px;
+	text-align: center;
+	margin: 10px 5px;
+	padding:6px;
+	background-color: #e1e1e1;
+	border:1px dashed #aaa;
+	border-radius:3px;
+}
+#optionsframework .section-repeat_upload .controls .multiple-each.to-copy{
+	display:none;
+}
+#optionsframework .section-repeat_upload .controls .multiple-each img{
+	width: 100%;
+    height: 100%;
+    object-fit:scale-down;
+}
+#optionsframework .section-repeat_upload .controls .multiple-each .multiple-remove{
+    background:url("../images/ico-delete.png") no-repeat;
+	border:medium none;
+	cursor:pointer;
+	bottom:-7px;
+	display:block;
+	float:left;
+	height:16px;
+	padding:0;
+	position:absolute;
+	left:-4px;
+	text-indent:-9999px;
+	width:16px;
 }

@@ -375,25 +375,11 @@ creativecityworship@gmail.com
 	);
 
 	$options[] = array(
-		'name' => __( 'Image 1', 'theme-textdomain' ),
-		'std' => $imagepath . '/home/section2-thumb.jpg',
-		'id' => 'service-image1',
-		'type' => 'upload'
-	);
-
-	$options[] = array(
-		'name' => __( 'Image 2', 'theme-textdomain' ),
-		'std' => $imagepath . '/home/section2-thumb.jpg',
-		'id' => 'service-image2',
-		'type' => 'upload'
-	);
-
-	$options[] = array(
-		'name' => __( 'Image 3', 'theme-textdomain' ),
-		'std' => $imagepath . '/home/section2-thumb.jpg',
-		'id' => 'service-image3',
-		'type' => 'upload'
+		'name' => __( 'Gallery', 'theme-textdomain' ),
+		'id' => 'service-image',
+		'type' => 'repeat_upload'
 	);	
+
 
 
 	/* ############################## */
@@ -499,6 +485,13 @@ creativecityworship@gmail.com
 
 	$options[] = array(
 		'name' => __( 'Logo', 'theme-textdomain' ),
+		'std' => '',
+		'id' => 'logo-theleader',
+		'type' => 'upload'
+	);
+
+	$options[] = array(
+		'name' => __( 'Gallery', 'theme-textdomain' ),
 		'id' => 'logoleader',
 		'type' => 'repeat_upload'
 	);
