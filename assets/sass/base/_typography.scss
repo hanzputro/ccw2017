@@ -15,6 +15,8 @@
 .light{
     font-family: 'Roboto', sans-serif;
     font-weight:300;
+}.regular{
+    font-weight:400;
 }
 .medium{
     font-family: 'Roboto', sans-serif;
@@ -363,18 +365,22 @@ article{
     .s14{ font-size:14px; }
     .s16{ font-size:16px; }
     .s18{ font-size:18px; }
+    .s20{ font-size:18px; }
     .s22{ font-size:20px; }
     .s24{ font-size:20px; line-height:28px; }
     .s30{ font-size:22px; line-height:30px; }
     .s38{ font-size:28px; line-height:32px; }
+    .s40{ font-size:34px; line-height:34px; }
     .s50{ font-size:36px; line-height:40px; margin-bottom:40px; }
     h1{ font-size:20px; }
 }
 
 @media (max-width:767px){
-    .s24{ font-size:18px; line-height:28px; }
-    .s30{ font-size:18px; line-height:28px; }
+    .s20{ font-size:16px; line-height:24px; }
+    .s24{ font-size:16px; line-height:24px; }
+    .s30{ font-size:16px; line-height:24px; }
     .s38{ font-size:22px; line-height:32px; }
+    .s40{ font-size:26px; line-height:32px; }
     .s50{ font-size:30px; line-height:38px; }
 }
 

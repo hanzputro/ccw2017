@@ -12,7 +12,7 @@ Template Name: The Leaders Page
 	<div class="container1600" id="section1">
 		<div class="container__content grid">
 			<div class="span12 section__content">
-	            <nav class="tablink center">
+	            <nav class="tablink tablink--page center">
 	                <ul>
 	                    <li class=""><a href="#notset"><h2 class="margin0">Who We Are</h2></a></li>
 	                    <li class=""><a href="#notset"><h2 class="margin0">Service</h2></a></li>
@@ -23,14 +23,14 @@ Template Name: The Leaders Page
 		</div>        
     </div>
 	
-	<div class="container1600" id="section2">
+	<div class="container940" id="section2">
     	<div class="container__content grid">
     		<div class="span12 center">
-	            <h1 class="s50 merriweather bold margin0">The Leaders</h1>
+	            <h1 class="s50 merriweather margin0"><b>The</b> Leaders</h1>
 	            <hr class="hr55">
-	            <p class="margin0 s24 myriadpro purple">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum lorem a volutpat euismod.<br>
-				Vivamus blandit metus eu sem blandit, eget dictum neque commodo. Cras fermentum sollicitudin laoreet. Aliquam quis tellus ultricies, iaculis justo ut, vulputate nibh. Fusce convallis odio vitae justo volutpat dictum. Sed non ligula odio. Praesent dapibus lobortis vestibulum. Ut accumsan sem nibh, dapibus mollis nisi ultrices ut.
-				</p>
+	            <p class="margin0 s24 myriadpro grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum lorem a volutpat euismod.</p>
+	            <br>
+	            <br>
 	        </div>    		
     	</div>        
     </div>
@@ -38,27 +38,39 @@ Template Name: The Leaders Page
     <div class="container1600" id="section3">
     	<div class="container__content grid">
     		<div class="span12">
-	            <h1 class="s50 merriweather bold margin0">Committee</h1>
-				<ul class="clearfix">
-	    			<li class="list float-left">
-	    				<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
-	    				<h3>Lorem ipsum</h3>
-						<p class="grey">Committee</p>
+	            <h1 class="s50 linetitle merriweather bold">Committee</h1>
+				<ul class="gallery">
+	    			<li class="gallery__list">
+	    				<div class="gallery__image">
+	    					<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
+	    					<div class="gallery__frame"></div>
+	    				</div>
+	    				<h3 class="margin0 regular">Lorem ipsum</h3>
+						<h3 class="light grey margin0"><i>Committee</i></h3>
 					</li>
-					<li class="list float-left">
-	    				<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
-	    				<h3>Lorem ipsum</h3>
-						<p class="grey">Committee</p>
+					<li class="gallery__list">
+	    				<div class="gallery__image">
+	    					<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
+	    					<div class="gallery__frame"></div>
+	    				</div>
+	    				<h3 class="margin0 regular">Lorem ipsum</h3>
+						<h3 class="light grey margin0"><i>Committee</i></h3>
 					</li>
-					<li class="list float-left">
-	    				<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
-	    				<h3>Lorem ipsum</h3>
-						<p class="grey">Committee</p>
+					<li class="gallery__list">
+	    				<div class="gallery__image">
+	    					<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
+	    					<div class="gallery__frame"></div>
+	    				</div>
+	    				<h3 class="margin0 regular">Lorem ipsum</h3>
+						<h3 class="light grey margin0"><i>Committee</i></h3>
 					</li>
-					<li class="list float-left">
-	    				<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
-	    				<h3>Lorem ipsum</h3>
-						<p class="grey">Committee</p>
+					<li class="gallery__list">
+	    				<div class="gallery__image">
+	    					<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
+	    					<div class="gallery__frame"></div>
+	    				</div>
+	    				<h3 class="margin0 regular">Lorem ipsum</h3>
+						<h3 class="light grey margin0"><i>Committee</i></h3>
 					</li>
 	    		</ul>
 	        </div>    		
@@ -68,27 +80,31 @@ Template Name: The Leaders Page
 	<div class="container1600" id="section4">
     	<div class="container__content grid">
     		<div class="span12">
-	            <h1 class="s50 merriweather bold margin0">Head of Departments</h1>
-				<ul class="clearfix">
-	    			<li class="list float-left">
-	    				<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
-	    				<h3>Lorem ipsum</h3>
-						<p class="grey">Committee</p>
+	            <h1 class="s50 linetitle merriweather bold">Head of Departments</h1>
+				<ul class="gallery">
+	    			<li class="gallery__list">
+	    				<div class="gallery__image">
+	    					<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
+	    					<div class="gallery__frame"></div>
+	    				</div>
+	    				<h3 class="margin0 regular">Lorem ipsum</h3>
+						<h3 class="light grey margin0"><i>Committee</i></h3>
 					</li>
-					<li class="list float-left">
-	    				<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
-	    				<h3>Lorem ipsum</h3>
-						<p class="grey">Committee</p>
+					<li class="gallery__list">
+	    				<div class="gallery__image">
+	    					<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
+	    					<div class="gallery__frame"></div>
+	    				</div>
+	    				<h3 class="margin0 regular">Lorem ipsum</h3>
+						<h3 class="light grey margin0"><i>Committee</i></h3>
 					</li>
-					<li class="list float-left">
-	    				<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
-	    				<h3>Lorem ipsum</h3>
-						<p class="grey">Committee</p>
-					</li>
-					<li class="list float-left">
-	    				<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
-	    				<h3>Lorem ipsum</h3>
-						<p class="grey">Committee</p>
+					<li class="gallery__list">
+	    				<div class="gallery__image">
+	    					<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
+	    					<div class="gallery__frame"></div>
+	    				</div>
+	    				<h3 class="margin0 regular">Lorem ipsum</h3>
+						<h3 class="light grey margin0"><i>Committee</i></h3>
 					</li>
 	    		</ul>
 	        </div>    		

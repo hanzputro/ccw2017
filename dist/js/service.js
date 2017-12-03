@@ -1,0 +1,1 @@
+var w=window,d=document,e=d.documentElement,g=d.getElementsByTagName("body")[0],widthviewport=w.innerWidth||e.clientWidth||g.clientWidth,heightviewport=w.innerHeight||e.clientHeight||g.clientHeight;$(document).ready(function(){$("#section3 .slide-bg").slick({fade:!0,dots:!0,speed:800})});

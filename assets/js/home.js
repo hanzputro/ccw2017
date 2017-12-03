@@ -48,21 +48,41 @@ $(document).ready(function(){
         $('#section3 .slide-bg, #section3 .slide-caption').slick('slickGoTo', dataSlide);        
     });
 
+    if (widthviewport > 1024){
+        $('.cd-section').each(function(){
+            var heightSection = $(this).height();
+            var gethSC = $('.section-cover', this).height();
+            var gethS = $('.section', this).height();
+            var setmidS = (gethSC - gethS)/2;
 
-    $('.cd-section').each(function(){
-        var heightSection = $(this).height();
-        var gethSC = $('.section-cover', this).height();
-        var gethS = $('.section', this).height();
-        var setmidS = (gethSC - gethS)/2;
+            // console.log(gethSC+' - '+gethS);
+            if( heightSection > heightviewport){
+                $(this).css('height', 'auto');            
+            }else{
+                $(this).css('height', heightviewport);
+                $('.section', this).css("cssText","margin-top:"+setmidS+"px;");
+            }
+        });
+    }
 
-        // console.log(gethSC+' - '+gethS);
-        if( heightSection > heightviewport){
-            $(this).css('height', 'auto');            
-        }else{
-            $(this).css('height', heightviewport);
-            $('.section', this).css("cssText","margin-top:"+setmidS+"px;");
-        }
-    });
+
+    if (widthviewport <= 1024){
+        var scrollingElement = document.scrollingElement || document.documentElement;
+        scrollingElement.scrollTop = 0;  
+        $('.header').addClass('white');
+        $('.header .logo img').attr('src', 'wp-content/themes/ccw2017/dist/images/logo-ccw.png');
+        $(window).scroll(function(event) {
+            console.log($(this).scrollTop() > ($('#section1').innerHeight()-50));
+            if( $(this).scrollTop() > ($('#section1').innerHeight()-50) ){
+                $('.header').removeClass('white');
+                $('.header .logo img').attr('src', 'wp-content/themes/ccw2017/dist/images/logo-ccw-black.png');
+            }else{
+                $('.header').addClass('white');
+                $('.header .logo img').attr('src', 'wp-content/themes/ccw2017/dist/images/logo-ccw.png');
+            }
+        });
+    }
+
 });
 
 
@@ -79,7 +99,7 @@ $(window).bind('mousewheel', function(event) {
             a = 0;
             pageNumber = pageNumber - 1;
             if( pageNumber == 2 ){
-                $('#section2 .thumb').addClass('animate');
+                $('#section2 .thumb').addClass('animate');                
             }
             else if( pageNumber == 4 ){
                 $('#section4 .section-cover').addClass('animate');
@@ -97,7 +117,7 @@ $(window).bind('mousewheel', function(event) {
             b = 0;
             pageNumber = pageNumber + 1;
             if( pageNumber == 2 ){
-                $('#section2 .thumb').addClass('animate');
+                $('#section2 .thumb').addClass('animate');                                
             }
             else if( pageNumber == 4 ){
                 $('#section4 .section-cover').addClass('animate');

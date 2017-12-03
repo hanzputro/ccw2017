@@ -42,7 +42,7 @@
                         <div class="ico-menu__content">
                             <ul>
                                 <li class="active">
-                                    <a href="#notset" class="">ABOUT US</a>
+                                    <a class="">ABOUT US</a>
                                     <ul class="ico-menu__submenu">
                                         <li><a href="#notset">Who We Are</a></li>
                                         <li><a href="#notset">Services</a></li>

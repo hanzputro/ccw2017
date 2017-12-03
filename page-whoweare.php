@@ -12,7 +12,7 @@ Template Name: Who We Are Page
 	<div class="container1600" id="section1">
 		<div class="container__content grid">
 			<div class="span12 section__content">
-	            <nav class="tablink center">
+	            <nav class="tablink tablink--page center">
 	                <ul>
 	                    <li class="active"><a href="#notset"><h2 class="margin0">Who We Are</h2></a></li>
 	                    <li class=""><a href="#notset"><h2 class="margin0">Service</h2></a></li>
@@ -43,14 +43,14 @@ Template Name: Who We Are Page
 		<div class="container940">
 			<div class="container__content grid">
 	    		<div class="span12 center">
-		            <h1 class="s50 merriweather bold margin0">Our Vision</h1>
+		            <h1 class="s50 merriweather margin0"><b>Our</b> Vision</h1>
 		            <hr class="hr55">
 		            <p class="margin0 s24 myriadpro purple">Discovering and Maximizing Our God-Given TALENTS to Serve The CITY We Are In, and to Bring People to WORSHIP God in Spirit and in Truth</p>
 		        </div>
 	    	</div>        
 	    	<div class="container__content grid">
 		        <div class="span12 center">
-		            <h1 class="s50 merriweather bold margin0">Our Mission</h1>
+		            <h1 class="s50 merriweather margin0"><b>Our</b> Mission</h1>
 		            <hr class="hr55">
 		            <p class="margin0 s24 myriadpro purple">Love God and Love People</p>
 		            <br>

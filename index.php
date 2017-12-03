@@ -11,14 +11,48 @@
     echo $node->asXML();
 ?>
 
-    <div class="section-page" id="section_page">       
-        <style>
-            #section1 .section-cover{
-                background-image: url('<?php bloginfo('template_url'); ?>/dist/images/home/bg-section1.jpg');
-            }
-        </style>
-        <section class="cd-section visible" id="section1">
-            <div class="section-cover">
+    <div class="section-page" id="section_page">        
+        <section class="cd-section visible" id="section1">                        
+            <div class="section-cover">                
+                <style>
+                    #section1 .section-cover{
+                        background-image: url('<?php bloginfo('template_url'); ?>/dist/images/home/bg-section1.jpg');
+                    }
+                </style>
+                <!-- section1:header -->
+            <div class="container header white">
+                <div class="container1600">
+                    <div class="logo"><a href="<?php echo site_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/dist/images/logo-ccw.png" alt=""></a></div>
+                    <div class="navbar">
+                        <ul class="medium">
+                            <li><a href="#notset" class="">ABOUT US</a></li>
+                            <li><a href="#notset" class="">CONNECT</a></li>
+                            <li>
+                                <div class="ico-menu">
+                                    <div class="ico-menu__line ico-menu__line1"></div>
+                                    <div class="ico-menu__line ico-menu__line2"></div>
+                                    <div class="ico-menu__line ico-menu__line3"></div>
+                                </div>
+                                <div class="ico-menu__content">
+                                    <ul>
+                                        <li class="active">
+                                            <a class="">ABOUT US</a>
+                                            <ul class="ico-menu__submenu">
+                                                <li><a href="#notset">Who We Are</a></li>
+                                                <li><a href="#notset">Services</a></li>
+                                                <li><a href="#notset">Our Leaders</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#notset" class="">MINISTRY</a></li>
+                                        <li><a href="#notset" class="">MEDIA</a></li>
+                                        <li><a href="#notset" class="">CONTACT</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
                 <div class="section container1600 center" id="section-cover1">
                     <h1 class="light white">CREATIVE CITY WORSHIP</h1>
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="830px" height="460px" viewBox="0 0 830 460" enable-background="new 0 0 830 460" xml:space="preserve">

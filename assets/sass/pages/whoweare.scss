@@ -1,5 +1,6 @@
 @import "../base/color";
 @import "../base/extend-only";
+@import "../components/tab";
 
 .thumb{}
 .linetitle{
@@ -13,77 +14,8 @@
         background:#8560a8;
     }
 }
-.tablink{
-    position: relative;        
-    ul{ }
-    li{ 
-        margin:0 15px;            
-        transition:0.3s ease;
-        a{
-            padding:5px 0; 
-            border-bottom:5px solid transparent;
-            transition:0.3s ease;
-            h1{ transition:0.3s ease; }
-        }
-        &:hover{                                
-            a {
-                border-bottom:5px solid #8560a8;
-                h1{ font-weight:700; }
-            }
-        }
-    }
-}
 
-#section1{
-    padding-top:105px;    
-    .tablink{
-        li{
-            position:relative;
-            margin:0 40px;
-            a{
-                &:before{
-                    content:'';
-                    position:absolute;
-                    bottom:8px; left:0; right:0;
-                    margin:auto;
-                    width:0%; height:0px;
-                    background-color:$color-purple;                        
-                    z-index:0;
-                    transition:0.3s ease;
-                }
-                &:hover{ 
-                    font-weight:600;
-                    color:$color-purple; border-bottom:5px solid transparent;
-                    &:before{
-                        content:'';
-                        position:absolute;
-                        bottom:8px; left:0; right:0;
-                        margin:auto;
-                        width:80%; height:2px;
-                        background-color:$color-purple;                        
-                        z-index:0;
-                    } 
-                }
-                h2{ position:relative; }
-            }
-            &.active{
-                a{
-                    font-weight:600;
-                    &:hover{ color:#292929; }
-                    &:before{
-                        content:'';
-                        position:absolute;
-                        bottom:8px; left:0; right:0;
-                        margin:auto;
-                        width:80%; height:15px;
-                        background-color:$color-purple;                        
-                        z-index:0;
-                    }
-                }
-            }
-        }
-    }
-}
+#section1{ padding-top:105px; }
 
 #section2{
     .section-cover{ background-color: $color-white; }
@@ -191,7 +123,28 @@
 }
 
 @media (max-width:767px){
+    .linetitle{
+        margin-left:30px;
+        margin-bottom:20px;
+        &:after{
+            top:17px; left:-30px;
+            width:20px; height:2px;
+        }
+    }
+    #section1{
+        padding-top:30px;
+        .tablink.tablink--page{
+            li{
+                float:none;
+                display:inline-block;
+                margin:0 15px;
+            }
+        }
+    }
     #section2{
+        .section__content{
+            h2{ margin:0 0 10px 30px; }
+        }
         .span6{ width:100%; }
         .section{ padding: 0 5%; }
         @keyframes thumb1 {
@@ -199,6 +152,7 @@
         }
         .thumb{ 
             width:70%;
+            .splash{ display:none; }
         }
         .tablink{
             margin:0 0 120px 0;

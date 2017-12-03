@@ -1,0 +1,58 @@
+@import "../base/color";
+@import "../base/extend-only";
+@import "../components/tab";
+@import "../components/form";
+@import "../components/gallery";
+
+.thumb{}
+.linetitle{
+    position: relative;
+    margin-left:80px;
+    &:after{
+        content:'';
+        position: absolute;
+        top:27px; left:-80px;
+        width:55px; height:3px;
+        background:#8560a8;
+    }
+}
+
+#section1{ padding-top:105px; }
+#section2{
+    background-color:#f2f2f2;
+    .filter{
+        @extend %clearfix;
+        .field--select{
+            @extend %float-left;
+        }
+        .field--search{
+            @extend %float-right;
+        }
+    }
+}
+
+// tablet
+@media (max-width:1024px){
+    #section1{
+        padding-top:30px;
+    }    
+}
+
+@media (max-width:480px){
+    .tablink{
+        &.tablink--page{
+            ul{
+                li{
+                    margin:0 20px;
+                }
+            }
+        }
+    }
+    .filter{
+        .field{ margin-bottom:10px; }
+        .field--select,
+        .field--search{
+            width:100% !important;
+        }
+    }
+}

@@ -1,35 +1,69 @@
-.tab__link{
-
-}
-.tab__container{
-
-}
-.tab__content{
-    display:none;
-}
-
 .tablink{
-	.tablink__a{
-		margin: 0 7px;
-		padding: 10px 25px;
-		border-radius: 25px;
-		border: 0;
-		display: inline-block;
-		cursor: pointer;
-		small{
-			margin: 0;
-			vertical-align: top;
-		}
-		&.active{
-			background: #f35b25;
-			color: white;
-			border: 0;
-			pointer-events: none;
-		}
-	}
-}
-.dropdown__fortabcontent__label{
-	color: rgba(0,0,0,.6);
-	letter-spacing: 0.6px;
-	margin: 0 0 5px;
+    position: relative;        
+    ul{}
+    li{
+        margin:0 15px;            
+        transition:0.2s ease;
+        a{
+            padding:5px 0; 
+            border-bottom:5px solid transparent;
+            transition:0.2s ease;
+            h1{ transition:0.2s ease; }
+        }
+        &:hover{                                
+            a {
+                border-bottom:5px solid #8560a8;
+                h1{ font-weight:700; }
+            }
+        }
+    }
+	
+	&.tablink--page{
+        li{
+            position:relative;
+            margin:0 40px;
+            a{
+                &:before{
+                    content:'';
+                    position:absolute;
+                    bottom:8px; left:0; right:0;
+                    margin:auto;
+                    width:0%; height:0px;
+                    background-color:$color-purple;                        
+                    z-index:0;
+                    transition:0.2s ease;
+                }
+                &:hover{ 
+                    font-weight:600;
+                    color:$color-purple; border-bottom:5px solid transparent;
+                    &:before{
+                        content:'';
+                        position:absolute;
+                        bottom:8px; left:0; right:0;
+                        margin:auto;
+                        width:80%; height:2px;
+                        background-color:$color-purple;                        
+                        z-index:0;
+                    } 
+                }
+                h2{ position:relative; }
+            }
+            &.active{
+                a{
+                    font-weight:600;
+                    &:hover{ color:#292929; }
+                    &:before{
+                        content:'';
+                        position:absolute;
+                        bottom:8px; left:0; right:0;
+                        margin:auto;
+                        width:80%; height:15px;
+                        background-color:$color-purple;                        
+                        z-index:0;
+                    }
+                }
+            }
+        }
+    }
+
 }

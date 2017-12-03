@@ -15,8 +15,7 @@ form{
         color: #3b3b3b;         
         border: 1px solid #e0e0e0;
         border-radius:2px;
-        padding: 10px 10px;
-        -webkit-appearance: none;
+        padding: 10px 10px;        
         vertical-align: middle;
         width:auto;
         height:40px;        
@@ -38,12 +37,18 @@ form{
             cursor: default;
         }
     }
+    input, textarea{
+        -webkit-appearance: none;
+    }
     textarea{ 
         height:auto;
         resize: none;
         &.small{ height:auto; }
     }
-    select{ background: linear-gradient(-180deg, rgba(255,255,255,1.00) 0%, #F5F5F5 100%); }
+    select{
+        background: linear-gradient(-180deg, rgba(255,255,255,1.00) 0%, #F5F5F5 100%);
+        padding-right:15px;
+    }
     .select--1{
         position: relative;
         &:before{
@@ -94,21 +99,25 @@ form{
     label{ 
         display:block; 
         margin-bottom: 5px; 
-    }
-    .select{
-        position:relative;
-        background-image: url(/images/ico-selectarrow.png);
-        background-repeat: no-repeat;
-        background-position: right center;
-        appearance: none;
-        text-indent: 0.01px;
-        text-overflow: '';
     }    
     .field{
         position: relative;
         width:320px;
         max-width:100%;
-        margin-bottom:20px; 
+        margin-bottom:20px;
+        &.field--search{
+            &:after{
+                content:'';
+                position: absolute;
+                top:0; bottom:0; left:14px;
+                margin: auto;
+                width:14px; height:14px;
+                background-image: url(../../dist/images/ico-search.png);
+                background-size:100%;
+                z-index:1;
+            }
+            input{ padding-left:37px; }
+        } 
         input, 
         select, 
         textarea{
@@ -305,7 +314,7 @@ form{
         border-bottom: 1px solid #e74001;
     }
 
-    @include break (1024){
+    @media (max-width:1024){
         .field{
             flex-flow:row wrap;
             input[type="checkbox"], 
@@ -315,7 +324,7 @@ form{
             }
         }
     }
-    @include break (600){
+    @media (max-width:600){
         input, textarea, select { width:100%; }
         select{ appearance: menulist; }
         input[type="checkbox"], 

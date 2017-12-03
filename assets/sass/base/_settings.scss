@@ -22,6 +22,10 @@
     max-width:100%;
     margin: 0 auto;
     padding:0 20px;
+    &480{
+        @extend .container;
+        width:480px;
+    }
     &940{
         @extend .container;
         width:940px;
@@ -32,7 +36,7 @@
     }
 }
 .container__content{
-    padding: 50px 20px;
+    padding: 70px 20px;
 }
 .containerfull{
     width: 100%;
@@ -96,4 +100,5 @@
     .hide-m{ display:none !important; }
     .show-m{ display:initial !important; }
     .container{ padding:0 10px; }
+    .container__content{ padding:40px 0; }
 }

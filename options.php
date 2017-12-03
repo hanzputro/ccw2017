@@ -108,17 +108,17 @@ function optionsframework_options() {
 		'type' => 'heading'
 	);
 
-	$options[] = array(
-		'name' => __( 'HEADER', 'theme-textdomain' ),
-		'type' => 'info'
-	);
+	// $options[] = array(
+	// 	'name' => __( 'HEADER', 'theme-textdomain' ),
+	// 	'type' => 'info'
+	// );
 
-	$options[] = array(
-		'name' => __( 'Logo', 'theme-textdomain' ),
-		'std' => $imagepath . '/logo-ccw-black.png',
-		'id' => 'logo',
-		'type' => 'upload'
-	);
+	// $options[] = array(
+	// 	'name' => __( 'Logo', 'theme-textdomain' ),
+	// 	'std' => $imagepath . '/logo-ccw-black.png',
+	// 	'id' => 'logo',
+	// 	'type' => 'upload'
+	// );
 
 	$options[] = array(
 		'name' => __( 'FOOTER', 'theme-textdomain' ),
@@ -184,18 +184,11 @@ function optionsframework_options() {
 		'id' => 'home-sec2-img',
 		'type' => 'upload'
 	);
-
-	$wp_editor_descsec2_settings = array(
-		'wpautop' => true, // Default
-		'textarea_rows' => 3,
-		'tinymce' => array( 'plugins' => 'wordpress,wplink' )
-	);
 	$options[] = array(
 		'name' => __( 'Description', 'theme-textdomain' ),
-		'id' => 'home-sec2-desc',
-		'type' => 'editor',
+		'id' => 'home-sec2-desc',		
 		'std' => 'Pastor Walter is our lead pastor. Creative City Worship lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
-		'settings' => $wp_editor_descsec2_settings
+		'type' => 'textarea'
 	);
 
 	// section 3
@@ -204,17 +197,11 @@ function optionsframework_options() {
 		'type' => 'info'
 	);
 
-	$wp_editor_descsec3_settings = array(
-		'wpautop' => true, // Default
-		'textarea_rows' => 3,
-		'tinymce' => array( 'plugins' => 'wordpress,wplink' )
-	);
 	$options[] = array(
 		'name' => __( 'News 1', 'theme-textdomain' ),
 		'id' => 'home-sec3-desc1',
-		'type' => 'editor',
 		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
-		'settings' => $wp_editor_descsec3_settings
+		'type' => 'textarea'
 	);
 
 	$options[] = array(
@@ -224,17 +211,11 @@ function optionsframework_options() {
 		'type' => 'upload'
 	);
 
-	$wp_editor_descsec3_settings = array(
-		'wpautop' => true, // Default
-		'textarea_rows' => 3,
-		'tinymce' => array( 'plugins' => 'wordpress,wplink' )
-	);
 	$options[] = array(
 		'name' => __( 'News 2', 'theme-textdomain' ),
 		'id' => 'home-sec3-desc2',
-		'type' => 'editor',
 		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
-		'settings' => $wp_editor_descsec3_settings
+		'type' => 'textarea'
 	);
 
 	$options[] = array(
@@ -244,17 +225,11 @@ function optionsframework_options() {
 		'type' => 'upload'
 	);
 
-	$wp_editor_descsec3_settings = array(
-		'wpautop' => true, // Default
-		'textarea_rows' => 3,
-		'tinymce' => array( 'plugins' => 'wordpress,wplink' )
-	);
 	$options[] = array(
 		'name' => __( 'News 3', 'theme-textdomain' ),
 		'id' => 'home-sec3-desc3',
-		'type' => 'editor',
 		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
-		'settings' => $wp_editor_descsec3_settings
+		'type' => 'textarea'
 	);
 
 	$options[] = array(
@@ -277,17 +252,11 @@ function optionsframework_options() {
 		'type' => 'text'
 	);
 
-	$wp_editor_descsec4_settings = array(
-		'wpautop' => true, // Default
-		'textarea_rows' => 3,
-		'tinymce' => array( 'plugins' => 'wordpress,wplink' )
-	);
 	$options[] = array(
 		'name' => __( 'Description', 'theme-textdomain' ),
 		'id' => 'home-sec4-desc',
-		'type' => 'editor',
 		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
-		'settings' => $wp_editor_descsec4_settings
+		'type' => 'textarea'
 	);
 
 	// section 5
@@ -303,22 +272,16 @@ function optionsframework_options() {
 		'type' => 'text'
 	);
 
-	$wp_editor_descsec5_settings = array(
-		'wpautop' => true, // Default
-		'textarea_rows' => 7,
-		'tinymce' => array( 'plugins' => 'wordpress,wplink' )
-	);
 	$options[] = array(
 		'name' => __( 'Description', 'theme-textdomain' ),
 		'id' => 'home-sec5-desc',
-		'type' => 'editor',
 		'std' => 'ARTOTEL - Thamrin
 JL. Sunda No.3,
 Jakarta Pusat
 
 creativecityworship@gmail.com
-@creativecityworship")',
-		'settings' => $wp_editor_descsec5_settings
+@creativecityworship',
+		'type' => 'textarea'
 	);
 
 
@@ -343,7 +306,7 @@ creativecityworship@gmail.com
 	);
 
 	$options[] = array(
-		'name' => __( 'Title', 'theme-textdomain' ),
+		'name' => __( 'Description', 'theme-textdomain' ),
 		'id' => 'service-desc1',
 		'std' => 'Kami punya ibadah hari minggu, Ibadah anak-anak atau Creative Kids dan Creative Community',
 		'type' => 'textarea'
@@ -361,17 +324,11 @@ creativecityworship@gmail.com
 		'type' => 'text'
 	);
 
-	$wp_editor_service_settings = array(
-		'wpautop' => true, // Default
-		'textarea_rows' => 3,
-		'tinymce' => array( 'plugins' => 'wordpress,wplink' )
-	);
 	$options[] = array(
 		'name' => __( 'Description', 'theme-textdomain' ),
 		'id' => 'service-desc2',
-		'type' => 'editor',
 		'std' => 'Pastor Walter is our lead pastor. Creative City Worship lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
-		'settings' => $wp_editor_service_settings
+		'type' => 'textarea'
 	);
 
 	$options[] = array(
@@ -409,17 +366,15 @@ creativecityworship@gmail.com
 		'type' => 'text'
 	);	
 
-	$wp_editor_whowearedesc1_settings = array(
-		'wpautop' => true, // Default
-		'textarea_rows' => 3,
-		'tinymce' => array( 'plugins' => 'wordpress,wplink' )
-	);
 	$options[] = array(
 		'name' => __( 'Description', 'theme-textdomain' ),
 		'id' => 'whoweare-desc',
-		'type' => 'editor',
-		'std' => 'Pastor Walter is our lead pastor. Creative City Worship started with a bunch of people who are passionate about God and passionate to serve others. We strongly believe that our God-given talents should be used to serve the city we are in, so that people can come to know who Jesus is and can worship Him in spirit and in truth.<br><br>We started our first Creative City Worship service on November 10th, 2013 with only 12 members. Having only a small amount of volunteers meant that everyone had to multi-task, and on every Sunday one person could have up to 3 ministries! But this has caused us to grow closer to one another and Sunday service became more than just an ordinary church service - it became our extended family gathering to worship God and rejoice in His presence.<br><br>Ever since then we have had tremendous miracles in the house of God - new members were added, many volunteered to serve, and we have even been given the opportunity to dedicate 4 young children to God and to baptize our first member on Easter Sunday, 20 April 2014.',
-		'settings' => $wp_editor_whowearedesc1_settings
+		'std' => 'Pastor Walter is our lead pastor. Creative City Worship started with a bunch of people who are passionate about God and passionate to serve others. We strongly believe that our God-given talents should be used to serve the city we are in, so that people can come to know who Jesus is and can worship Him in spirit and in truth.
+
+		We started our first Creative City Worship service on November 10th, 2013 with only 12 members. Having only a small amount of volunteers meant that everyone had to multi-task, and on every Sunday one person could have up to 3 ministries! But this has caused us to grow closer to one another and Sunday service became more than just an ordinary church service - it became our extended family gathering to worship God and rejoice in His presence.
+
+		Ever since then we have had tremendous miracles in the house of God - new members were added, many volunteered to serve, and we have even been given the opportunity to dedicate 4 young children to God and to baptize our first member on Easter Sunday, 20 April 2014.',
+		'type' => 'textarea'
 	);
 
 	$options[] = array(
@@ -477,114 +432,88 @@ creativecityworship@gmail.com
 	);
 
 	$options[] = array(
+		'name' => __( 'The Leaders', 'theme-textdomain' ),
+		'type' => 'info'
+	);
+
+	// $options[] = array(
+	// 	'name' => __( 'Title', 'theme-textdomain' ),
+	// 	'id'	=> 'repeat_text',
+	// 	'std' => 'Test Multiple',
+	// 	'type' => 'repeat_text'
+	// );
+
+	$options[] = array(
 		'name' => __( 'Title', 'theme-textdomain' ),
-		'id'	=> 'repeat_text',
-		'std' => 'Test Multiple',
-		'type' => 'repeat_text'
+		'id' => 'theleaders-title',
+		'std' => 'The Leaders',
+		'type' => 'text'
+	);
+	$options[] = array(
+		'name' => __( 'Description', 'theme-textdomain' ),
+		'id' => 'theleaders-desc',
+		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum lorem a volutpat euismod.<br>
+				Vivamus blandit metus eu sem blandit, eget dictum neque commodo. Cras fermentum sollicitudin laoreet. Aliquam quis tellus ultricies, iaculis justo ut, vulputate nibh. Fusce convallis odio vitae justo volutpat dictum. Sed non ligula odio. Praesent dapibus lobortis vestibulum. Ut accumsan sem nibh, dapibus mollis nisi ultrices ut.',
+		'type' => 'textarea'
 	);
 
 	$options[] = array(
-		'name' => __( 'Logo', 'theme-textdomain' ),
-		'std' => '',
-		'id' => 'logo-theleader',
-		'type' => 'upload'
-	);
-
-	$options[] = array(
-		'name' => __( 'Gallery', 'theme-textdomain' ),
-		'id' => 'logoleader',
+		'name' => __( 'Commitee', 'theme-textdomain' ),
+		'id' => 'service-gallery-commitee',
 		'type' => 'repeat_upload'
 	);
 
-	// $options[] = array(
-	// 	'name' => __( 'Logo', 'theme-textdomain' ),
-	// 	'std' => array(
-	// 		'img' => $imagepath . '/logo-ccw-black.png',
-	// 		'img' => $imagepath . '/logo-ccw-black.png',
-	// 		'img' => $imagepath . '/logo-ccw-black.png'
-	// 	),
-	// 	'id' => 'theleader',
-	// 	'type' => 'repeat_upload'
-	// );
+	$options[] = array(
+		'name' => __( 'Head Of Department', 'theme-textdomain' ),
+		'id' => 'service-gallery-hod',
+		'type' => 'repeat_upload'
+	);
 
-	// $options[] = array(
-	// 	'name' => "Example Image Selector",
-	// 	'desc' => "Images for layout.",
-	// 	'id' => "example_images",
-	// 	'std' => "2c-l-fixed",
-	// 	'type' => "images",
-	// 	'options' => array(
-	// 		'1col-fixed' => $imagepath . '/1col.png',
-	// 		'2c-l-fixed' => $imagepath . '/2cl.png',
-	// 		'2c-r-fixed' => $imagepath . '/2cr.png'
-	// 	)
-	// );
 
-	// $options[] = array(
-	// 	'name' => __( 'Logo', 'theme-textdomain' ),
-	// 	'std' => '',
-	// 	'id' => 'logo-theleader',
-	// 	'type' => 'multiple-upload'
-	// );
+	/* ############################### */
+	/* ######### CONTACT tab ######### */
+	/* ############################### */
+	$options[] = array(
+		'name' => __( 'Contact', 'theme-textdomain' ),
+		'type' => 'heading'
+	);
 
-	// $options[] = array(
-	// 	'name' => __( 'Title', 'theme-textdomain' ),
-	// 	'id' => 'theleaders-title',
-	// 	'std' => 'The Leaders',
-	// 	'type' => 'text'
-	// );	
+	$options[] = array(
+		'name' => __( 'Contact', 'theme-textdomain' ),
+		'type' => 'info'
+	);
 
-	// $wp_editor_theleader_settings = array(
-	// 	'wpautop' => true, // Default
-	// 	'textarea_rows' => 3,
-	// 	'tinymce' => array( 'plugins' => 'wordpress,wplink' )
-	// );
-	// $options[] = array(
-	// 	'name' => __( 'Description', 'theme-textdomain' ),
-	// 	'id' => 'theleaders-desc',
-	// 	'type' => 'editor',
-	// 	'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum lorem a volutpat euismod.<br>
-	// 			Vivamus blandit metus eu sem blandit, eget dictum neque commodo. Cras fermentum sollicitudin laoreet. Aliquam quis tellus ultricies, iaculis justo ut, vulputate nibh. Fusce convallis odio vitae justo volutpat dictum. Sed non ligula odio. Praesent dapibus lobortis vestibulum. Ut accumsan sem nibh, dapibus mollis nisi ultrices ut.',
-	// 	'settings' => $wp_editor_theleader_settings
-	// );
+	$options[] = array(
+		'name' => __( 'Title', 'theme-textdomain' ),
+		'id' => 'contact-title',
+		'std' => 'Creative City Worship',
+		'type' => 'text'
+	);
+	$options[] = array(
+		'name' => __( 'Description', 'theme-textdomain' ),
+		'id' => 'theleaders-desc',
+		'std' => 'Artotel-Thamrin
+Every Sunday at 10AM',
+		'type' => 'textarea'
+	);
 
-	// $options[] = array(
-	// 	'name' => __( 'Committee', 'theme-textdomain' ),
-	// 	'type' => 'info'
-	// );
 
-	// $options[] = array(
-	// 	'name' => __( 'Title', 'theme-textdomain' ),
-	// 	'id' => 'theleaders-committee-title',
-	// 	'std' => 'Committee',
-	// 	'type' => 'text'
-	// );
-
-	// $options[] = array(
-	// 	'name' => __( 'Background', 'theme-textdomain' ),
-	// 	'std' => $imagepath . '/leaders.jpg',
-	// 	'id' => 'theleaders-committee-bg',
-	// 	'type' => 'upload'
-	// );
-
-	// $options[] = array(
-	// 	'name' => __( 'Head of Departments', 'theme-textdomain' ),
-	// 	'type' => 'info'
-	// );
-
-	// $options[] = array(
-	// 	'name' => __( 'Title', 'theme-textdomain' ),
-	// 	'id' => 'theleaders-hod-title',
-	// 	'std' => 'Head of Departments',
-	// 	'type' => 'text'
-	// );
-
-	// $options[] = array(
-	// 	'name' => __( 'Background', 'theme-textdomain' ),
-	// 	'std' => $imagepath . '/leaders.jpg',
-	// 	'id' => 'theleaders-hod-bg',
-	// 	'type' => 'upload'
-	// );
+	/* ############################### */
+	/* ########## MEDIA tab ########## */
+	/* ############################### */
+	$options[] = array(
+		'name' => __( 'Media', 'theme-textdomain' ),
+		'type' => 'heading'
+	);
+	$options[] = array(
+		'name' => __( 'Media', 'theme-textdomain' ),
+		'type' => 'info'
+	);
+	$options[] = array(
+		'name' => __( 'Media Gallery', 'theme-textdomain' ),
+		'id' => 'media-gallery',
+		'type' => 'repeat_upload'
+	);
 
 	return $options;
 }

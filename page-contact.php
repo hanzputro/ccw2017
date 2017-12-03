@@ -1,98 +1,54 @@
 <?php
 /*
-Template Name: The Leaders Page
+Template Name: Contact Page
 */
 ?>
 <?php get_header(); ?>
 
 <!-- specific page -->
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/dist/css/theleaders.css">
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/dist/css/contact.css">
 
 
-	<div class="container1600" id="section1">
-		<div class="container__content grid">
-			<div class="span12 section__content">
-	            <nav class="tablink center">
-	                <ul>
-	                    <li class=""><a href="#notset"><h2 class="margin0">Who We Are</h2></a></li>
-	                    <li class=""><a href="#notset"><h2 class="margin0">Service</h2></a></li>
-	                    <li class="active"><a href="#notset"><h2 class="margin0">The Leaders</h2></a></li>
-	                </ul>
-	            </nav>                    
-	        </div>
-		</div>        
-    </div>
+	<div class="containerfull" id="section1">
+		<iframe class="map" id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.564300037044!2d106.82254131535889!3d-6.189010995519481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f425cc5f2945%3A0x7bb495c84a711172!2sARTOTEL+THAMRIN-JAKARTA!5e0!3m2!1sen!2sid!4v1507702707895" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>    
 	
-	<div class="container1600" id="section2">
-    	<div class="container__content grid">
-    		<div class="span12 center">
-	            <h1 class="s50 merriweather bold margin0">The Leaders</h1>
-	            <hr class="hr55">
-	            <p class="margin0 s24 myriadpro purple">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum lorem a volutpat euismod.<br>
-				Vivamus blandit metus eu sem blandit, eget dictum neque commodo. Cras fermentum sollicitudin laoreet. Aliquam quis tellus ultricies, iaculis justo ut, vulputate nibh. Fusce convallis odio vitae justo volutpat dictum. Sed non ligula odio. Praesent dapibus lobortis vestibulum. Ut accumsan sem nibh, dapibus mollis nisi ultrices ut.
-				</p>
-	        </div>    		
-    	</div>        
-    </div>
-
-    <div class="container1600" id="section3">
-    	<div class="container__content grid">
-    		<div class="span12">
-	            <h1 class="s50 merriweather bold margin0">Committee</h1>
-				<ul class="clearfix">
-	    			<li class="list float-left">
-	    				<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
-	    				<h3>Lorem ipsum</h3>
-						<p class="grey">Committee</p>
-					</li>
-					<li class="list float-left">
-	    				<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
-	    				<h3>Lorem ipsum</h3>
-						<p class="grey">Committee</p>
-					</li>
-					<li class="list float-left">
-	    				<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
-	    				<h3>Lorem ipsum</h3>
-						<p class="grey">Committee</p>
-					</li>
-					<li class="list float-left">
-	    				<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
-	    				<h3>Lorem ipsum</h3>
-						<p class="grey">Committee</p>
-					</li>
-	    		</ul>
-	        </div>    		
-    	</div>        
-    </div>
-	
-	<div class="container1600" id="section4">
-    	<div class="container__content grid">
-    		<div class="span12">
-	            <h1 class="s50 merriweather bold margin0">Head of Departments</h1>
-				<ul class="clearfix">
-	    			<li class="list float-left">
-	    				<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
-	    				<h3>Lorem ipsum</h3>
-						<p class="grey">Committee</p>
-					</li>
-					<li class="list float-left">
-	    				<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
-	    				<h3>Lorem ipsum</h3>
-						<p class="grey">Committee</p>
-					</li>
-					<li class="list float-left">
-	    				<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
-	    				<h3>Lorem ipsum</h3>
-						<p class="grey">Committee</p>
-					</li>
-					<li class="list float-left">
-	    				<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
-	    				<h3>Lorem ipsum</h3>
-						<p class="grey">Committee</p>
-					</li>
-	    		</ul>
-	        </div>    		
-    	</div>        
+    <div class="container1600" id="section2">
+        <div class="container__content grid">
+            <div class="span6 section__content">
+                <h1 class="linetitle s40 merriweather bold">Creative City Worship</h1>
+                <h2 class="s20 light"><i>Artotel-Thamrin<br>Every Sunday at 10AM</i></h2>                    
+            </div>
+            <div class="span6">
+                <form action="">
+                	<div class="container480" cellpadding="5">
+                		<div class="field">
+                			<span width="50" class="title">Name</span>
+                			<span align="center" width="50" class="separator">:</span>
+                			<input type="text" class="">
+                		</div>
+                		<div class="field">
+                			<span width="50" class="title">Email</span>
+                			<span align="center" width="50" class="separator">:</span>
+                			<input type="text" class="">
+                		</div>
+                		<div class="field">
+                			<span width="50" class="title">Phone</span>
+                			<span align="center" width="50" class="separator">:</span>
+                			<input type="text" class="">
+                		</div>
+                		<div class="field">
+                			<span width="50" class="title">Message</span>
+                			<span align="center" width="50" class="separator">:</span>
+                			<textarea name="" id="" class="" rows="4"></textarea>
+                		</div>
+                		<div class="field" style="padding:10px 0 0 85px;">
+                			<a href="javascript:void(0)" class="button button--purple">Submit</a>
+                		</div>
+                	</div>
+                </form>                    
+            </div>
+        </div>        
     </div>
 
     <div class="footer">
@@ -110,6 +66,6 @@ Template Name: The Leaders Page
 
 <!-- JS -->
 <?php wp_footer(); ?>
-
+<script src="<?php bloginfo('template_url'); ?>/dist/js/contact.js"></script>
 </html>
 		

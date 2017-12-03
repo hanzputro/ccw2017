@@ -10,13 +10,51 @@
     // background: linear-gradient(to bottom,rgba(0,0,0,.1) 0%,rgba(255, 255, 255, 0) 100%);
     transform: translateY(-10px);
     animation: header 2s ease forwards 5s;
+    &.white{
+        .logo{}
+        .navbar{
+            ul{ color:white; }
+            li{
+                a{
+                    &:hover{ color:white; }
+                }
+            }
+        }
+        .ico-menu{
+            .ico-menu__line{
+                background:white;
+            }
+        }
+        .ico-menu__content{
+            li{
+                a:hover{
+                    color:$color-purple;
+                    font-weight:600;
+                }
+                &.active{
+                    a:hover{
+                        color:#5e5e5e;
+                        font-weight:400;
+                    }
+                    .ico-menu__submenu{
+                        a:hover{
+                            color:$color-purple;
+                            font-weight:600;
+                        }
+                    }
+                }
+            }            
+        }
+    }
     .container1600{
         @extend %flex;
         @extend %between;
     }
     .logo{
         margin:32px 0 0 0;
-        img{ filter: drop-shadow(0 0 5px rgba(0,0,0,.1)); }
+        img{ 
+            // filter: drop-shadow(0 0 5px rgba(0,0,0,.1)); 
+        }
     }
     .navbar{
         ul{ 
@@ -39,15 +77,16 @@
                     opacity:0;
                     position:absolute;
                     left:0; bottom:-8px;
-                    width:0%; height:3px;
+                    width:0%; height:1px;
                     background:$color-green;
                     transition:0.4s ease;
                 }
                 &:hover{
-                    color:$color-purple;
-                    &:before{
-                        opacity:1; width:100%;
-                    }
+                    color:#000;
+                    font-weight:600;
+                    // &:before{
+                    //     opacity:1; width:100%;
+                    // }
                 }                
             }
             &:last-child{
@@ -69,7 +108,7 @@
         margin-left:17px;
         &.active{
             .ico-menu__line{ 
-                background:$color-green;           
+                background:#000;           
                 &:last-child{ margin:0; }
                 &1{ width:100%; transform:rotate(-45deg) translate(-8px,8px); }
                 &2{ opacity:0; }
@@ -89,7 +128,7 @@
         }
         &:hover{
             .ico-menu__line{ 
-                background:$color-green;           
+                background:#000;           
                 &:last-child{ margin:0; }
                 &1{ width:100%; }
                 &2{ width:65%; }
@@ -143,6 +182,7 @@
                 }
                 &:hover{
                     font-weight:600;
+                    color:$color-purple;
                     &:after{
                         width:28px;
                         background:$color-purple;
@@ -163,8 +203,8 @@
             }
             &.active{
                 a{
-                    color:$color-purple;
-                    font-weight:600;
+                    color:#5e5e5e;
+                    font-weight:400;
                     &:before{
                         opacity:1; width:100%;
                     }
@@ -180,6 +220,7 @@
                             color:#5e5e5e;
                             &:hover{
                                 color:$color-purple;
+                                font-weight:600;
                             }
                         }
                     }
