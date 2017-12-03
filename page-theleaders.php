@@ -26,9 +26,9 @@ Template Name: The Leaders Page
 	<div class="container940" id="section2">
     	<div class="container__content grid">
     		<div class="span12 center">
-	            <h1 class="s50 merriweather margin0"><b>The</b> Leaders</h1>
+	            <h1 class="s50 merriweather margin0"><b><?php echo of_get_option('theleaders-title'); ?></b></h1>
 	            <hr class="hr55">
-	            <p class="margin0 s24 myriadpro grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum lorem a volutpat euismod.</p>
+	            <p class="margin0 s24 myriadpro grey"><?php echo of_get_option('theleaders-desc'); ?></p>
 	            <br>
 	            <br>
 	        </div>    		
@@ -115,9 +115,9 @@ Template Name: The Leaders Page
         <div class="container1600 clearfix">
             <div class="copyright"><h5 class="margin0 merriweather">Copyright 2017, Creative City Worship, All Right Reserved</h5></div>
             <ul class="footer-menu">
-                <li><a href=""><h5 class="margin0 merriweather">Creative Community</h5></a></li>
-                <li><a href=""><h5 class="margin0 merriweather">Services</h5></a></li>
-                <li><a href=""><h5 class="margin0 merriweather">Get Connected</h5></a></li>
+                <li><a href="<?php echo of_get_option('footer-cc-link'); ?>"><h5 class="margin0 merriweather">Creative Community</h5></a></li>
+                <li><a href="<?php echo of_get_option('footer-s-link'); ?>"><h5 class="margin0 merriweather">Services</h5></a></li>
+                <li><a href="<?php echo of_get_option('footer-gc-link'); ?>"><h5 class="margin0 merriweather">Get Connected</h5></a></li>
             </ul>
         </div>
     </div>

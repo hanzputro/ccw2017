@@ -16,7 +16,7 @@
             <div class="section-cover">                
                 <style>
                     #section1 .section-cover{
-                        background-image: url('<?php bloginfo('template_url'); ?>/dist/images/home/bg-section1.jpg');
+                        background-image: url('<?php echo of_get_option('home-sec1-bg'); ?>');
                     }
                 </style>
                 <!-- section1:header -->
@@ -71,13 +71,13 @@
                 <div class="section grid" id="section-cover2">
                     <div class="span6">
                         <div class="thumb">
-                            <img class="" src="<?php bloginfo('template_url'); ?>/dist/images/home/section2-thumb.jpg" alt="">
+                            <img class="" src="<?php echo of_get_option('home-sec2-img'); ?>" alt="">
                             <div class="splash"></div>
                         </div>                    
                     </div>
                     <div class="span6 section__content">
-                        <h1 class="linetitle s50 merriweather bold"><?php echo get_option('shortname_sc2ttl'); ?></h1>
-                        <p class="s30"><?php echo get_option('shortname_sc2capt'); ?></p>
+                        <h1 class="linetitle s50 merriweather bold"><?php echo of_get_option('home-sec2-title'); ?></h1>
+                        <p class="s30"><?php echo of_get_option('home-sec2-desc'); ?></p>
                         <nav class="tablink">
                             <ul>
                                 <li class=""><a href="#notset"><h1 class="margin0">About Us</h1></a></li>
@@ -132,8 +132,8 @@
         <section class="cd-section" id="section4">
             <div class="section-cover">
                 <div class="section">
-                    <h1 class="s50 merriweather bold linetitle"><?php echo get_option('shortname_sc4ttl'); ?></h1>
-                    <p class="margin0 s24"><?php echo get_option('shortname_sc4capt'); ?></p>
+                    <h1 class="s50 merriweather bold linetitle"><?php echo of_get_option('home-sec4-title'); ?></h1>
+                    <p class="margin0 s24"><?php echo of_get_option('home-sec4-desc'); ?></p>
                     <ul class="news">
                         <li class="news__list">
                             <div class="splash2"></div>
@@ -173,8 +173,8 @@
             <div class="section-cover">
                 <div class="section grid">
                     <div class="span6 contact__caption">
-                        <h1 class="s50 merriweather bold linetitle"><?php echo get_option('shortname_sc5ttl'); ?></h1>
-                        <p class="margin0 s24 myriadpro"><?php echo get_option('shortname_sc5capt'); ?></p>
+                        <h1 class="s50 merriweather bold linetitle"><?php echo of_get_option('home-sec5-title'); ?></h1>
+                        <p class="margin0 s24 myriadpro"><?php echo of_get_option('home-sec5-desc'); ?></p>
                         <!-- <br>
                         <ul>
                             <li><a href="" class="s18 italic"><i class="ico-email"></i>creativecityworship@gmail.com</a></li>
@@ -189,9 +189,9 @@
                     <div class="container1600 clearfix">
                         <div class="copyright"><h5 class="margin0 merriweather">Copyright 2017, Creative City Worship, All Right Reserved</h5></div>
                         <ul class="footer-menu">
-                            <li><a href=""><h5 class="margin0 merriweather">Creative Community</h5></a></li>
-                            <li><a href=""><h5 class="margin0 merriweather">Services</h5></a></li>
-                            <li><a href=""><h5 class="margin0 merriweather">Get Connected</h5></a></li>
+                            <li><a href="<?php echo of_get_option('footer-cc-link'); ?>"><h5 class="margin0 merriweather">Creative Community</h5></a></li>
+                            <li><a href="<?php echo of_get_option('footer-s-link'); ?>"><h5 class="margin0 merriweather">Services</h5></a></li>
+                            <li><a href="<?php echo of_get_option('footer-gc-link'); ?>"><h5 class="margin0 merriweather">Get Connected</h5></a></li>
                         </ul>
                     </div>
                 </div>

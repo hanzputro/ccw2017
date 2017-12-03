@@ -19,7 +19,7 @@
     <?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
     <!-- <meta name="author" content="" />
     <meta name="keywords" content="" />  -->
-    <link rel="icon" type="image/png" href="<?php bloginfo('template_url'); ?>/assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="<?php bloginfo('template_url'); ?>/dist/images/favicon.png">
     
     <?php wp_head(); ?>    
 </head>

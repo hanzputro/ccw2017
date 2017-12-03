@@ -18,6 +18,7 @@
 #section1{ padding-top:105px; }
 
 #section2{
+    overflow:hidden;
     .section-cover{ background-color: $color-white; }
     .section__content{ 
         position:relative; 
@@ -67,8 +68,8 @@
             opacity:0;
             transform: rotate(-30deg) translateX(180px);
             position: absolute;
-            bottom: -200px;
-            width: 650px; height: 381px;
+            bottom: -210px;
+            width: 350px; height: 205px;
             background-image: url(../../dist/images/home/splash.png);
             background-size: 100%;
             z-index: 2;            
@@ -97,8 +98,8 @@
         .thumb{
             width: 380px;
             .splash{                
-                bottom: -210px;
-                width: 350px; height: 205px;
+                // bottom: -210px;
+                // width: 350px; height: 205px;
             }
         }
         .linetitle{ margin-bottom:40px; }

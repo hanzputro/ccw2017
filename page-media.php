@@ -91,9 +91,9 @@ Template Name: Media Page
         <div class="container1600 clearfix">
             <div class="copyright"><h5 class="margin0 merriweather">Copyright 2017, Creative City Worship, All Right Reserved</h5></div>
             <ul class="footer-menu">
-                <li><a href=""><h5 class="margin0 merriweather">Creative Community</h5></a></li>
-                <li><a href=""><h5 class="margin0 merriweather">Services</h5></a></li>
-                <li><a href=""><h5 class="margin0 merriweather">Get Connected</h5></a></li>
+                <li><a href="<?php echo of_get_option('footer-cc-link'); ?>"><h5 class="margin0 merriweather">Creative Community</h5></a></li>
+                <li><a href="<?php echo of_get_option('footer-s-link'); ?>"><h5 class="margin0 merriweather">Services</h5></a></li>
+                <li><a href="<?php echo of_get_option('footer-gc-link'); ?>"><h5 class="margin0 merriweather">Get Connected</h5></a></li>
             </ul>
         </div>
     </div>

@@ -27,32 +27,32 @@ Template Name: Who We Are Page
     	<div class="container__content grid">
     		<div class="span6">
 	            <div class="thumb animate">
-	                <img class="" src="<?php bloginfo('template_url'); ?>/dist/images/home/section2-thumb.jpg" alt="">
+	                <img class="" src="<?php echo of_get_option('whoweare-img'); ?>" alt="">
 	                <div class="splash"></div>
 	            </div>                    
 	        </div>
 	        <div class="span6 section__content">
-	        	<h2 class="s20 grey">WHO WE ARE</h2>
-	            <h1 class="linetitle s50 merriweather bold">Creative City Worship</h1>
-	            <p class="s20">Pastor Walter is our lead pastor. Creative City Worship started with a bunch of people who are passionate about God and passionate to serve others. We strongly believe that our God-given talents should be used to serve the city we are in, so that people can come to know who Jesus is and can worship Him in spirit and in truth.<br><br>We started our first Creative City Worship service on November 10th, 2013 with only 12 members. Having only a small amount of volunteers meant that everyone had to multi-task, and on every Sunday one person could have up to 3 ministries! But this has caused us to grow closer to one another and Sunday service became more than just an ordinary church service - it became our extended family gathering to worship God and rejoice in His presence.<br><br>Ever since then we've had tremendous miracles in the house of God - new members were added, many volunteered to serve, and we've even been given the opportunity to dedicate 4 young children to God and to baptize our first member on Easter Sunday, 20 April 2014. </p>                    
+	        	<h2 class="s20 grey"><?php echo of_get_option('whoweare-minititle'); ?></h2>
+	            <h1 class="linetitle s50 merriweather bold"><?php echo of_get_option('whoweare-title'); ?></h1>
+	            <p class="s20"><?php echo of_get_option('whoweare-desc'); ?></p>                    
 	        </div>
     	</div>        
     </div>
 	
-	<div class="container" id="section3" style="background-image: url('<?php bloginfo('template_url'); ?>/dist/images/bg-whoweare.jpg');">
+	<div class="container" id="section3" style="background-image: url('<?php echo of_get_option('whoweare-bg2'); ?>');">
 		<div class="container940">
 			<div class="container__content grid">
 	    		<div class="span12 center">
-		            <h1 class="s50 merriweather margin0"><b>Our</b> Vision</h1>
+		            <h1 class="s50 merriweather margin0"><b><?php echo of_get_option('whoweare-title2'); ?></b></h1>
 		            <hr class="hr55">
-		            <p class="margin0 s24 myriadpro purple">Discovering and Maximizing Our God-Given TALENTS to Serve The CITY We Are In, and to Bring People to WORSHIP God in Spirit and in Truth</p>
+		            <p class="margin0 s24 myriadpro purple"><?php echo of_get_option('whoweare-desc2'); ?></p>
 		        </div>
 	    	</div>        
 	    	<div class="container__content grid">
 		        <div class="span12 center">
-		            <h1 class="s50 merriweather margin0"><b>Our</b> Mission</h1>
+		            <h1 class="s50 merriweather margin0"><b><?php echo of_get_option('whoweare-title3'); ?></b></h1>
 		            <hr class="hr55">
-		            <p class="margin0 s24 myriadpro purple">Love God and Love People</p>
+		            <p class="margin0 s24 myriadpro purple"><?php echo of_get_option('whoweare-desc3'); ?></p>
 		            <br>
 		            <br>
 		        </div>
@@ -64,9 +64,9 @@ Template Name: Who We Are Page
         <div class="container1600 clearfix">
             <div class="copyright"><h5 class="margin0 merriweather">Copyright 2017, Creative City Worship, All Right Reserved</h5></div>
             <ul class="footer-menu">
-                <li><a href=""><h5 class="margin0 merriweather">Creative Community</h5></a></li>
-                <li><a href=""><h5 class="margin0 merriweather">Services</h5></a></li>
-                <li><a href=""><h5 class="margin0 merriweather">Get Connected</h5></a></li>
+                <li><a href="<?php echo of_get_option('footer-cc-link'); ?>"><h5 class="margin0 merriweather">Creative Community</h5></a></li>
+                <li><a href="<?php echo of_get_option('footer-s-link'); ?>"><h5 class="margin0 merriweather">Services</h5></a></li>
+                <li><a href="<?php echo of_get_option('footer-gc-link'); ?>"><h5 class="margin0 merriweather">Get Connected</h5></a></li>
             </ul>
         </div>
     </div>

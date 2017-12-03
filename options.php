@@ -128,21 +128,21 @@ function optionsframework_options() {
 	$options[] = array(
 		'name' => __( 'Creative Community Link', 'theme-textdomain' ),
 		'id' => 'footer-cc-link',
-		'std' => '<?php echo site_url(); ?>',
+		'std' => '',
 		'type' => 'text'
 	);
 
 	$options[] = array(
 		'name' => __( 'Services Link', 'theme-textdomain' ),
 		'id' => 'footer-s-link',
-		'std' => '<?php echo site_url(); ?>',
+		'std' => '',
 		'type' => 'text'
 	);
 
 	$options[] = array(
 		'name' => __( 'Get Connected Link', 'theme-textdomain' ),
 		'id' => 'footer-gc-link',
-		'std' => '<?php echo site_url(); ?>',
+		'std' => '',
 		'type' => 'text'
 	);
 
@@ -364,7 +364,14 @@ creativecityworship@gmail.com
 		'id' => 'whoweare-minititle',
 		'std' => 'WHO WE ARE',
 		'type' => 'text'
-	);	
+	);
+
+	$options[] = array(
+		'name' => __( 'Background', 'theme-textdomain' ),
+		'std' => $imagepath . '/home/section2-thumb.jpg',
+		'id' => 'whoweare-img',
+		'type' => 'upload'
+	);
 
 	$options[] = array(
 		'name' => __( 'Description', 'theme-textdomain' ),
@@ -385,7 +392,7 @@ creativecityworship@gmail.com
 	$options[] = array(
 		'name' => __( 'Background', 'theme-textdomain' ),
 		'std' => $imagepath . '/bg-whoweare.jpg',
-		'id' => 'whoweare-bg',
+		'id' => 'whoweare-bg2',
 		'type' => 'upload'
 	);
 
@@ -452,8 +459,7 @@ creativecityworship@gmail.com
 	$options[] = array(
 		'name' => __( 'Description', 'theme-textdomain' ),
 		'id' => 'theleaders-desc',
-		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum lorem a volutpat euismod.<br>
-				Vivamus blandit metus eu sem blandit, eget dictum neque commodo. Cras fermentum sollicitudin laoreet. Aliquam quis tellus ultricies, iaculis justo ut, vulputate nibh. Fusce convallis odio vitae justo volutpat dictum. Sed non ligula odio. Praesent dapibus lobortis vestibulum. Ut accumsan sem nibh, dapibus mollis nisi ultrices ut.',
+		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum lorem a volutpat euismod.',
 		'type' => 'textarea'
 	);
 
@@ -491,7 +497,7 @@ creativecityworship@gmail.com
 	);
 	$options[] = array(
 		'name' => __( 'Description', 'theme-textdomain' ),
-		'id' => 'theleaders-desc',
+		'id' => 'contact-desc',
 		'std' => 'Artotel-Thamrin
 Every Sunday at 10AM',
 		'type' => 'textarea'
