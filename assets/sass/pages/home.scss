@@ -195,8 +195,10 @@
             opacity:0;
             transform: rotate(-30deg) translateX(180px);
             position: absolute;
-            bottom: -200px;
-            width: 650px; height: 381px;
+            // bottom: -200px;
+            // width: 650px; height: 381px;
+            bottom: -210px;
+            width: 350px; height: 205px;
             background-image: url(../../dist/images/home/splash.png);
             background-size: 100%;
             z-index: 2;            
@@ -665,7 +667,7 @@
             animation: thumb1 1.8s ease forwards 1s;
             &:before{ animation: thumbbefore1 1.8s ease forwards 1.3s; }
             &:after{ animation: thumbafter1 1.8s ease forwards 1.3s; }
-            .splash{ animation: splash1 2.8s ease forwards 1.3s; }
+            .splash{ display:none; }
         }
     }
     #section3{
