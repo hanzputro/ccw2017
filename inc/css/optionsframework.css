@@ -306,3 +306,36 @@
 	text-indent:-9999px;
 	width:16px;
 }
+#optionsframework .section-gallery .controls{
+	width:100%;
+}
+#optionsframework .section-gallery .controls .gallery-add{
+}
+#optionsframework .section-gallery .controls .gallery-each{
+	display:inline-block;
+	width:100%;
+	position:relative;
+}
+#optionsframework .section-gallery .controls .gallery-each.to-copy{
+	display:none;
+}
+#optionsframework .section-gallery .controls .gallery-each input,
+#optionsframework .section-gallery .controls .gallery-each textarea{
+	width:60%;
+	float:left;
+	border: 1px solid #ddd;
+	margin:0 0 10px 0;
+}
+#optionsframework .section-gallery .controls .gallery-each textarea{
+	height:150px;
+}
+#optionsframework .section-gallery .controls .gallery-each .gallery-upload{
+	position: absolute;
+	top: 0; left: 62%;
+}
+#optionsframework .section-gallery .controls .gallery-each .gallery-remove{
+	position: absolute;
+	top: 0; right: 0;
+	color:red;
+	cursor:pointer;
+}

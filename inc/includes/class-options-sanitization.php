@@ -127,29 +127,25 @@ add_filter( 'of_sanitize_upload', 'of_sanitize_upload' );
 * Sanitize Repeat Upload Fields
 * by Hanzputro
 */
-function sanitize_repeat_upload( $input, $option ){
-	// $clean = '';
-	// $filetype = wp_check_filetype( $input );
-	// if ( $filetype["ext"] ) {
-	// 	$clean = esc_url( $input );
-	// }
-	// if( is_array( $input ) )
-	// $clean = array_map( 'sanitize_text_field', $input);
-	// return $clean;
-	
+function sanitize_repeat_upload( $input, $option ){	
 	$clean = '';
 	if( is_array( $input ) )
 	$clean = array_map( 'sanitize_text_field', $input);
 	return $clean;
-
-	// $clean = '';
-	// $filetype = wp_check_filetype( $input );
-	// if ( $filetype["ext"] ) {
-	// 	$clean = array_map( esc_url( $input ) );
-	// }
-	// return $clean;
 }
 add_filter( 'of_sanitize_repeat_upload', 'sanitize_repeat_upload', 10, 2 );
+
+/**
+* Sanitize Gallery Fields
+* by Hanzputro
+*/
+// function sanitize_gallery( $input, $option ){	
+// 	$clean = '';
+// 	if( is_array( $input ) )
+// 	$clean = array_map( 'sanitize_text_field', $input);
+// 	return $clean;
+// }
+// add_filter( 'of_sanitize_gallery', 'sanitize_gallery', 10, 2 );
 
 /**
  * Sanitization for editor input.
@@ -468,6 +464,29 @@ function of_recognized_font_styles() {
 		);
 	return apply_filters( 'of_recognized_font_styles', $default );
 }
+
+
+
+/**
+ * By hanzputro
+ * Get recognized input.
+ *
+ * Returns an array of all recognized font styles.
+ * Keys are intended to be stored in the database
+ * while values are ready for display in in html.
+ *
+ * @return   array
+ */
+// function of_recognized_input() {
+// 	$default = array(
+// 		'normal'      => __( 'Normal', 'theme-textdomain' ),
+// 		'italic'      => __( 'Italic', 'theme-textdomain' ),
+// 		'bold'        => __( 'Bold', 'theme-textdomain' ),
+// 		'bold italic' => __( 'Bold Italic', 'theme-textdomain' )
+// 		);
+// 	return apply_filters( 'of_recognized_input', $default );
+// }
+
 
 /**
  * Is a given string a color formatted in hexidecimal notation?

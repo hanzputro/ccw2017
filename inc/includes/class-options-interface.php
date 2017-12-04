@@ -215,11 +215,62 @@ class Options_Framework_Interface {
 
 				break;
 
-			// Repeat Uploader
-			// case "repeat_upload":
-			// 	$output .= Options_Framework_Media_Uploader::optionsframework_multiuploader( $value['id'], $val, null );
 
-			// 	break;
+
+
+			// Gallery
+			case 'gallery':
+
+			unset( $gal_input, $gal_textarea, $gal_input2 );
+
+			$gallery_defaults = array(
+				'input' => '',
+				'textarea' => '',
+				'input2' => ''
+			);
+
+			$gallery_stored = wp_parse_args( $val, $gallery_defaults );
+
+			$gallery_options = array(
+				'input' => sanitize_repeat_field(),
+				'textarea' => sanitize_repeat_field(),
+				'input2' => sanitize_repeat_field()
+			);
+
+			if ( isset( $value['options'] ) ) {
+				$gallery_options = wp_parse_args( $value['options'], $gallery_options );
+			}
+
+			// input
+			if ( $gallery_options['input'] ) {
+				$gal_input = '<input class="of-gallery of-gallery-input" name="' . esc_attr( $option_name . '[' . $value['id'] . '][input]' ) . '" id="' . esc_attr( $value['id'] . '_input' ) . '"/>';
+			}
+
+			// textarea
+			if ( $gallery_options['textarea'] ) {
+				$gal_textarea = '<input class="of-gallery of-gallery-textarea" name="' . esc_attr( $option_name . '[' . $value['id'] . '][textarea]' ) . '" id="' . esc_attr( $value['id'] . '_textarea' ) . '"></textarea>';
+			}
+
+			// input2
+			if ( $gallery_options['input2'] ) {
+				$gal_input2 = '<input class="of-gallery of-gallery-input2" name="' . esc_attr( $option_name . '[' . $value['id'] . '][input2]' ) . '" id="' . esc_attr( $value['id'] . '_input2' ) . '"/>';
+			}
+
+			// image
+
+			// Allow modification/injection of gallery fields
+			$gallery_fields = compact( 'gal_input', 'gal_textarea', 'gal_input2' );
+			$gallery_fields = apply_filters( 'of_gallery_fields', $gallery_fields, $gallery_stored, $option_name, $value );
+			$output .= implode( '', $gallery_fields );
+
+				break;
+
+
+
+
+
+
+
 
 			// Typography
 			case 'typography':
@@ -501,3 +552,57 @@ function repeat_upload_option_type( $option_name, $option, $values ){
 		
 }
 add_filter( 'optionsframework_repeat_upload', 'repeat_upload_option_type', 10, 3 );
+
+
+
+/**
+* Gallery
+* By Hanzputro
+*/
+// function gallery_option_type( $option_name, $option, $values ){
+//   	$counter = 0;
+
+// 	$output = '<div class="of-repeat-loop">';
+	
+// 	if( is_array( $values ) ) foreach ( (array)$values as $value ){
+
+// 		$output .= '<div class="gallery-each">';	
+// 		$output .= '<input class="of-input" name="' . esc_attr( $option_name . '[' . $option['id'] . ']['.$counter.']' ) . '" value="' . esc_attr( $value ) . '" placeholder="Title"/>';
+// 		$output .= '<textarea class="of-input" name="' . esc_attr( $option_name . '[textarea-' . $option['id'] . ']['.$counter.']' ) . '" value="' . esc_attr( $value ) . '" placeholder="Description"/></textarea>';
+// 		$output .= '<input class="of-input" name="' . esc_attr( $option_name . '[input2-' . $option['id'] . ']['.$counter.']' ) . '" value="' . esc_attr( $value ) . '" placeholder="Extra Input"/>';
+// 		$output .= '<img name="' . esc_attr( $option_name . '[image-' . $option['id'] . ']['.$counter.']' ) . '"  src="' . esc_attr( $value ) . '" >';
+// 		$output .= '<a class="button icon gallery-upload">Upload Image</a>';
+// 		$output .= '<a class="gallery-remove">'. __('Remove') .'</a>';
+// 		$output .= '</div><!--.gallery-each-->';
+
+// 		$counter++;
+// 	}
+
+// 	if( $counter == 0 ){
+// 		$output .= '<div class="gallery-each">';	
+// 		$output .= '<input class="of-input" name="' . esc_attr( $option_name . '[' . $option['id'] . '][input]['.$counter.']' ) . '" value="' . esc_attr( $value ) . '" placeholder="Title"/>';
+// 		$output .= '<textarea class="of-input" name="' . esc_attr( $option_name . '[' . $option['id'] . '][textarea]['.$counter.']' ) . '" value="' . esc_attr( $value ) . '" placeholder="Description"/></textarea>';
+// 		$output .= '<input class="of-input" name="' . esc_attr( $option_name . '[' . $option['id'] . '][input2]['.$counter.']' ) . '" value="' . esc_attr( $value ) . '" placeholder="Extra Input"/>';
+// 		$output .= '<img name="' . esc_attr( $option_name . '[' . $option['id'] . '][image]['.$counter.']' ) . '"  src="' . esc_attr( $value ) . '" >';
+// 		$output .= '<a class="button icon gallery-upload">Upload Image</a>';
+// 		$output .= '</div><!--.gallery-each-->';
+// 	}
+
+// 	$output .= '<div class="gallery-each to-copy">';	
+// 	$output .= '<input class="of-input" data-rel="' . esc_attr( $option_name . '[' . $option['id'] . ']' ) . '" value="' . esc_attr( $value ) . '" placeholder="Title"/>';
+// 	$output .= '<textarea class="of-input" data-rel="' . esc_attr( $option_name . '[textarea-' . $option['id'] . ']' ) . '" value="' . esc_attr( $value ) . '" placeholder="Description"/></textarea>';
+// 	$output .= '<input class="of-input" data-rel="' . esc_attr( $option_name . '[input2-' . $option['id'] . ']' ) . '" value="' . esc_attr( $value ) . '" placeholder="Extra Input"/>';
+// 	$output .= '<img data-rel="' . esc_attr( $option_name . '[image-' . $option['id'] . ']' ) . '"  src="' . esc_attr( $value ) . '" >';
+// 	$output .= '<a class="button icon gallery-upload">Upload Image</a>';
+// 	$output .= '<a class="gallery-remove">'. __('Remove') .'</a>';
+// 	$output .= '</div><!--.gallery-each-->';
+
+	
+// 	$output .= '<a class="button icon gallery-add">Add</a><br>';
+
+// 	$output .= '</div><!--.of-repeat-loop-->';
+	
+// 	return $output;
+		
+// }
+// add_filter( 'optionsframework_gallery', 'gallery_option_type', 10, 3 );

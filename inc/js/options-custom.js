@@ -91,7 +91,30 @@ jQuery(document).ready(function($) {
         $(".controls").on("click", ".dodelete", function(e){
             $(this).parent('.of-repeat-group').remove();
         });
+    });
 
+    // repeat gallery
+	jQuery(function($){
+        $(".gallery-add").on("click", function(e){
+
+            // the loop object
+            $loop = $(this).parent();
+
+            // the group to copy
+            $group = $loop.find('.to-copy').clone().insertBefore($(this)).removeClass('to-copy');
+
+            // the new input
+            $input = $group.find('input');   
+            count = $loop.children('.of-repeat-group').not('.to-copy').length;
+
+        	input_name = $input.attr('data-rel');
+        	$input.attr('name', input_name + '[' + ( count - 1 ) + ']');
+
+        });
+
+        $(".controls").on("click", ".dodelete", function(e){
+            $(this).parent('.of-repeat-group').remove();
+        });
     });
 
 

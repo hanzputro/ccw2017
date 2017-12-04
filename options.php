@@ -65,6 +65,20 @@ function optionsframework_options() {
 		'color' => false
 	);
 
+	// Gallery Defaults
+	$gallery_defaults = array(
+		'input' => 'Title',
+		'textarea' => 'Description',
+		'input2' => 'Extra Input' 
+	);
+
+	// Gallery Options
+	$gallery_options = array(
+		'input' => 'Title',
+		'textarea' => 'Description',
+		'input2' => 'Extra Input' 
+	);
+
 	// Pull all the categories into an array
 	$options_categories = array();
 	$options_categories_obj = get_categories();
@@ -197,92 +211,103 @@ function optionsframework_options() {
 		'type' => 'info'
 	);
 
-	$options[] = array(
-		'name' => __( 'News 1', 'theme-textdomain' ),
-		'id' => 'home-sec3-desc1',
-		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
-		'type' => 'textarea'
+	// $options[] = array(
+	// 	'name' => __( 'Gallery', 'theme-textdomain' ),
+	// 	'id' => 'home-sec3-gallery',
+	// 	'type' => 'gallery2'
+	// );
+	$options[] = array( 'name' => __( 'Gallery', 'theme-textdomain' ),
+		'id' => "example_gallery",
+		'std' => $gallery_defaults,
+		'type' => 'gallery'
 	);
 
-	$options[] = array(
-		'name' => __( 'Background News 1', 'theme-textdomain' ),
-		'std' => $imagepath . '/home/bg-section3.jpg',
-		'id' => 'home-sec3-bg1',
-		'type' => 'upload'
-	);
+// 	$options[] = array(
+// 		'name' => __( 'News 1', 'theme-textdomain' ),
+// 		'id' => 'home-sec3-desc1',
+// 		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
+// 		'type' => 'textarea'
+// 	);
 
-	$options[] = array(
-		'name' => __( 'News 2', 'theme-textdomain' ),
-		'id' => 'home-sec3-desc2',
-		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
-		'type' => 'textarea'
-	);
+// 	$options[] = array(
+// 		'name' => __( 'Background News 1', 'theme-textdomain' ),
+// 		'std' => $imagepath . '/home/bg-section3.jpg',
+// 		'id' => 'home-sec3-bg1',
+// 		'type' => 'upload'
+// 	);
 
-	$options[] = array(
-		'name' => __( 'Background News 2', 'theme-textdomain' ),
-		'std' => $imagepath . '/home/bg-section3.jpg',
-		'id' => 'home-sec3-bg2',
-		'type' => 'upload'
-	);
+// 	$options[] = array(
+// 		'name' => __( 'News 2', 'theme-textdomain' ),
+// 		'id' => 'home-sec3-desc2',
+// 		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
+// 		'type' => 'textarea'
+// 	);
 
-	$options[] = array(
-		'name' => __( 'News 3', 'theme-textdomain' ),
-		'id' => 'home-sec3-desc3',
-		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
-		'type' => 'textarea'
-	);
+// 	$options[] = array(
+// 		'name' => __( 'Background News 2', 'theme-textdomain' ),
+// 		'std' => $imagepath . '/home/bg-section3.jpg',
+// 		'id' => 'home-sec3-bg2',
+// 		'type' => 'upload'
+// 	);
 
-	$options[] = array(
-		'name' => __( 'Background News 3', 'theme-textdomain' ),
-		'std' => $imagepath . '/home/bg-section3.jpg',
-		'id' => 'home-sec3-bg3',
-		'type' => 'upload'
-	);
+// 	$options[] = array(
+// 		'name' => __( 'News 3', 'theme-textdomain' ),
+// 		'id' => 'home-sec3-desc3',
+// 		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
+// 		'type' => 'textarea'
+// 	);
 
-	// section 4
-	$options[] = array(
-		'name' => __( 'SECTION 4', 'theme-textdomain' ),
-		'type' => 'info'
-	);
+// 	$options[] = array(
+// 		'name' => __( 'Background News 3', 'theme-textdomain' ),
+// 		'std' => $imagepath . '/home/bg-section3.jpg',
+// 		'id' => 'home-sec3-bg3',
+// 		'type' => 'upload'
+// 	);
 
-	$options[] = array(
-		'name' => __( 'Title', 'theme-textdomain' ),
-		'id' => 'home-sec4-title',
-		'std' => 'Upcoming Events',
-		'type' => 'text'
-	);
+// 	// section 4
+// 	$options[] = array(
+// 		'name' => __( 'SECTION 4', 'theme-textdomain' ),
+// 		'type' => 'info'
+// 	);
 
-	$options[] = array(
-		'name' => __( 'Description', 'theme-textdomain' ),
-		'id' => 'home-sec4-desc',
-		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
-		'type' => 'textarea'
-	);
+// 	$options[] = array(
+// 		'name' => __( 'Title', 'theme-textdomain' ),
+// 		'id' => 'home-sec4-title',
+// 		'std' => 'Upcoming Events',
+// 		'type' => 'text'
+// 	);
 
-	// section 5
-	$options[] = array(
-		'name' => __( 'SECTION 5', 'theme-textdomain' ),
-		'type' => 'info'
-	);
+// 	$options[] = array(
+// 		'name' => __( 'Description', 'theme-textdomain' ),
+// 		'id' => 'home-sec4-desc',
+// 		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
+// 		'type' => 'textarea'
+// 	);
 
-	$options[] = array(
-		'name' => __( 'Title', 'theme-textdomain' ),
-		'id' => 'home-sec5-title',
-		'std' => 'Upcoming Events',
-		'type' => 'text'
-	);
+// 	// section 5
+// 	$options[] = array(
+// 		'name' => __( 'SECTION 5', 'theme-textdomain' ),
+// 		'type' => 'info'
+// 	);
 
-	$options[] = array(
-		'name' => __( 'Description', 'theme-textdomain' ),
-		'id' => 'home-sec5-desc',
-		'std' => 'ARTOTEL - Thamrin
-JL. Sunda No.3,
-Jakarta Pusat
+// 	$options[] = array(
+// 		'name' => __( 'Title', 'theme-textdomain' ),
+// 		'id' => 'home-sec5-title',
+// 		'std' => 'Upcoming Events',
+// 		'type' => 'text'
+// 	);
 
-creativecityworship@gmail.com
-@creativecityworship',
-		'type' => 'textarea'
-	);
+// 	$options[] = array(
+// 		'name' => __( 'Description', 'theme-textdomain' ),
+// 		'id' => 'home-sec5-desc',
+// 		'std' => 'ARTOTEL - Thamrin
+// JL. Sunda No.3,
+// Jakarta Pusat
+
+// creativecityworship@gmail.com
+// @creativecityworship',
+// 		'type' => 'textarea'
+// 	);
 
 
 	/* ########################### */
