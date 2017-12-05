@@ -104,16 +104,60 @@ jQuery(document).ready(function($) {
             $group = $loop.find('.to-copy').clone().insertBefore($(this)).removeClass('to-copy');
 
             // the new input
-            $input = $group.find('input');   
-            count = $loop.children('.of-repeat-group').not('.to-copy').length;
+            $input = $group.find('.fieldinput');
+            $textarea = $group.find('.fieldtextarea');
+            $input2 = $group.find('.fieldinput2');
+
+            count = $loop.children('.gallery-each').not('.to-copy').length;
 
         	input_name = $input.attr('data-rel');
+        	textarea_name = $textarea.attr('data-rel');
+        	input2_name = $input2.attr('data-rel');
+
         	$input.attr('name', input_name + '[' + ( count - 1 ) + ']');
+        	$textarea.attr('name', textarea_name + '[' + ( count - 1 ) + ']');
+        	$input2.attr('name', input2_name + '[' + ( count - 1 ) + ']');
 
         });
 
-        $(".controls").on("click", ".dodelete", function(e){
-            $(this).parent('.of-repeat-group').remove();
+        $(".controls").on("click", ".gallery-remove", function(e){
+            // if($(this).parents('.of-repeat-loop').find('.gallery-each').length < 4 ){
+        	
+            count = $(this).parents().find('.gallery-each').not('.to-copy').length;
+            toeach = $(this).parents(); 
+            $(toeach).each(function(){
+            	$(this).find('.fieldinput').attr('name', count);
+            });
+
+            $(this).parent('.gallery-each').remove();
+        	$('.gallery-remove').remove();
+        	
+            // }else{
+            // 	$(this).parent('.gallery-each').remove();
+            // }
+
+            // the loop object
+          //   $loop = $(this).parents('.of-repeat-loop');
+          //   count = $loop.find('.gallery-each').not('.to-copy').length;
+
+          //   // $($loop.children('.gallery-each')).each(function(){
+          //   	// the group to copy
+	         //    $group = $loop.find('.to-copy');
+
+	         //    // the new input
+	         //    $input = $group.find('.fieldinput');
+	         //    $textarea = $group.find('.fieldtextarea');
+	         //    $input2 = $group.find('.fieldinput2');        
+
+	        	// input_name = $input.attr('data-rel');
+	        	// textarea_name = $textarea.attr('data-rel');
+	        	// input2_name = $input2.attr('data-rel');
+
+	        	
+	        	// $textarea.attr('name', textarea_name + '[' + ( count - 1 ) + ']');
+	        	// $input2.attr('name', input2_name + '[' + ( count - 1 ) + ']');
+            // });
+            
         });
     });
 

@@ -135,17 +135,6 @@ function sanitize_repeat_upload( $input, $option ){
 }
 add_filter( 'of_sanitize_repeat_upload', 'sanitize_repeat_upload', 10, 2 );
 
-/**
-* Sanitize Gallery Fields
-* by Hanzputro
-*/
-// function sanitize_gallery( $input, $option ){	
-// 	$clean = '';
-// 	if( is_array( $input ) )
-// 	$clean = array_map( 'sanitize_text_field', $input);
-// 	return $clean;
-// }
-// add_filter( 'of_sanitize_gallery', 'sanitize_gallery', 10, 2 );
 
 /**
  * Sanitization for editor input.
@@ -234,6 +223,32 @@ function of_sanitize_background( $input ) {
 	return $output;
 }
 add_filter( 'of_sanitize_background', 'of_sanitize_background' );
+
+
+/**
+ * Sanitization for gallery option.
+ * 
+ * By hanzputro
+ *
+ * @returns array $output
+ */
+function of_sanitize_gallery( $input ) {
+
+	$output = wp_parse_args( $input, array(
+		'input' => '',
+		'textarea'  => '',
+		'input2'  => '',
+	) );
+
+	$output['input'] = apply_filters( 'sanitize_repeat_field', $input['input'] );
+	$output['textarea'] = apply_filters( 'sanitize_repeat_field', $input['textarea'] );
+	$output['input2'] = apply_filters( 'sanitize_repeat_field', $input['input2'] );
+
+	return $output;
+}
+add_filter( 'of_sanitize_gallery', 'of_sanitize_gallery' );
+
+
 
 /**
  * Sanitization for background repeat
@@ -464,29 +479,6 @@ function of_recognized_font_styles() {
 		);
 	return apply_filters( 'of_recognized_font_styles', $default );
 }
-
-
-
-/**
- * By hanzputro
- * Get recognized input.
- *
- * Returns an array of all recognized font styles.
- * Keys are intended to be stored in the database
- * while values are ready for display in in html.
- *
- * @return   array
- */
-// function of_recognized_input() {
-// 	$default = array(
-// 		'normal'      => __( 'Normal', 'theme-textdomain' ),
-// 		'italic'      => __( 'Italic', 'theme-textdomain' ),
-// 		'bold'        => __( 'Bold', 'theme-textdomain' ),
-// 		'bold italic' => __( 'Bold Italic', 'theme-textdomain' )
-// 		);
-// 	return apply_filters( 'of_recognized_input', $default );
-// }
-
 
 /**
  * Is a given string a color formatted in hexidecimal notation?

@@ -67,16 +67,9 @@ function optionsframework_options() {
 
 	// Gallery Defaults
 	$gallery_defaults = array(
-		'input' => 'Title',
-		'textarea' => 'Description',
-		'input2' => 'Extra Input' 
-	);
-
-	// Gallery Options
-	$gallery_options = array(
-		'input' => 'Title',
-		'textarea' => 'Description',
-		'input2' => 'Extra Input' 
+		'input' => '',
+		'textarea' => '',
+		'input2' => '' 
 	);
 
 	// Pull all the categories into an array
@@ -211,11 +204,13 @@ function optionsframework_options() {
 		'type' => 'info'
 	);
 
-	// $options[] = array(
-	// 	'name' => __( 'Gallery', 'theme-textdomain' ),
-	// 	'id' => 'home-sec3-gallery',
-	// 	'type' => 'gallery2'
-	// );
+	$options[] = array(
+		'name' => __( 'Title', 'theme-textdomain' ),
+		'id'	=> 'repeat_text',
+		'std' => 'Test Multiple',
+		'type' => 'repeat_text'
+	);
+	
 	$options[] = array( 'name' => __( 'Gallery', 'theme-textdomain' ),
 		'id' => "example_gallery",
 		'std' => $gallery_defaults,
