@@ -243,6 +243,7 @@ function of_sanitize_gallery( $input ) {
 	$output['input'] = apply_filters( 'sanitize_repeat_field', $input['input'] );
 	$output['textarea'] = apply_filters( 'sanitize_repeat_field', $input['textarea'] );
 	$output['input2'] = apply_filters( 'sanitize_repeat_field', $input['input2'] );
+	$output['image'] = apply_filters( 'sanitize_repeat_field', $input['image'] );
 
 	return $output;
 }

@@ -121,43 +121,37 @@ jQuery(document).ready(function($) {
         });
 
         $(".controls").on("click", ".gallery-remove", function(e){
-            // if($(this).parents('.of-repeat-loop').find('.gallery-each').length < 4 ){
-        	
-            count = $(this).parents().find('.gallery-each').not('.to-copy').length;
-            toeach = $(this).parents(); 
-            $(toeach).each(function(){
-            	$(this).find('.fieldinput').attr('name', count);
-            });
 
-            $(this).parent('.gallery-each').remove();
-        	$('.gallery-remove').remove();
-        	
-            // }else{
-            // 	$(this).parent('.gallery-each').remove();
-            // }
+            var toCopy = $(this).parents().find('.to-copy');
+        	var input_name = toCopy.find('.fieldinput').attr('data-rel');
+        	var textarea_name = toCopy.find('.fieldtextarea').attr('data-rel');
+        	var input2_name = toCopy.find('.fieldinput2').attr('data-rel');
 
-            // the loop object
-          //   $loop = $(this).parents('.of-repeat-loop');
-          //   count = $loop.find('.gallery-each').not('.to-copy').length;
+            var notCopy = $(this).parents().find('.gallery-each').not('.to-copy');            
 
-          //   // $($loop.children('.gallery-each')).each(function(){
-          //   	// the group to copy
-	         //    $group = $loop.find('.to-copy');
+            var eachwrapper = $(this).parents();
+            var toeach = $(this).parent().attr('class');
 
-	         //    // the new input
-	         //    $input = $group.find('.fieldinput');
-	         //    $textarea = $group.find('.fieldtextarea');
-	         //    $input2 = $group.find('.fieldinput2');        
+        	var count = $(this).parents().find('.gallery-each').not('.to-copy, .is-delete').length-1;
+        	$(this).parent().addClass('is-delete').find('.fieldinput').attr('name', input_name + '[' +count+ ']');
 
-	        	// input_name = $input.attr('data-rel');
-	        	// textarea_name = $textarea.attr('data-rel');
-	        	// input2_name = $input2.attr('data-rel');
+        	var i=0;
+            $(this).parents().find('.gallery-each').not('.to-copy, .is-delete').each(function(){
+            		$(this).find('.fieldinput').attr('name', input_name + '[' + i + ']');
+            		$(this).find('.fieldtextarea').attr('name', textarea_name + '[' + i + ']');
+            		$(this).find('.fieldinput2').attr('name', input2_name + '[' + i + ']');
+            		// console.log(this);
+            		// console.log(i);
+            	i++
+            });			
 
-	        	
-	        	// $textarea.attr('name', textarea_name + '[' + ( count - 1 ) + ']');
-	        	// $input2.attr('name', input2_name + '[' + ( count - 1 ) + ']');
-            // });
-            
+           	if( count > 2 ){
+           	 	$(this).parent('.gallery-each').remove();
+        		$('.gallery-remove').remove();
+           	}else{
+           		$(this).parent('.gallery-each').remove();
+           	}
+
         });
     });
 

@@ -168,4 +168,78 @@ jQuery(document).ready(function($){
     });
 
 
+
+
+
+    /* ######################################################### */
+	/* ################## Add Gallery Image ################### */
+	/* ######################################################### */
+	function optionsframework_add_gallery_image(event, selector, selector2) {
+
+		var upload = $(".uploaded-file"), frame;
+		var $el = $(this);
+		optionsframework_selector = selector;
+		thisBtnUpload = selector2;
+
+		event.preventDefault();
+
+		// If the media frame already exists, reopen it.
+		if ( optionsframework_upload ) {
+			optionsframework_upload.open();
+		} else {
+			// Create the media frame.
+			optionsframework_upload = wp.media.frames.optionsframework_upload =  wp.media({
+				// Set the title of the modal.
+				title: $el.data('choose'),
+
+				// Customize the submit button.
+				button: {
+					// Set the text of the button.
+					text: $el.data('update'),
+					// Tell the button not to close the modal, since we're
+					// going to refresh the page when the image is selected.
+					close: false
+				},
+
+				multiple: false //allowing for multiple image selection
+			});
+
+			// When an image is selected, run a callback.
+			optionsframework_upload.on( 'select', function() {
+				// Grab the selected attachment.
+				var attachment = optionsframework_upload.state().get('selection').first();
+				optionsframework_upload.close();
+
+				if ( attachment.attributes.type == 'image' ) {
+					// var loop = optionsframework_selector;					
+		   //          var thisBtn = loop.find('.of-repeat-loop .multiple-upload');
+		   //          var count = (loop.find('.of-repeat-loop .multiple-each').length) - 1;
+
+		   //          // the group for get value of data-rel
+		   //          var group = loop.find('.of-repeat-loop .multiple-each.to-copy');		            
+		   //          var input = group.find('input');
+		   //      	var input_name = input.attr('data-rel');
+		   			thisBtnUpload.parent().find('img').attr('src', attachment.attributes.url );
+					// optionsframework_selector.find('.of-repeat-loop').append('<div class="gallery-each">'+
+		   //              	'<img name="'+ input_name +'['+ i +']" src="' + attachment.attributes.url + '" >' );
+		                	// '<input type="hidden" name="'+ input_name +'['+ i +']"  value="' + attachment.attributes.url + '">'+
+		                	// '<a class="multiple-remove">Remove</a></div>' );
+				}
+
+			});
+
+		}
+		// Finally, open the modal.
+		optionsframework_upload.open();
+	}
+
+	// $('.controls').on('click','.multiple-remove', function() {
+	// 	$(this).parent().remove();
+ //    });
+
+    $('.gallery-upload').click( function( event ) {
+    	optionsframework_add_gallery_image(event, $(this).parent('.section'), $(this));
+    });
+
+
 });
