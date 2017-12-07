@@ -15,7 +15,7 @@ Template Name: Media Page
 			<div class="span12 section__content">
 	            <nav class="tablink tablink--page center">
 	                <ul>
-	                    <li class="active"><a href="#notset"><h2 class="margin0">Gallery</h2></a></li>
+	                    <li class="active"><a><h2 class="margin0">Gallery</h2></a></li>
 	                    <li class=""><a href="#notset"><h2 class="margin0">Audio</h2></a></li>
 	                </ul>
 	            </nav>                    
@@ -42,7 +42,7 @@ Template Name: Media Page
     		</div>
     		<div class="span12">
 				<ul class="gallery">
-	    			<li class="gallery__list">
+	    			<!-- <li class="gallery__list">
 	    				<a href="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" class="gallery__link">
 	    					<div class="gallery__image">
 		    					<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
@@ -51,37 +51,28 @@ Template Name: Media Page
 		    				<h3 class="margin0 regular">Ret-ret 2017</h3>
 							<h3 class="light grey margin0"><i>Lembang Bandung</i></h3>
 	    				</a>	    				
-					</li>
-					<li class="gallery__list">
-	    				<a href="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" class="gallery__link">
-	    					<div class="gallery__image">
-		    					<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
-		    					<div class="gallery__frame"></div>
-		    				</div>
-		    				<h3 class="margin0 regular">Ret-ret 2017</h3>
-							<h3 class="light grey margin0"><i>Lembang Bandung</i></h3>
-	    				</a>	    				
-					</li>
-					<li class="gallery__list">
-	    				<a href="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" class="gallery__link">
-	    					<div class="gallery__image">
-		    					<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
-		    					<div class="gallery__frame"></div>
-		    				</div>
-		    				<h3 class="margin0 regular">Ret-ret 2017</h3>
-							<h3 class="light grey margin0"><i>Lembang Bandung</i></h3>
-	    				</a>	    				
-					</li>
-					<li class="gallery__list">
-	    				<a href="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" class="gallery__link">
-	    					<div class="gallery__image">
-		    					<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
-		    					<div class="gallery__frame"></div>
-		    				</div>
-		    				<h3 class="margin0 regular">Ret-ret 2017</h3>
-							<h3 class="light grey margin0"><i>Lembang Bandung</i></h3>
-	    				</a>	    				
-					</li>
+					</li> -->
+					<?php
+	                    $options = of_get_option( 'media-gallery' );
+	                    $field = $options;
+	                    $i = 0;
+	                    if( ! empty( $options ) ){
+	                        foreach( $options['input'] as $option ){
+	                            echo '<li class="gallery__list">';
+				    			echo 	'<a href="'. $field['image'][$i] .'" class="gallery__link">';
+				    			echo 		'<div class="gallery__image">';
+					    		echo 			'<img src="'. $field['image'][$i] .'" alt="">';
+					    		echo 			'<div class="gallery__frame"></div>';
+					    		echo 		'</div>';
+					    		echo 		'<h3 class="margin0 regular">'. $field['input'][$i] .'</h3>';
+								echo 		'<h3 class="light grey margin0"><i>'. $field['textarea'][$i] .'</i></h3>';
+				    			echo 	'</a>';
+								echo '</li>';
+
+								$i++;
+	                        }
+	                    }
+                    ?>
 	    		</ul>
 	        </div>    		
     	</div>        

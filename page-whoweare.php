@@ -14,9 +14,9 @@ Template Name: Who We Are Page
 			<div class="span12 section__content">
 	            <nav class="tablink tablink--page center">
 	                <ul>
-	                    <li class="active"><a href="#notset"><h2 class="margin0">Who We Are</h2></a></li>
-	                    <li class=""><a href="#notset"><h2 class="margin0">Service</h2></a></li>
-	                    <li class=""><a href="#notset"><h2 class="margin0">The Leaders</h2></a></li>
+	                    <li class="active"><a><h2 class="margin0">Who We Are</h2></a></li>
+	                    <li class=""><a href="<?php echo site_url(); ?>/service"><h2 class="margin0">Service</h2></a></li>
+	                    <li class=""><a href="<?php echo site_url(); ?>/the-leaders"><h2 class="margin0">The Leaders</h2></a></li>
 	                </ul>
 	            </nav>                    
 	        </div>

@@ -14,9 +14,9 @@ Template Name: Service Page
 			<div class="span12 section__content">
 	            <nav class="tablink tablink--page center">
 	                <ul>
-	                    <li class=""><a href="#notset"><h2 class="margin0">Who We Are</h2></a></li>
-	                    <li class="active"><a href="#notset"><h2 class="margin0">Service</h2></a></li>
-	                    <li class=""><a href="#notset"><h2 class="margin0">The Leaders</h2></a></li>
+	                    <li class=""><a href="<?php echo site_url(); ?>/who-we-are"><h2 class="margin0">Who We Are</h2></a></li>
+	                    <li class="active"><a><h2 class="margin0">Service</h2></a></li>
+	                    <li class=""><a href="<?php echo site_url(); ?>/the-leaders"><h2 class="margin0">The Leaders</h2></a></li>
 	                </ul>
 	            </nav>                    
 	        </div>
@@ -49,12 +49,12 @@ Template Name: Service Page
                             <img src="<?php bloginfo('template_url'); ?>/dist/images/service/section2-thumb.jpg" alt="">
                             <img src="<?php bloginfo('template_url'); ?>/dist/images/service/section2-thumb.jpg" alt=""> -->
                             <?php
-                            $options = of_get_option( 'service-image' ); 
-                            if( ! empty( $options ) ){
-                                foreach( $options as $option ){
-                                    echo '<img src="'. $option .'" alt="">';
+                                $options = of_get_option( 'service-image' ); 
+                                if( ! empty( $options ) ){
+                                    foreach( $options as $option ){
+                                        echo '<img src="'. $option .'" alt="">';
+                                    }
                                 }
-                            }
                             ?>                                               
                         </div>
                     </div>

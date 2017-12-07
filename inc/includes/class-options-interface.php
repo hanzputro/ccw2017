@@ -509,7 +509,6 @@ function gallery_option_type( $option_name, $option, $values ){
 	$output = '<div class="of-repeat-loop">';
 
 	if( is_array( $field['input'] ) ) foreach ( (array)$field['input'] as $value ){
-
 		$output .= '<div class="gallery-each">';
 
 		$output .= '<input name="' . esc_attr( $option_name . '[' . $option['id'] . '][input]['.$counter.']' ) . '" id="' . esc_attr( $option['id'] . '_input' ) . '" class="of-input fieldinput"  type="text" placeholder="Title" value="' . esc_attr( $field['input'][$counter] ) . '" />';
@@ -523,7 +522,7 @@ function gallery_option_type( $option_name, $option, $values ){
 		$output .= '<a class="button icon gallery-upload">Upload Image</a>';
 
 		$output .= '<a class="gallery-remove">remove</a>';
-		
+
 		$output .= '</div><!--.gallery-each-->';
 
 		$counter++;

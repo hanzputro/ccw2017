@@ -14,9 +14,9 @@ Template Name: The Leaders Page
 			<div class="span12 section__content">
 	            <nav class="tablink tablink--page center">
 	                <ul>
-	                    <li class=""><a href="#notset"><h2 class="margin0">Who We Are</h2></a></li>
-	                    <li class=""><a href="#notset"><h2 class="margin0">Service</h2></a></li>
-	                    <li class="active"><a href="#notset"><h2 class="margin0">The Leaders</h2></a></li>
+	                    <li class=""><a href="<?php echo site_url(); ?>/who-we-are"><h2 class="margin0">Who We Are</h2></a></li>
+	                    <li class=""><a href="<?php echo site_url(); ?>/service"><h2 class="margin0">Service</h2></a></li>
+	                    <li class="active"><a><h2 class="margin0">The Leaders</h2></a></li>
 	                </ul>
 	            </nav>                    
 	        </div>
@@ -40,38 +40,33 @@ Template Name: The Leaders Page
     		<div class="span12">
 	            <h1 class="s50 linetitle merriweather bold">Committee</h1>
 				<ul class="gallery">
-	    			<li class="gallery__list">
+	    			<!-- <li class="gallery__list">
 	    				<div class="gallery__image">
 	    					<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
 	    					<div class="gallery__frame"></div>
 	    				</div>
 	    				<h3 class="margin0 regular">Lorem ipsum</h3>
 						<h3 class="light grey margin0"><i>Committee</i></h3>
-					</li>
-					<li class="gallery__list">
-	    				<div class="gallery__image">
-	    					<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
-	    					<div class="gallery__frame"></div>
-	    				</div>
-	    				<h3 class="margin0 regular">Lorem ipsum</h3>
-						<h3 class="light grey margin0"><i>Committee</i></h3>
-					</li>
-					<li class="gallery__list">
-	    				<div class="gallery__image">
-	    					<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
-	    					<div class="gallery__frame"></div>
-	    				</div>
-	    				<h3 class="margin0 regular">Lorem ipsum</h3>
-						<h3 class="light grey margin0"><i>Committee</i></h3>
-					</li>
-					<li class="gallery__list">
-	    				<div class="gallery__image">
-	    					<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
-	    					<div class="gallery__frame"></div>
-	    				</div>
-	    				<h3 class="margin0 regular">Lorem ipsum</h3>
-						<h3 class="light grey margin0"><i>Committee</i></h3>
-					</li>
+					</li> -->
+					<?php
+	                    $options = of_get_option( 'service-gallery-commitee' );
+	                    $field = $options;
+	                    $i = 0;
+	                    if( ! empty( $options ) ){
+	                        foreach( $options['input'] as $option ){
+	                            echo '<li class="gallery__list">';
+				    			echo	'<div class="gallery__image">';
+				    			echo		'<img src="'. $field['image'][$i] .'" alt="">';
+				    			echo		'<div class="gallery__frame"></div>';
+				    			echo	'</div>';
+				    			echo	'<h3 class="margin0 regular">'. $field['input'][$i] .'</h3>';
+								echo	'<h3 class="light grey margin0">'. $field['textarea'][$i] .'</h3>';
+								echo '</li>';
+
+								$i++;
+	                        }
+	                    }
+                    ?>
 	    		</ul>
 	        </div>    		
     	</div>        
@@ -82,30 +77,33 @@ Template Name: The Leaders Page
     		<div class="span12">
 	            <h1 class="s50 linetitle merriweather bold">Head of Departments</h1>
 				<ul class="gallery">
-	    			<li class="gallery__list">
+	    			<!-- <li class="gallery__list">
 	    				<div class="gallery__image">
 	    					<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
 	    					<div class="gallery__frame"></div>
 	    				</div>
 	    				<h3 class="margin0 regular">Lorem ipsum</h3>
 						<h3 class="light grey margin0"><i>Committee</i></h3>
-					</li>
-					<li class="gallery__list">
-	    				<div class="gallery__image">
-	    					<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
-	    					<div class="gallery__frame"></div>
-	    				</div>
-	    				<h3 class="margin0 regular">Lorem ipsum</h3>
-						<h3 class="light grey margin0"><i>Committee</i></h3>
-					</li>
-					<li class="gallery__list">
-	    				<div class="gallery__image">
-	    					<img src="<?php bloginfo('template_url'); ?>/dist/images/leaders.jpg" alt="">
-	    					<div class="gallery__frame"></div>
-	    				</div>
-	    				<h3 class="margin0 regular">Lorem ipsum</h3>
-						<h3 class="light grey margin0"><i>Committee</i></h3>
-					</li>
+					</li> -->
+					<?php
+	                    $options = of_get_option( 'service-gallery-hod' );
+	                    $field = $options;
+	                    $i = 0;
+	                    if( ! empty( $options ) ){
+	                        foreach( $options['input'] as $option ){
+	                            echo '<li class="gallery__list">';
+				    			echo	'<div class="gallery__image">';
+				    			echo		'<img src="'. $field['image'][$i] .'" alt="">';
+				    			echo		'<div class="gallery__frame"></div>';
+				    			echo	'</div>';
+				    			echo	'<h3 class="margin0 regular">'. $field['input'][$i] .'</h3>';
+								echo	'<h3 class="light grey margin0">'. $field['textarea'][$i] .'</h3>';
+								echo '</li>';
+
+								$i++;
+	                        }
+	                    }
+                    ?>
 	    		</ul>
 	        </div>    		
     	</div>        
