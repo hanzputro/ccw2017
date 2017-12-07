@@ -211,19 +211,8 @@ jQuery(document).ready(function($){
 				optionsframework_upload.close();
 
 				if ( attachment.attributes.type == 'image' ) {
-					// var loop = optionsframework_selector;					
-		   //          var thisBtn = loop.find('.of-repeat-loop .multiple-upload');
-		   //          var count = (loop.find('.of-repeat-loop .multiple-each').length) - 1;
-
-		   //          // the group for get value of data-rel
-		   //          var group = loop.find('.of-repeat-loop .multiple-each.to-copy');		            
-		   //          var input = group.find('input');
-		   //      	var input_name = input.attr('data-rel');
 		   			thisBtnUpload.parent().find('img').attr('src', attachment.attributes.url );
-					// optionsframework_selector.find('.of-repeat-loop').append('<div class="gallery-each">'+
-		   //              	'<img name="'+ input_name +'['+ i +']" src="' + attachment.attributes.url + '" >' );
-		                	// '<input type="hidden" name="'+ input_name +'['+ i +']"  value="' + attachment.attributes.url + '">'+
-		                	// '<a class="multiple-remove">Remove</a></div>' );
+		   			thisBtnUpload.parent().find('.fieldimage').attr('value', attachment.attributes.url );
 				}
 
 			});
@@ -237,7 +226,7 @@ jQuery(document).ready(function($){
 	// 	$(this).parent().remove();
  //    });
 
-    $('.gallery-upload').click( function( event ) {
+    $('.controls').on('click', '.gallery-upload', function( event ) {
     	optionsframework_add_gallery_image(event, $(this).parent('.section'), $(this));
     });
 

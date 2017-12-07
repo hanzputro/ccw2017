@@ -69,7 +69,8 @@ function optionsframework_options() {
 	$gallery_defaults = array(
 		'input' => '',
 		'textarea' => '',
-		'input2' => '' 
+		'input2' => '',
+		'image' => '' 
 	);
 
 	// Pull all the categories into an array
@@ -203,106 +204,58 @@ function optionsframework_options() {
 		'name' => __( 'SECTION 3', 'theme-textdomain' ),
 		'type' => 'info'
 	);
-
-	$options[] = array(
-		'name' => __( 'Title', 'theme-textdomain' ),
-		'id'	=> 'repeat_text',
-		'std' => 'Test Multiple',
-		'type' => 'repeat_text'
-	);
 	
-	$options[] = array( 'name' => __( 'Gallery', 'theme-textdomain' ),
-		'id' => "example_gallery",
+	$options[] = array( 
+		'name' => __( 'News Slider', 'theme-textdomain' ),
+		'id' => "home-sec4-newsslider",
 		'std' => $gallery_defaults,
 		'type' => 'gallery'
 	);
 
-// 	$options[] = array(
-// 		'name' => __( 'News 1', 'theme-textdomain' ),
-// 		'id' => 'home-sec3-desc1',
-// 		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
-// 		'type' => 'textarea'
-// 	);
+	// section 4
+	$options[] = array(
+		'name' => __( 'SECTION 4', 'theme-textdomain' ),
+		'type' => 'info'
+	);
 
-// 	$options[] = array(
-// 		'name' => __( 'Background News 1', 'theme-textdomain' ),
-// 		'std' => $imagepath . '/home/bg-section3.jpg',
-// 		'id' => 'home-sec3-bg1',
-// 		'type' => 'upload'
-// 	);
+	$options[] = array(
+		'name' => __( 'Title', 'theme-textdomain' ),
+		'id' => 'home-sec4-title',
+		'std' => 'Upcoming Events',
+		'type' => 'text'
+	);
 
-// 	$options[] = array(
-// 		'name' => __( 'News 2', 'theme-textdomain' ),
-// 		'id' => 'home-sec3-desc2',
-// 		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
-// 		'type' => 'textarea'
-// 	);
+	$options[] = array(
+		'name' => __( 'Description', 'theme-textdomain' ),
+		'id' => 'home-sec4-desc',
+		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
+		'type' => 'textarea'
+	);
 
-// 	$options[] = array(
-// 		'name' => __( 'Background News 2', 'theme-textdomain' ),
-// 		'std' => $imagepath . '/home/bg-section3.jpg',
-// 		'id' => 'home-sec3-bg2',
-// 		'type' => 'upload'
-// 	);
+	// section 5
+	$options[] = array(
+		'name' => __( 'SECTION 5', 'theme-textdomain' ),
+		'type' => 'info'
+	);
 
-// 	$options[] = array(
-// 		'name' => __( 'News 3', 'theme-textdomain' ),
-// 		'id' => 'home-sec3-desc3',
-// 		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
-// 		'type' => 'textarea'
-// 	);
+	$options[] = array(
+		'name' => __( 'Title', 'theme-textdomain' ),
+		'id' => 'home-sec5-title',
+		'std' => 'Upcoming Events',
+		'type' => 'text'
+	);
 
-// 	$options[] = array(
-// 		'name' => __( 'Background News 3', 'theme-textdomain' ),
-// 		'std' => $imagepath . '/home/bg-section3.jpg',
-// 		'id' => 'home-sec3-bg3',
-// 		'type' => 'upload'
-// 	);
+	$options[] = array(
+		'name' => __( 'Description', 'theme-textdomain' ),
+		'id' => 'home-sec5-desc',
+		'std' => 'ARTOTEL - Thamrin
+JL. Sunda No.3,
+Jakarta Pusat
 
-// 	// section 4
-// 	$options[] = array(
-// 		'name' => __( 'SECTION 4', 'theme-textdomain' ),
-// 		'type' => 'info'
-// 	);
-
-// 	$options[] = array(
-// 		'name' => __( 'Title', 'theme-textdomain' ),
-// 		'id' => 'home-sec4-title',
-// 		'std' => 'Upcoming Events',
-// 		'type' => 'text'
-// 	);
-
-// 	$options[] = array(
-// 		'name' => __( 'Description', 'theme-textdomain' ),
-// 		'id' => 'home-sec4-desc',
-// 		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
-// 		'type' => 'textarea'
-// 	);
-
-// 	// section 5
-// 	$options[] = array(
-// 		'name' => __( 'SECTION 5', 'theme-textdomain' ),
-// 		'type' => 'info'
-// 	);
-
-// 	$options[] = array(
-// 		'name' => __( 'Title', 'theme-textdomain' ),
-// 		'id' => 'home-sec5-title',
-// 		'std' => 'Upcoming Events',
-// 		'type' => 'text'
-// 	);
-
-// 	$options[] = array(
-// 		'name' => __( 'Description', 'theme-textdomain' ),
-// 		'id' => 'home-sec5-desc',
-// 		'std' => 'ARTOTEL - Thamrin
-// JL. Sunda No.3,
-// Jakarta Pusat
-
-// creativecityworship@gmail.com
-// @creativecityworship',
-// 		'type' => 'textarea'
-// 	);
+creativecityworship@gmail.com
+@creativecityworship',
+		'type' => 'textarea'
+	);
 
 
 	/* ########################### */
@@ -483,17 +436,97 @@ function optionsframework_options() {
 		'type' => 'textarea'
 	);
 
-	$options[] = array(
-		'name' => __( 'Commitee', 'theme-textdomain' ),
-		'id' => 'service-gallery-commitee',
-		'type' => 'repeat_upload'
+	$options[] = array( 
+		'name' => __( 'Commitee Gallery', 'theme-textdomain' ),
+		'id' => "service-gallery-commitee",
+		'std' => $gallery_defaults,
+		'type' => 'gallery'
 	);
 
-	$options[] = array(
-		'name' => __( 'Head Of Department', 'theme-textdomain' ),
-		'id' => 'service-gallery-hod',
-		'type' => 'repeat_upload'
+	$options[] = array( 
+		'name' => __( 'Head Of Department Gallery', 'theme-textdomain' ),
+		'id' => "service-gallery-hod",
+		'std' => $gallery_defaults,
+		'type' => 'gallery'
 	);
+
+
+
+	/* ################################## */
+	/* ########## MINISTRY tab ########## */
+	/* ################################## */
+	$options[] = array(
+		'name' => __( 'Ministry', 'theme-textdomain' ),
+		'type' => 'heading'
+	);
+	$options[] = array(
+		'name' => __( 'Get Involved', 'theme-textdomain' ),
+		'type' => 'info'
+	);
+	$options[] = array(
+		'name' => __( 'Title', 'theme-textdomain' ),
+		'id' => 'ministry-gi-title',
+		'std' => 'Get Involved',
+		'type' => 'text'
+	);
+	$options[] = array(
+		'name' => __( 'Description', 'theme-textdomain' ),
+		'id' => 'ministry-gi-desc',
+		'std' => "We believe the church is not somewhere you go, it's something you are. We know that God is moving through His church, and we want you to be a part of it. There are several ways you can get involved at Creative City Worship.",
+		'type' => 'textarea'
+	);
+	$options[] = array(
+		'name' => __( 'Volunteers', 'theme-textdomain' ),
+		'type' => 'info'
+	);
+	$options[] = array(
+		'name' => __( 'Title', 'theme-textdomain' ),
+		'id' => 'ministry-v-title',
+		'std' => 'Volunteers',
+		'type' => 'text'
+	);
+	$options[] = array(
+		'name' => __( 'Description', 'theme-textdomain' ),
+		'id' => 'ministry-v-desc',
+		'std' => "We believe the church is not somewhere you go, it's something you are. We know that God is moving through His church, and we want you to be a part of it. There are several ways you can get involved at Creative City Worship.",
+		'type' => 'textarea'
+	);
+	$options[] = array(
+		'name' => __( 'Background', 'theme-textdomain' ),
+		'std' => $imagepath . '/ministry/banner.jpg',
+		'id' => 'ministry-v-bg',
+		'type' => 'upload'
+	);
+	$options[] = array(
+		'name' => __( 'Media', 'theme-textdomain' ),
+		'type' => 'info'
+	);
+	$options[] = array( 
+		'name' => __( 'Ministry Gallery', 'theme-textdomain' ),
+		'id' => "ministry-gallery",
+		'std' => $gallery_defaults,
+		'type' => 'gallery'
+	);
+
+	
+	/* ############################### */
+	/* ########## MEDIA tab ########## */
+	/* ############################### */
+	$options[] = array(
+		'name' => __( 'Media', 'theme-textdomain' ),
+		'type' => 'heading'
+	);
+	$options[] = array(
+		'name' => __( 'Media', 'theme-textdomain' ),
+		'type' => 'info'
+	);
+	$options[] = array( 
+		'name' => __( 'Media Gallery', 'theme-textdomain' ),
+		'id' => "media-gallery",
+		'std' => $gallery_defaults,
+		'type' => 'gallery'
+	);
+
 
 
 	/* ############################### */
@@ -521,24 +554,6 @@ function optionsframework_options() {
 		'std' => 'Artotel-Thamrin
 Every Sunday at 10AM',
 		'type' => 'textarea'
-	);
-
-
-	/* ############################### */
-	/* ########## MEDIA tab ########## */
-	/* ############################### */
-	$options[] = array(
-		'name' => __( 'Media', 'theme-textdomain' ),
-		'type' => 'heading'
-	);
-	$options[] = array(
-		'name' => __( 'Media', 'theme-textdomain' ),
-		'type' => 'info'
-	);
-	$options[] = array(
-		'name' => __( 'Media Gallery', 'theme-textdomain' ),
-		'id' => 'media-gallery',
-		'type' => 'repeat_upload'
 	);
 
 	return $options;

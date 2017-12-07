@@ -518,7 +518,8 @@ function gallery_option_type( $option_name, $option, $values ){
 
 		$output .= '<input name="' . esc_attr( $option_name . '[' . $option['id'] . '][input2]['.$counter.']' ) . '" id="' . esc_attr( $option['id'] . '_input2' ) . '" class="of-input fieldinput2"  type="text" placeholder="Extra Input" value="' . esc_attr( $field['input2'][$counter] ) . '" />';
 
-		$output .= '<img name="' . esc_attr( $option_name . '[' . $option['id'] . '][image]['.$counter.']' ) . '"  src="' . esc_attr( $field['image'][$counter] ) . '" >';
+		$output .= '<input class="of-input fieldimage" type="hidden" name="' . esc_attr( $option_name . '[' . $option['id'] . '][image]['.$counter.']' ) . '" value="' . esc_attr( $field['image'][$counter] ) . '" />';
+		$output .= '<img src="' . esc_attr( $field['image'][$counter] ) . '" >';
 		$output .= '<a class="button icon gallery-upload">Upload Image</a>';
 
 		$output .= '<a class="gallery-remove">remove</a>';
@@ -537,7 +538,8 @@ function gallery_option_type( $option_name, $option, $values ){
 
 		$output .= '<input name="' . esc_attr( $option_name . '[' . $option['id'] . '][input2]['.$counter.']' ) . '" id="' . esc_attr( $option['id'] . '_input2' ) . '" class="of-input fieldinput2"  type="text" placeholder="Extra Input" value="' . esc_attr( $field['input2'][$counter] ) . '" />';
 
-		$output .= '<img name="' . esc_attr( $option_name . '[' . $option['id'] . '][image]['.$counter.']' ) . '"  src="' . esc_attr( $field['image'][$counter] ) . '" >';
+		$output .= '<input class="of-input fieldimage" type="hidden" name="' . esc_attr( $option_name . '[' . $option['id'] . '][image]['.$counter.']' ) . '" value="' . esc_attr( $field['image'][$counter] ) . '" />';
+		$output .= '<img src="' . esc_attr( $field['image'][$counter] ) . '" >';
 		$output .= '<a class="button icon gallery-upload">Upload Image</a>';
 
 		$output .= '</div><!--.gallery-each-->';
@@ -551,7 +553,8 @@ function gallery_option_type( $option_name, $option, $values ){
 
 	$output .= '<input data-rel="' . esc_attr( $option_name . '[' . $option['id'] . '][input2]' ) . '" id="' . esc_attr( $option['id'] . '_input2' ) . '" class="of-input fieldinput2"  type="text" placeholder="Extra Input" value="' . esc_attr( $field['input2'][$counter] ) . '" />';
 
-	$output .= '<img name="' . esc_attr( $option_name . '[' . $option['id'] . '][image]' ) . '"  src="' . esc_attr( $field['image'][$counter] ) . '" >';
+	$output .= '<input class="of-input fieldimage" type="hidden" data-rel="' . esc_attr( $option_name . '[' . $option['id'] . '][image]' ) . '" value="' . esc_attr( $field['image'][$counter] ) . '" />';
+	$output .= '<img src="' . esc_attr( $field['image'][$counter] ) . '" >';
 	$output .= '<a class="button icon gallery-upload">Upload Image</a>';
 
 	$output .= '<a class="gallery-remove">remove</a>';
