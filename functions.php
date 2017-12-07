@@ -59,18 +59,74 @@ jQuery(document).ready(function() {
 <?php
 }
 
-/*
- * This is an example of filtering menu parameters
- */
 
-/*
-function prefix_options_menu_filter( $menu ) {
-	$menu['mode'] = 'menu';
-	$menu['page_title'] = __( 'Hello Options', 'textdomain');
-	$menu['menu_title'] = __( 'Hello Options', 'textdomain');
-	$menu['menu_slug'] = 'hello-options';
-	return $menu;
+
+/**
+* Add Google captcha field to Comment form
+* By Hanzputro
+*/
+/*********************************************************/
+/*                 Form Contact Setup                   */
+/*********************************************************/
+// response generation function
+$response = "";
+$humanValue = $_COOKIE['cookieName'];
+
+//function to generate response
+function my_contact_form_generate_response($type, $message){
+    global $response;
+
+    if($type == "success"){
+      $response = "<div class='field info-success'>{$message}</div>";
+    }
+    else{
+      $response = "<div class='field info-error'>{$message}</div>";
+    }
 }
 
-add_filter( 'optionsframework_menu', 'prefix_options_menu_filter' );
-*/
+//response messages
+$not_human       = "Please, i need human.";
+$missing_content = "Please supply all information.";
+$email_invalid   = "Email Address Invalid.";
+$message_unsent  = "Message was not sent. Try Again.";
+$message_sent    = "Thanks! Your message has been sent.";
+
+//user posted variables
+$name = $_POST['message_name'];
+$email = $_POST['message_email'];
+$phone = $_POST['phone'];
+$message = $_POST['message_text'];
+// $human = $_POST['message_human'];
+
+//php mailer variables
+$to = get_option('admin_email');
+$subject = "Someone sent a message from ".get_bloginfo('name');
+$content_email = $phone  . "\r\n" . $message  . "\r\n";
+$headers = 'From: '. $email . "\r\n" . 'Reply-To: ' . $email . "\r\n";
+
+if (isset($_POST['send--button'])){
+    if(empty($name) || empty($message) || empty($email) || empty($phone)){
+        my_contact_form_generate_response("error", $missing_content);
+    }
+    else{
+        if($humanValue == 1 ){
+            if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                my_contact_form_generate_response("error", $email_invalid);
+            }
+            else{
+                if(!empty($name) || !empty($message) || !empty($email) || !empty($phone)){
+                    $sent = wp_mail($to, $subject, strip_tags($content_email), $headers);
+                    if($sent){
+                        my_contact_form_generate_response("success", $message_sent); //message sent!
+                    } 
+                    else{
+                        my_contact_form_generate_response("error", $message_unsent); //message wasn't sent
+                    }   
+                }                
+            }     
+        }
+        else{            
+            my_contact_form_generate_response("error", $not_human);
+        }
+    }
+}

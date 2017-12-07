@@ -19,34 +19,58 @@ Template Name: Contact Page
                 <h1 class="linetitle s40 merriweather bold"><?php echo of_get_option('contact-title'); ?></h1>
                 <h2 class="s20 light"><i><?php echo of_get_option('contact-desc'); ?></i></h2>                    
             </div>
-            <div class="span6">
-                <form action="">
+            <div class="span6" id="respond">                
+                <form action="<?php the_permalink(); ?>" id="emailform" method="post">
                 	<div class="container480" cellpadding="5">
+                        <?php echo $response; ?>
                 		<div class="field">
                 			<span width="50" class="title">Name</span>
                 			<span align="center" width="50" class="separator">:</span>
-                			<input type="text" class="">
+                			<input type="text" name="message_name" value="<?php echo esc_attr($_POST['message_name']); ?>">
                 		</div>
                 		<div class="field">
                 			<span width="50" class="title">Email</span>
                 			<span align="center" width="50" class="separator">:</span>
-                			<input type="text" class="">
+                			<input type="text" name="message_email" value="<?php echo esc_attr($_POST['message_email']); ?>">
                 		</div>
                 		<div class="field">
                 			<span width="50" class="title">Phone</span>
                 			<span align="center" width="50" class="separator">:</span>
-                			<input type="text" class="">
+                			<input type="text" name="phone" value="<?php echo esc_attr($_POST['phone']); ?>">
                 		</div>
                 		<div class="field">
                 			<span width="50" class="title">Message</span>
                 			<span align="center" width="50" class="separator">:</span>
-                			<textarea name="" id="" class="" rows="4"></textarea>
+                			<textarea type="text" rows="4" name="message_text"><?php echo esc_textarea($_POST['message_text']); ?></textarea>
                 		</div>
+                        <div class="field" style="padding-left:85px;">
+                            <!-- google capthca -->
+                            <div id="recaptcha" class="g-recaptcha" data-sitekey="6LcJBTwUAAAAADCC5gDvAplHmwKMnUxsNS_Gnm1l"></div>
+                        </div>
                 		<div class="field" style="padding:10px 0 0 85px;">
-                			<a href="javascript:void(0)" class="button button--purple">Submit</a>
+                            <input type="submit" class="button button--purple send--button" name="send--button" value="SUBMIT">
+                            <!-- <a class="button button--purple send--button" name="send--button">SUBMIT</a> -->
                 		</div>
                 	</div>
-                </form>                    
+                </form>
+
+                <script src='https://www.google.com/recaptcha/api.js'></script>
+                <script type="text/javascript">
+                    $( '.send--button' ).click(function(){
+                        var $captcha = $( '#recaptcha' ),
+                        response = grecaptcha.getResponse();
+                        if (response.length === 0) {
+                            console.log('Recaptcha Error');
+                            // $captcha.attr('verify','0');
+                            document.cookie = "cookieName=0";
+                        } else {
+                            console.log('Recaptcha Success');
+                            // $captcha.attr('verify','1');
+                            document.cookie = "cookieName=1";
+                        }
+                    })
+                </script>
+
             </div>
         </div>        
     </div>
@@ -66,6 +90,8 @@ Template Name: Contact Page
 
 <!-- JS -->
 <?php wp_footer(); ?>
+
+
 <script src="<?php bloginfo('template_url'); ?>/dist/js/contact.js"></script>
 </html>
 		

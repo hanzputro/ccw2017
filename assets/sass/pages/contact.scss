@@ -68,6 +68,18 @@
         }
     }
 }
+.info-error{
+    padding: 10px;
+    color: red;
+    border: 1px solid red;
+    border-radius: 2px;
+}
+.info-success{
+    padding: 10px;
+    color: green;
+    border: 1px solid green;
+    border-radius: 2px;
+}
 
 // tablet
 @media (max-width:1024px){
