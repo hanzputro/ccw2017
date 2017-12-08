@@ -25,7 +25,7 @@
                     <div class="logo"><a href="<?php echo site_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/dist/images/logo-ccw.png" alt=""></a></div>
                     <div class="navbar">
                         <ul class="medium">
-                            <li><a href="#notset" class="">ABOUT US</a></li>
+                            <li><a href="<?php echo site_url(); ?>/who-we-are" class="">ABOUT US</a></li>
                             <li><a href="#notset" class="">CONNECT</a></li>
                             <li>
                                 <div class="ico-menu">
@@ -38,14 +38,14 @@
                                         <li class="active">
                                             <a class="">ABOUT US</a>
                                             <ul class="ico-menu__submenu">
-                                                <li><a href="#notset">Who We Are</a></li>
-                                                <li><a href="#notset">Services</a></li>
-                                                <li><a href="#notset">Our Leaders</a></li>
+                                                <li><a href="<?php echo site_url(); ?>/who-we-are">Who We Are</a></li>
+                                                <li><a href="<?php echo site_url(); ?>/service">Services</a></li>
+                                                <li><a href="<?php echo site_url(); ?>/The-leaders">Our Leaders</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#notset" class="">MINISTRY</a></li>
-                                        <li><a href="#notset" class="">MEDIA</a></li>
-                                        <li><a href="#notset" class="">CONTACT</a></li>
+                                        <li><a href="<?php echo site_url(); ?>/ministry" class="">MINISTRY</a></li>
+                                        <li><a href="<?php echo site_url(); ?>/media" class="">MEDIA</a></li>
+                                        <li><a href="<?php echo site_url(); ?>/contact" class="">CONTACT</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -94,12 +94,24 @@
             <div class="section-cover">
                 <div class="slider">
                     <div class="slide-bg">
-                        <div data-slide="0" data-link="link_aaa" class="slide" style="background-image: url(<?php bloginfo('template_url'); ?>/dist/images/home/bg-section3.jpg);"></div>
+                        <!-- <div data-slide="0" data-link="link_aaa" class="slide" style="background-image: url(<?php bloginfo('template_url'); ?>/dist/images/home/bg-section3.jpg);"></div>
                         <div data-slide="1" data-link="link_bbb" class="slide" style="background-image: url(<?php bloginfo('template_url'); ?>/dist/images/home/bg-section3.jpg);"></div>
-                        <div data-slide="2" data-link="link_ccc" class="slide" style="background-image: url(<?php bloginfo('template_url'); ?>/dist/images/home/bg-section3.jpg);"></div>                    
+                        <div data-slide="2" data-link="link_ccc" class="slide" style="background-image: url(<?php bloginfo('template_url'); ?>/dist/images/home/bg-section3.jpg);"></div> -->
+                        <?php
+                            $options = of_get_option( 'home-sec3-newsslider' );
+                            $field = $options;
+                            $i = 0;
+                            if( ! empty( $options ) ){
+                                foreach( $options['input'] as $option ){
+                                    echo '<div data-slide="2" data-link="link_ccc" class="slide" style="background-image: url('. $field['image'][$i] .');"></div>';
+
+                                    $i++;
+                                }
+                            }
+                        ?>
                     </div>
                     <div class="slide-caption">
-                        <div class="slide">
+                        <!-- <div class="slide">
                             <h1 class="s38 merriweather bold linetitle">Sunday Service</h1>
                             <p class="margin0 s24">Lorem ipsum dolor sit amet, consectetur adipiscing elitdo eiusmod tempor incididunt ut labore et dolore magna alia. Ut enim ad minim veniam, quis nostrud.</p>
                         </div>
@@ -110,7 +122,22 @@
                         <div class="slide">
                             <h1 class="s38 merriweather bold linetitle">Creative Community</h1>
                             <p class="margin0 s24">Lorem ipsum dolor sit amet, consectetur adipiscing elitdo eiusmod tempor incididunt ut labore et dolore magna alia. Ut enim ad minim veniam, quis nostrud.</p>
-                        </div>
+                        </div> -->
+                        <?php
+                            $options = of_get_option( 'home-sec3-newsslider' );
+                            $field = $options;
+                            $i = 0;
+                            if( ! empty( $options ) ){
+                                foreach( $options['input'] as $option ){
+                                    echo '<div class="slide">';
+                                    echo '    <h1 class="s38 merriweather bold linetitle">'. $field['input'][$i] .'</h1>';
+                                    echo '    <p class="margin0 s24">'. $field['textarea'][$i] .'</p>';
+                                    echo '</div>';
+
+                                    $i++;
+                                }
+                            }
+                        ?>
                     </div>
                     <nav class="clearfix slide__nav">
                         <div class="read-more">
@@ -120,9 +147,21 @@
                             </a>
                         </div>
                         <ul>
-                            <li class="slick-current"><a href="javascript:void(0);" data-slide="0" class="s16 merriweather customPaging">SUNDAY SERVICE</a></li>
+                            <!-- <li class="slick-current"><a href="javascript:void(0);" data-slide="0" class="s16 merriweather customPaging">SUNDAY SERVICE</a></li>
                             <li class=""><a href="javascript:void(0);" data-slide="1" class="s16 merriweather customPaging">CREATIVE KIDS</a></li>
-                            <li class=""><a href="javascript:void(0);" data-slide="2" class="s16 merriweather customPaging">CREATIVE COMMUNITY</a></li>
+                            <li class=""><a href="javascript:void(0);" data-slide="2" class="s16 merriweather customPaging">CREATIVE COMMUNITY</a></li> -->
+                            <?php
+                            $options = of_get_option( 'home-sec3-newsslider' );
+                            $field = $options;
+                            $i = 0;
+                            if( ! empty( $options ) ){
+                                foreach( $options['input'] as $option ){
+                                    echo '<li class=""><a href="javascript:void(0);" data-slide="'. [$i] .'" class="s16 merriweather customPaging">'. $field['input'][$i] .'</a></li>';
+
+                                    $i++;
+                                }
+                            }
+                        ?>
                         </ul>
                     </nav>
                 </div>
@@ -135,7 +174,7 @@
                     <h1 class="s50 merriweather bold linetitle"><?php echo of_get_option('home-sec4-title'); ?></h1>
                     <p class="margin0 s24"><?php echo of_get_option('home-sec4-desc'); ?></p>
                     <ul class="news">
-                        <li class="news__list">
+                        <!-- <li class="news__list">
                             <div class="splash2"></div>
                             <a href="">
                                 <img src="<?php bloginfo('template_url'); ?>/dist/images/home/section4-thumb1.jpg" alt="" class="thumb">
@@ -163,7 +202,28 @@
                                     <span class="s20 light title light">COFFEE WORKSHOP</span>
                                 </div>
                             </a>
-                        </li>
+                        </li> -->
+                        <?php
+                            $options = of_get_option( 'home-sec4-news' );
+                            $field = $options;
+                            $i = 0;
+                            if( ! empty( $options ) ){
+                                foreach( $options['input'] as $option ){
+                                    echo '<li class="news__list">';
+                                    echo     '<div class="splash3"></div>';
+                                    echo     '<a href="">';
+                                    echo         '<img src="'. $field['image'][$i] .'" alt="" class="thumb">';
+                                    echo         '<div class="caption">';
+                                    echo             '<span class="s28 merriweather bold date"><span class="s60">12</span><br>NOV</span>';
+                                    echo             '<span class="s20 light title light">'. $field['input'][$i] .'</span>';
+                                    echo         '</div>';
+                                    echo     '</a>';
+                                    echo '</li>';
+
+                                    $i++;
+                                }
+                            }
+                        ?>
                     </ul>
                 </div>
             </div>

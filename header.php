@@ -31,7 +31,7 @@
             <div class="logo"><a href="<?php echo site_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/dist/images/logo-ccw-black.png" alt=""></a></div>
             <div class="navbar">
                 <ul class="medium">
-                    <li><a href="#notset" class="">ABOUT US</a></li>
+                    <li><a href="<?php echo site_url(); ?>/who-we-are" class="">ABOUT US</a></li>
                     <li><a href="#notset" class="">CONNECT</a></li>
                     <li>
                         <div class="ico-menu">
@@ -44,14 +44,14 @@
                                 <li class="active">
                                     <a class="">ABOUT US</a>
                                     <ul class="ico-menu__submenu">
-                                        <li><a href="#notset">Who We Are</a></li>
-                                        <li><a href="#notset">Services</a></li>
-                                        <li><a href="#notset">Our Leaders</a></li>
+                                        <li><a href="<?php echo site_url(); ?>/who-we-are">Who We Are</a></li>
+                                        <li><a href="<?php echo site_url(); ?>/service">Services</a></li>
+                                        <li><a href="<?php echo site_url(); ?>/The-leaders">Our Leaders</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#notset" class="">MINISTRY</a></li>
-                                <li><a href="#notset" class="">MEDIA</a></li>
-                                <li><a href="#notset" class="">CONTACT</a></li>
+                                <li><a href="<?php echo site_url(); ?>/ministry" class="">MINISTRY</a></li>
+                                <li><a href="<?php echo site_url(); ?>/media" class="">MEDIA</a></li>
+                                <li><a href="<?php echo site_url(); ?>/contact" class="">CONTACT</a></li>
                             </ul>
                         </div>
                     </li>

@@ -132,21 +132,18 @@ function optionsframework_options() {
 		'name' => __( 'FOOTER', 'theme-textdomain' ),
 		'type' => 'info'
 	);
-
 	$options[] = array(
 		'name' => __( 'Creative Community Link', 'theme-textdomain' ),
 		'id' => 'footer-cc-link',
 		'std' => '',
 		'type' => 'text'
 	);
-
 	$options[] = array(
 		'name' => __( 'Services Link', 'theme-textdomain' ),
 		'id' => 'footer-s-link',
 		'std' => '',
 		'type' => 'text'
 	);
-
 	$options[] = array(
 		'name' => __( 'Get Connected Link', 'theme-textdomain' ),
 		'id' => 'footer-gc-link',
@@ -160,12 +157,10 @@ function optionsframework_options() {
 		'name' => __( 'Home', 'theme-textdomain' ),
 		'type' => 'heading'
 	);
-
 	$options[] = array(
 		'name' => __( 'SECTION 1', 'theme-textdomain' ),
 		'type' => 'info'
 	);
-
 	$options[] = array(
 		'name' => __( 'Background', 'theme-textdomain' ),
 		'std' => $imagepath . '/home/bg-section1.jpg',
@@ -178,14 +173,12 @@ function optionsframework_options() {
 		'name' => __( 'SECTION 2', 'theme-textdomain' ),
 		'type' => 'info'
 	);
-
 	$options[] = array(
 		'name' => __( 'Title', 'theme-textdomain' ),
 		'id' => 'home-sec2-title',
 		'std' => 'Come As You Are',
 		'type' => 'text'
 	);
-
 	$options[] = array(
 		'name' => __( 'Image', 'theme-textdomain' ),
 		'std' => $imagepath . '/home/section2-thumb.jpg',
@@ -203,11 +196,10 @@ function optionsframework_options() {
 	$options[] = array(
 		'name' => __( 'SECTION 3', 'theme-textdomain' ),
 		'type' => 'info'
-	);
-	
+	);	
 	$options[] = array( 
 		'name' => __( 'News Slider', 'theme-textdomain' ),
-		'id' => "home-sec4-newsslider",
+		'id' => "home-sec3-newsslider",
 		'std' => $gallery_defaults,
 		'type' => 'gallery'
 	);
@@ -217,19 +209,23 @@ function optionsframework_options() {
 		'name' => __( 'SECTION 4', 'theme-textdomain' ),
 		'type' => 'info'
 	);
-
 	$options[] = array(
 		'name' => __( 'Title', 'theme-textdomain' ),
 		'id' => 'home-sec4-title',
 		'std' => 'Upcoming Events',
 		'type' => 'text'
 	);
-
 	$options[] = array(
 		'name' => __( 'Description', 'theme-textdomain' ),
 		'id' => 'home-sec4-desc',
 		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
 		'type' => 'textarea'
+	);
+	$options[] = array(
+		'name' => __( 'News', 'theme-textdomain' ),
+		'id' => "home-sec4-news",
+		'std' => $gallery_defaults,
+		'type' => 'gallery'
 	);
 
 	// section 5
@@ -237,14 +233,12 @@ function optionsframework_options() {
 		'name' => __( 'SECTION 5', 'theme-textdomain' ),
 		'type' => 'info'
 	);
-
 	$options[] = array(
 		'name' => __( 'Title', 'theme-textdomain' ),
 		'id' => 'home-sec5-title',
 		'std' => 'Upcoming Events',
 		'type' => 'text'
 	);
-
 	$options[] = array(
 		'name' => __( 'Description', 'theme-textdomain' ),
 		'id' => 'home-sec5-desc',
@@ -265,45 +259,38 @@ creativecityworship@gmail.com
 		'name' => __( 'Service', 'theme-textdomain' ),
 		'type' => 'heading'
 	);
-
 	$options[] = array(
 		'name' => __( 'OUR SERVICE', 'theme-textdomain' ),
 		'type' => 'info'
 	);
-
 	$options[] = array(
 		'name' => __( 'Title', 'theme-textdomain' ),
 		'id' => 'service-title1',
 		'std' => 'Our Services',
 		'type' => 'text'
 	);
-
 	$options[] = array(
 		'name' => __( 'Description', 'theme-textdomain' ),
 		'id' => 'service-desc1',
 		'std' => 'Kami punya ibadah hari minggu, Ibadah anak-anak atau Creative Kids dan Creative Community',
 		'type' => 'textarea'
 	);
-
 	$options[] = array(
 		'name' => __( 'SUNDAY SERVICE', 'theme-textdomain' ),
 		'type' => 'info'
 	);
-
 	$options[] = array(
 		'name' => __( 'Title', 'theme-textdomain' ),
 		'id' => 'service-title2',
 		'std' => 'Sunday Service',
 		'type' => 'text'
 	);
-
 	$options[] = array(
 		'name' => __( 'Description', 'theme-textdomain' ),
 		'id' => 'service-desc2',
 		'std' => 'Pastor Walter is our lead pastor. Creative City Worship lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
 		'type' => 'textarea'
 	);
-
 	$options[] = array(
 		'name' => __( 'Gallery', 'theme-textdomain' ),
 		'id' => 'service-image',
@@ -319,33 +306,28 @@ creativecityworship@gmail.com
 		'name' => __( 'Who We Are', 'theme-textdomain' ),
 		'type' => 'heading'
 	);
-
 	$options[] = array(
 		'name' => __( 'WHO WE ARE', 'theme-textdomain' ),
 		'type' => 'info'
 	);
-
 	$options[] = array(
 		'name' => __( 'Title', 'theme-textdomain' ),
 		'id' => 'whoweare-title',
 		'std' => 'Creative City Worship',
 		'type' => 'text'
 	);
-
 	$options[] = array(
 		'name' => __( 'Title', 'theme-textdomain' ),
 		'id' => 'whoweare-minititle',
 		'std' => 'WHO WE ARE',
 		'type' => 'text'
 	);
-
 	$options[] = array(
 		'name' => __( 'Background', 'theme-textdomain' ),
 		'std' => $imagepath . '/home/section2-thumb.jpg',
 		'id' => 'whoweare-img',
 		'type' => 'upload'
 	);
-
 	$options[] = array(
 		'name' => __( 'Description', 'theme-textdomain' ),
 		'id' => 'whoweare-desc',
@@ -356,45 +338,38 @@ creativecityworship@gmail.com
 		Ever since then we have had tremendous miracles in the house of God - new members were added, many volunteered to serve, and we have even been given the opportunity to dedicate 4 young children to God and to baptize our first member on Easter Sunday, 20 April 2014.',
 		'type' => 'textarea'
 	);
-
 	$options[] = array(
 		'name' => __( 'OUR VISION', 'theme-textdomain' ),
 		'type' => 'info'
 	);
-
 	$options[] = array(
 		'name' => __( 'Background', 'theme-textdomain' ),
 		'std' => $imagepath . '/bg-whoweare.jpg',
 		'id' => 'whoweare-bg2',
 		'type' => 'upload'
 	);
-
 	$options[] = array(
 		'name' => __( 'Title', 'theme-textdomain' ),
 		'id' => 'whoweare-title2',
 		'std' => 'Our Vision',
 		'type' => 'text'
 	);
-
 	$options[] = array(
 		'name' => __( 'Title', 'theme-textdomain' ),
 		'id' => 'whoweare-desc2',
 		'std' => 'Discovering and Maximizing Our God-Given TALENTS to Serve The CITY We Are In, and to Bring People to WORSHIP God in Spirit and in Truth',
 		'type' => 'textarea'
 	);
-
 	$options[] = array(
 		'name' => __( 'OUR MISSION', 'theme-textdomain' ),
 		'type' => 'info'
 	);
-
 	$options[] = array(
 		'name' => __( 'Title', 'theme-textdomain' ),
 		'id' => 'whoweare-title3',
 		'std' => 'Our Mission',
 		'type' => 'text'
 	);
-
 	$options[] = array(
 		'name' => __( 'Title', 'theme-textdomain' ),
 		'id' => 'whoweare-desc3',
