@@ -701,10 +701,11 @@
                 bottom:5px;
                 .read-more{
                     position:absolute;
-                    bottom:85px;
+                    left:0; bottom:85px;
                     float:none;
                     width:initial;
                     margin:0;
+                    padding:0 8%;
                     a{ display:inherit; }
                     .ico-plus{
                         width:25px; height:25px;
@@ -819,7 +820,7 @@
                     bottom:70px;
                     float:none;
                     width:initial;
-                    margin:0;
+                    margin:0;                    
                     a{ display:inherit; }
                     .ico-plus{
                         width:25px; height:25px;

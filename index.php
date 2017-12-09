@@ -103,7 +103,7 @@
                             $i = 0;
                             if( ! empty( $options ) ){
                                 foreach( $options['input'] as $option ){
-                                    echo '<div data-slide="2" data-link="link_ccc" class="slide" style="background-image: url('. $field['image'][$i] .');"></div>';
+                                    echo '<div data-slide="'.$i.'" data-link="" class="slide" style="background-image: url('. $field['image'][$i] .');"></div>';
 
                                     $i++;
                                 }
@@ -156,7 +156,7 @@
                             $i = 0;
                             if( ! empty( $options ) ){
                                 foreach( $options['input'] as $option ){
-                                    echo '<li class=""><a href="javascript:void(0);" data-slide="'. [$i] .'" class="s16 merriweather customPaging">'. $field['input'][$i] .'</a></li>';
+                                    echo '<li class=""><a href="javascript:void(0);" data-slide="'. $i .'" class="s16 merriweather customPaging">'. $field['input'][$i] .'</a></li>';
 
                                     $i++;
                                 }
@@ -210,7 +210,12 @@
                             if( ! empty( $options ) ){
                                 foreach( $options['input'] as $option ){
                                     echo '<li class="news__list">';
-                                    echo     '<div class="splash3"></div>';
+                                    if ($i == 0){
+                                        echo '<div class="splash2"></div>';
+                                    }
+                                    else if ($i == 2){
+                                        echo '<div class="splash3"></div>';
+                                    }
                                     echo     '<a href="">';
                                     echo         '<img src="'. $field['image'][$i] .'" alt="" class="thumb">';
                                     echo         '<div class="caption">';
