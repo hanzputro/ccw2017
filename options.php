@@ -70,6 +70,7 @@ function optionsframework_options() {
 		'input' => '',
 		'textarea' => '',
 		'input2' => '',
+		'input3' => '',
 		'image' => '' 
 	);
 

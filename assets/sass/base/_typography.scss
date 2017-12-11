@@ -41,13 +41,13 @@
 .s20{ font-size:20px; }
 .s22{ font-size:22px; }
 .s24{ font-size:24px; line-height:30px; }
-.s28{ font-size:28px; }
-.s30{ font-size:30px; line-height:40px; }
-.s38{ font-size:38px; line-height:48px; margin-bottom:25px; }
-.s40{ font-size:40px; line-height:50px; }
-.s50{ font-size:50px; line-height:60px; margin-bottom:70px; }
-.s60{ font-size:60px; }
-.s72{ font-size:72px; line-height:82px; }
+.s28{ font-size:26px; }
+.s30{ font-size:26px; line-height:40px; }
+.s38{ font-size:36px; line-height:48px; margin-bottom:25px; }
+.s40{ font-size:38px; line-height:50px; }
+.s50{ font-size:48px; line-height:60px; margin-bottom:70px; }
+.s60{ font-size:58px; }
+.s72{ font-size:70px; line-height:82px; }
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -364,14 +364,14 @@ article{
     .s12{ font-size:12px; }
     .s14{ font-size:14px; }
     .s16{ font-size:16px; }
-    .s18{ font-size:18px; }
+    .s18{ font-size:16px; }
     .s20{ font-size:18px; }
     .s22{ font-size:20px; }
     .s24{ font-size:20px; line-height:28px; }
-    .s30{ font-size:22px; line-height:30px; }
-    .s38{ font-size:28px; line-height:32px; }
-    .s40{ font-size:34px; line-height:34px; }
-    .s50{ font-size:36px; line-height:40px; margin-bottom:40px; }
+    .s30{ font-size:20px; line-height:30px; }
+    .s38{ font-size:26px; line-height:32px; }
+    .s40{ font-size:32px; line-height:34px; }
+    .s50{ font-size:32px; line-height:40px; margin-bottom:40px; }
     h1{ font-size:20px; }
 }
 
@@ -380,7 +380,7 @@ article{
     .s24{ font-size:16px; line-height:24px; }
     .s30{ font-size:16px; line-height:24px; }
     .s38{ font-size:22px; line-height:32px; }
-    .s40{ font-size:26px; line-height:32px; }
-    .s50{ font-size:30px; line-height:38px; }
+    .s40{ font-size:24px; line-height:32px; }
+    .s50{ font-size:28px; line-height:38px; }
 }
 

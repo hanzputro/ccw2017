@@ -238,12 +238,14 @@ function of_sanitize_gallery( $input ) {
 		'input' => '',
 		'textarea'  => '',
 		'input2'  => '',
+		'input3'  => '',
 		'image' => ''
 	) );
 
 	$output['input'] = apply_filters( 'sanitize_repeat_field', $input['input'] );
 	$output['textarea'] = apply_filters( 'sanitize_repeat_field', $input['textarea'] );
 	$output['input2'] = apply_filters( 'sanitize_repeat_field', $input['input2'] );
+	$output['input3'] = apply_filters( 'sanitize_repeat_field', $input['input3'] );
 	$output['image'] = apply_filters( 'sanitize_repeat_field', $input['image'] );
 
 	return $output;

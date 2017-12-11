@@ -107,6 +107,7 @@ jQuery(document).ready(function($) {
             $input = $group.find('.fieldinput');
             $textarea = $group.find('.fieldtextarea');
             $input2 = $group.find('.fieldinput2');
+            $input3 = $group.find('.fieldinput3');
             $image = $group.find('.fieldimage');
 
             count = $loop.children('.gallery-each').not('.to-copy').length;
@@ -114,11 +115,13 @@ jQuery(document).ready(function($) {
         	input_name = $input.attr('data-rel');
         	textarea_name = $textarea.attr('data-rel');
         	input2_name = $input2.attr('data-rel');
+            input3_name = $input3.attr('data-rel');
             image_name = $image.attr('data-rel');
 
         	$input.attr('name', input_name + '[' + ( count - 1 ) + ']');
         	$textarea.attr('name', textarea_name + '[' + ( count - 1 ) + ']');
         	$input2.attr('name', input2_name + '[' + ( count - 1 ) + ']');
+            $input3.attr('name', input3_name + '[' + ( count - 1 ) + ']');
             $image.attr('name', image_name + '[' + ( count - 1 ) + ']');
 
         });
@@ -129,6 +132,7 @@ jQuery(document).ready(function($) {
         	var input_name = toCopy.find('.fieldinput').attr('data-rel');
         	var textarea_name = toCopy.find('.fieldtextarea').attr('data-rel');
         	var input2_name = toCopy.find('.fieldinput2').attr('data-rel');
+            var input3_name = toCopy.find('.fieldinput3').attr('data-rel');
             var image_name = toCopy.find('.fieldimage').attr('data-rel');
 
             var notCopy = $(this).parents().find('.gallery-each').not('.to-copy');            
@@ -144,6 +148,7 @@ jQuery(document).ready(function($) {
             		$(this).find('.fieldinput').attr('name', input_name + '[' + i + ']');
             		$(this).find('.fieldtextarea').attr('name', textarea_name + '[' + i + ']');
             		$(this).find('.fieldinput2').attr('name', input2_name + '[' + i + ']');
+                    $(this).find('.fieldinput3').attr('name', input3_name + '[' + i + ']');
                     $(this).find('.fieldimage').attr('name', image_name + '[' + i + ']');
             		// console.log(this);
             		// console.log(i);

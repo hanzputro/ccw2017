@@ -19,7 +19,9 @@ Template Name: Contact Page
                 <h1 class="linetitle s40 merriweather bold"><?php echo of_get_option('contact-title'); ?></h1>
                 <h2 class="s20 light"><i><?php echo of_get_option('contact-desc'); ?></i></h2>                    
             </div>
-            <div class="span6" id="respond">                
+            <div class="span6" id="respond">
+ 
+
                 <form action="<?php the_permalink(); ?>" id="emailform" method="post">
                 	<div class="container480" cellpadding="5">
                         <?php echo $response; ?>

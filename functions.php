@@ -129,4 +129,4 @@ if (isset($_POST['send--button'])){
             my_contact_form_generate_response("error", $not_human);
         }
     }
-}
+}?>

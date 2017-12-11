@@ -80,9 +80,9 @@
                         <p class="s30"><?php echo of_get_option('home-sec2-desc'); ?></p>
                         <nav class="tablink">
                             <ul>
-                                <li class=""><a href="#notset"><h1 class="margin0">About Us</h1></a></li>
-                                <li class=""><a href="#notset"><h1 class="margin0">Music</h1></a></li>
-                                <li class=""><a href="#notset"><h1 class="margin0">Vision</h1></a></li>
+                                <li class=""><a href="<?php echo site_url(); ?>/who-we-are"><h1 class="margin0">About Us</h1></a></li>
+                                <li class=""><a href="<?php echo site_url(); ?>/media"><h1 class="margin0">Music</h1></a></li>
+                                <li class=""><a href="<?php echo site_url(); ?>/who-we-are"><h1 class="margin0">Vision</h1></a></li>
                             </ul>
                         </nav>                    
                     </div>
