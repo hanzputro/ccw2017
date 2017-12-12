@@ -138,8 +138,10 @@ class Options_Framework_Admin {
 		if ( $this->options_screen != $hook )
 	        return;
 
+	    wp_enqueue_style( 'datetimepickerstyle', get_template_directory_uri(). '/assets/vendor/datetimepicker/build/jquery.datetimepicker.min.css', '', '');
+
 		wp_enqueue_style( 'optionsframework', OPTIONS_FRAMEWORK_DIRECTORY . 'css/optionsframework.css', array(),  Options_Framework::VERSION );
-		wp_enqueue_style( 'wp-color-picker' );
+		wp_enqueue_style( 'datetimepickerstyle', 'optionsframework' ,'wp-color-picker');
 	}
 
 	/**
@@ -153,12 +155,10 @@ class Options_Framework_Admin {
 	        return;
 
 		// Enqueue custom option panel JS
-		wp_enqueue_script(
-			'options-custom',
-			OPTIONS_FRAMEWORK_DIRECTORY . 'js/options-custom.js',
-			array( 'jquery','wp-color-picker' ),
-			Options_Framework::VERSION
-		);
+		wp_register_script('jquery2', get_template_directory_uri().'/assets/vendor/jquery/jquery-1.11.3.min.js', '', '') ;
+		wp_register_script('datetimepicker', get_template_directory_uri().'/assets/vendor/datetimepicker/build/jquery.datetimepicker.full.min.js', '', '');
+		wp_register_script('options-custom', OPTIONS_FRAMEWORK_DIRECTORY . 'js/options-custom.js', '', Options_Framework::VERSION);
+		wp_enqueue_script( array('jquery', 'jquery2', 'datetimepicker', 'options-custom', 'wp-color-picker'));	  
 
 		// Inline scripts from options-interface.php
 		add_action( 'admin_head', array( $this, 'of_admin_head' ) );

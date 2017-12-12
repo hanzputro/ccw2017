@@ -337,7 +337,11 @@
     max-height: 150px;
     object-fit: scale-down;
 }
-#optionsframework .section-gallery .controls .gallery-each .fieldinput3{
+#optionsframework .section-gallery .controls .gallery-each .fielddate,
+#optionsframework .section-gallery .controls .gallery-each .fieldtime{
+	width:30%;
+}
+#optionsframework .section-gallery .controls .gallery-each .fieldtime{
 	margin:0 0 30px 0;
 }
 #optionsframework .section-gallery .controls .gallery-each .gallery-upload{

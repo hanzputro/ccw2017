@@ -1,5 +1,15 @@
 <?php
 
+/*
+Theme Name: CCW (Creative City Worship)
+Description: A responsive theme
+Version: 1
+Author: hanzputro (Hanif Putra)
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: ccw, Creative City Worship, wordpress theme
+*/
+
 /*********************************************************/
 /*                      theme setup                      */
 /*********************************************************/
@@ -85,7 +95,7 @@ function my_contact_form_generate_response($type, $message){
 }
 
 //response messages
-$not_human       = "Please, i need human.";
+$not_human       = "Please, I need human.";
 $missing_content = "Please supply all information.";
 $email_invalid   = "Email Address Invalid.";
 $message_unsent  = "Message was not sent. Try Again.";
@@ -100,8 +110,8 @@ $message = $_POST['message_text'];
 
 //php mailer variables
 $to = get_option('admin_email');
-$subject = "Someone sent a message from ".get_bloginfo('name');
-$content_email = $phone  . "\r\n" . $message  . "\r\n";
+$subject = $name." sent a message from ".get_bloginfo('name');
+$content_email = "Phone:" . $phone  . "\r\n" . $message . "\r\n";
 $headers = 'From: '. $email . "\r\n" . 'Reply-To: ' . $email . "\r\n";
 
 if (isset($_POST['send--button'])){

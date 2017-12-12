@@ -21,6 +21,14 @@ Template Name: Contact Page
             </div>
             <div class="span6" id="respond">
  
+                <!-- <?php
+                // Start the loop.
+                while ( have_posts() ) : the_post();
+
+                    the_content();
+
+                endwhile;
+                ?> -->
 
                 <form action="<?php the_permalink(); ?>" id="emailform" method="post">
                 	<div class="container480" cellpadding="5">
@@ -46,12 +54,12 @@ Template Name: Contact Page
                 			<textarea type="text" rows="4" name="message_text"><?php echo esc_textarea($_POST['message_text']); ?></textarea>
                 		</div>
                         <div class="field" style="padding-left:85px;">
-                            <!-- google capthca -->
+
                             <div id="recaptcha" class="g-recaptcha" data-sitekey="6LcJBTwUAAAAADCC5gDvAplHmwKMnUxsNS_Gnm1l"></div>
+                            
                         </div>
                 		<div class="field" style="padding:10px 0 0 85px;">
                             <input type="submit" class="button button--purple send--button" name="send--button" value="SUBMIT">
-                            <!-- <a class="button button--purple send--button" name="send--button">SUBMIT</a> -->
                 		</div>
                 	</div>
                 </form>

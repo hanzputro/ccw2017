@@ -38,7 +38,7 @@ gulp.task('sass-compile', function () {
         .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.stream());
 });
-gulp.task('css-move', function () { 
+gulp.task('css-move', function () {
     gulp.src([
         'dist/css/style.css',
         'dist/css/panel.css'
@@ -113,8 +113,8 @@ gulp.task('php', function() {
 */
 gulp.task('serve', ['sass', 'js-plugin', 'js-script'], function() {
     browserSync.init({
-        proxy: "http://localhost/wordpress/ccw2017"
-        // proxy: "wp.dev/wp-admin"
+        // proxy: "http://localhost/wordpress/ccw2017"
+        proxy: "wp.dev/wp-admin"
     });
     gulp.watch(['assets/sass/*/**.scss'], ['sass']);
     gulp.watch('assets/js/*.js', ['js-script']);

@@ -69,6 +69,20 @@ jQuery(document).ready(function($) {
 	}
 
 
+
+    // datetimepciker only date
+    jQuery('.fielddate').datetimepicker({
+        timepicker:false,
+        format:'d/m/Y'
+    });
+
+    // datetimepciker only time
+    jQuery('.fieldtime').datetimepicker({
+        datepicker:false,
+        format:'H:i'
+    });
+
+
 	// repeat field
 	jQuery(function($){
         $(".docopy").on("click", function(e){
