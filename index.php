@@ -209,6 +209,7 @@
                             $i = 0;
                             if( ! empty( $options ) ){
                                 foreach( $options['input'] as $option ){
+                                    $date = explode("/", $field['date'][$i]);
                                     echo '<li class="news__list">';
                                     if ($i == 0){
                                         echo '<div class="splash2"></div>';
@@ -219,7 +220,7 @@
                                     echo     '<a href="">';
                                     echo         '<img src="'. $field['image'][$i] .'" alt="" class="thumb">';
                                     echo         '<div class="caption">';
-                                    echo             '<span class="s28 merriweather bold date"><span class="s60">12</span><br>NOV</span>';
+                                    echo             '<span class="s28 merriweather bold date"><span class="s60">'. $date[0] .'</span><br>'. $date[1] .'</span>';
                                     echo             '<span class="s20 light title light">'. $field['input'][$i] .'</span>';
                                     echo         '</div>';
                                     echo     '</a>';
