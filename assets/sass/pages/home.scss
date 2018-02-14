@@ -860,15 +860,15 @@
                     padding:10px;          
                     .thumb{}
                     .date{
-                        width: 50px;
-                        line-height:22px;
-                        font-size:22px;
-                        .s60{ line-height: 35px; }
+                        width: 45px;
+                        line-height:18px;
+                        font-size:16px;
+                        .s60{ font-size:35px; line-height: 35px; }
                     }
                     .title{
                         width:74%;
                         font-size:16px;
-                        width: calc(100% - 50px);
+                        width: calc(100% - 45px);
                         margin-top: 35px;
                     }
                 }

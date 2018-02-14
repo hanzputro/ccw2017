@@ -72,6 +72,9 @@ function optionsframework_options() {
 		'input2' => '',
 		'input3' => '',
 		'date' => '',
+		'dateday' => '',
+		'datemonth' => '',
+		'dateyear' => '',
 		'time' => '',
 		'image' => '' 
 	);
