@@ -1,13 +1,13 @@
 <?php
 
 /*
-Theme Name: Dealer Hino Bekasi
+Theme Name: CCW (Creative City Worship)
 Description: A responsive theme
 Version: 1
 Author: hanzputro (Hanif Putra)
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: hino, bekasi, dealer hino, dealer hino bekasi.  
+Tags: ccw, Creative City Worship, wordpress theme
 */
 
 /*********************************************************/
@@ -19,13 +19,13 @@ function theme_setup() {
 add_action( 'wp_enqueue_scripts', 'theme_setup' );
 
 function js_setup() {
-  wp_register_script( 'jquery','','');
-  wp_register_script('jquery2', get_template_directory_uri().'/assets/vendor/jquery/jquery-1.11.3.min.js', '', '');
-  wp_register_script('plugins', get_template_directory_uri().'/dist/js/plugins.js', '', '');
-  wp_register_script('base', get_template_directory_uri().'/dist/js/base.js', '', '');
+   wp_register_script( 'jquery','','');
+   wp_register_script('jquery2', get_template_directory_uri().'/assets/vendor/jquery/jquery-1.11.3.min.js', '', '') ;
+   wp_register_script('plugins', get_template_directory_uri().'/dist/js/plugins.js', '', '') ;
+   wp_register_script('base', get_template_directory_uri().'/dist/js/base.js', '', '') ;
 
-  wp_enqueue_script( array('jquery', 'jquery2', 'plugins', 'base'));   
-}
+   wp_enqueue_script( array('jquery', 'jquery2', 'plugins', 'base'));   
+}  
 add_action('wp_enqueue_scripts', 'js_setup');
 
 /*
